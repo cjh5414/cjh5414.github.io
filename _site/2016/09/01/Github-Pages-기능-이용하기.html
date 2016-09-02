@@ -35,18 +35,40 @@
         <div id="main">
     <article>
         <header class="major">
-            <h2 class="post-title">Curabitur</h2>
-                <p class="post-meta">Feb 17, 2015</p>
+            <h2 class="post-title">Github Pages 기능 이용하기</h2>
+                <p class="post-meta">Sep 1, 2016</p>
         </header>
 
         <section>
-            <p><img src="/images/fulls/03.jpg" class="fit image" /> Curabitur orci turpis, egestas placerat velit eget, dictum pellentesque ipsum. Suspendisse potenti. Suspendisse ac maximus arcu. Sed ut mattis ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum eleifend odio vitae varius aliquam. Quisque ac pretium nisi. Curabitur tempus urna ac ultrices commodo.</p>
+            <h2 id="github-pages">Github의 Pages란?</h2>
+<p>Github에서 무료로 호스팅하는 공개 웹페이지이다. 웹 서버를 구축하지 않고도 github의 repository에 index.html 파일을 넣는 것 만으로 간편하게 개인 사이트를 만들 수 있다.</p>
 
-<p>Curabitur iaculis est at mattis mattis. Aliquam erat volutpat. Etiam vitae cursus quam. Nunc ultricies nunc non lorem fringilla cursus. Etiam dapibus libero ac turpis accumsan pulvinar. Sed auctor velit eget mi consequat bibendum. Aliquam interdum purus eget metus pretium ullamcorper.</p>
+<h2 id="github-pages-">Github Pages 만들기</h2>
+<h3 id="create-a-repository">1. Create a Repository</h3>
+<p>github에 로그인을 하고 새로운 repository를 생성한다.<br />
+repository의 이름은 반드시 <em>[username]</em>.github.io 로 지정해야한다.<br />
+<img src="/images/githubpages/githubpages_new.png" alt="New Repository" /></p>
 
-<p>Pellentesque feugiat ex non ligula commodo, eget varius tortor pellentesque. Pellentesque id tortor felis. Cras fringilla ante eget orci laoreet, non consequat urna suscipit. Pellentesque luctus ac nulla vitae porttitor. Proin sed tortor quis magna efficitur efficitur a id leo. Donec efficitur augue et laoreet maximus. Ut semper egestas porttitor. Phasellus sagittis vulputate sem at laoreet.</p>
+<h3 id="clone-the-repository">2. Clone the repository</h3>
+<p>terminal을 실행시키고 project를 clone 하고자 하는 폴더로 이동한 후 다음 명령을 실행한다.<br />
+$ git clone https://github.com/<em>[username]</em>/<em>[username]</em>.github.io</p>
 
-<p>Sed lobortis urna ut mi volutpat, sit amet euismod sapien tincidunt. Nulla facilisi. Pellentesque quis tempus neque. Mauris dictum ac sapien nec congue. In hac habitasse platea dictumst. Duis id pellentesque nisl. Morbi eget massa magna.</p>
+<h3 id="create-an-indexhtml">3. Create an index.html</h3>
+<p>clone한 project 폴더로 이동한다.<br />
+$ cd <em>[username]</em>.github.io<br />
+개인 사이트에 보여질 index.html을 작성한다.<br />
+$ echo “Hello World” &gt; index.html</p>
+
+<h3 id="push">4. Push</h3>
+<p>작성한 index.html을 commit, push한다.<br />
+$ git add –all<br />
+$ git commit -m “Initialize Github Pages”<br />
+$ git push -u origin master</p>
+
+<p>http://<em>[username]</em>.github.io 주소로 확인한다.<br />
+<img src="/images/githubpages/githubpages_result.png" alt="New Repository" /></p>
+<h3 id="section">5. 참고 자료</h3>
+<p><a href="https://pages.github.com">https://pages.github.com</a></p>
 
         </section>
         
@@ -54,37 +76,19 @@
             <div class="row">
             
             
-                <article class="6u 12u(small) excerpt">
+            
+            
+                <article class="6u 12u(small) excerpt f-right">
                     <header>
-                        <h2><a href="/update/2015/02/06/welcome-to-jekyll.html">Suspendisse pellentesque</a></h2>
+                        <h2><a href="/2016/09/03/jhy.html">지훈 ♥ 희영</a></h2>
                     </header>
                     <section>
-                        <p><img src="/images/fulls/01.jpg" class="fit image" /> Suspendisse pellentesque mollis turpis, vitae ullamcorper arcu sagittis in. Pellentesque viverra, diam vel ultrices lobortis, urna diam efficitur diam, non ultricies enim massa et neque. Mauris lacinia purus nibh, ac consequat mi molestie ac. Suspendisse at sapien ac magna posuere imperdiet eget id nisi.</p>
-
+                        <p><img src="/images/jhy.jpeg" alt="New Repository" /></p>
 
                     </section>
                     <footer>
                         <ul class="actions">
-                            <li><a href="/update/2015/02/06/welcome-to-jekyll.html" class="button">Read More</a></li>
-                        </ul>
-                    </footer>
-                </article>
-            
-            
-            
-            
-                <article class="6u$ 12u(small) excerpt f-right">
-                    <header>
-                        <h2><a href="/2016/09/01/init-blog.html">Init Blog</a></h2>
-                    </header>
-                    <section>
-                        <p><img src="/images/fulls/01.jpg" class="fit image" />
-blog</p>
-
-                    </section>
-                    <footer>
-                        <ul class="actions">
-                            <li><a href="/2016/09/01/init-blog.html" class="button">Read More</a></li>
+                            <li><a href="/2016/09/03/jhy.html" class="button">Read More</a></li>
                         </ul>
                     </footer>
                 </article>
