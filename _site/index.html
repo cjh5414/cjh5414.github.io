@@ -37,12 +37,149 @@
     <section>
         
             <header class="major">
-                <h2>지훈 ♥ 희영</h2>
+                <h2>마크다운(Markdown)</h2>
                 <p class="post-meta">Sep 3, 2016</p>
             </header>
 
             <section>
-                <p><img src="/images/jhy.jpeg" alt="New Repository" /></p>
+                <h2 id="markdown-">Markdown 이란?</h2>
+<p>일반 텍스트 문서의 양식을 편집하는 문법으로 쉽게 쓰고 읽을 수 있으며 HTML로 변환이 가능하다. 텍스트에 태그를 이용해서 글자를 굵게하거나, 이미지를 삽입하는 등의 기능을 제공하고, 간결, 다양한 형태로의 변환, 적은 용량 등의 장점이 있다. README 파일이나 온라인 문서 등을 작성하는데 유용하다.</p>
+
+<h2 id="markdown--1">Markdown 문법</h2>
+<h3 id="section">1. 제목</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>큰 제목
+=====
+</code></pre>
+</div>
+
+<h1 id="section-1">큰 제목</h1>
+<div class="highlighter-rouge"><pre class="highlight"><code>작은 제목
+-------
+</code></pre>
+</div>
+
+<h2 id="section-2">작은 제목</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code># 제목1
+## 제목2
+### 제목3
+#### 제목4
+##### 제목5
+###### 제목6
+</code></pre>
+</div>
+<h1 id="section-3">제목1</h1>
+<h2 id="section-4">제목2</h2>
+<h3 id="section-5">제목3</h3>
+<h4 id="section-6">제목4</h4>
+<h5 id="section-7">제목5</h5>
+<h6 id="section-8">제목6</h6>
+<p><br /></p>
+<h3 id="section-9">2. 강조</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>*기울임* _기울임_
+**굵은글씨** __굵은글씨__
+~~취소선~~
+</code></pre>
+</div>
+<p><em>기울임</em><br />
+<strong>굵은글씨</strong><br />
+<del>취소선</del><br />
+<br /></p>
+<h3 id="section-10">3. 개행</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>라인 끝에
+스페이스바를  
+2개 이상 넣는다.  
+(드레그 해서 스페이스바 확인)
+</code></pre>
+</div>
+<p>라인 끝에
+스페이스바를<br />
+2개 이상 넣는다.<br />
+<br /></p>
+<h3 id="section-11">4. 인용문</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>인용문은  
+&gt; "&gt;"기호를 오른쪽에 십입한다.
+&gt;&gt; 겹쳐서도 사용 가능하다.  
+## 안에서 다른 마크다운 요소를 포함할 수 도 있다.
+</code></pre>
+</div>
+<p>인용문은</p>
+<blockquote>
+  <p>”&gt;”기호를 오른쪽에 십입한다.</p>
+  <blockquote>
+    <p>겹쳐서도 사용 가능하다.</p>
+    <h2 id="section-12">안에서 다른 마크다운 요소를 포함할 수 도 있다.</h2>
+  </blockquote>
+</blockquote>
+
+<p><br /></p>
+<h3 id="section-13">5. 글 머리 기호</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>* 글
+* 머리
+	* 기호
+- 글
+- 머리
+	- 기호
+</code></pre>
+</div>
+<ul>
+  <li>글</li>
+  <li>머리
+    <ul>
+      <li>기호</li>
+    </ul>
+  </li>
+  <li>글</li>
+  <li>머리
+    <ul>
+      <li>기호</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+<h3 id="section-14">6. 코드</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>`한 줄 코드`
+</code></pre>
+</div>
+<p><code class="highlighter-rouge">한 줄 코드</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code> ```
+ 여러
+ 줄
+ 코드
+ ```
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>여러
+줄
+코드
+</code></pre>
+</div>
+<p><br /></p>
+<h3 id="section-15">7. 이미지</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>![대체 텍스트](이미지경로)
+![markdown logo](http://lh3.googleusercontent.com/-3PZCHZ3KJKQ/UseeUz_MrZI/AAAAAAABi_c/ZnadAPzyJcg/s200/markdown-mark.png)
+</code></pre>
+</div>
+<p><img src="http://lh3.googleusercontent.com/-3PZCHZ3KJKQ/UseeUz_MrZI/AAAAAAABi_c/ZnadAPzyJcg/s200/markdown-mark.png" alt="markdown logo" />
+<br /></p>
+<h3 id="section-16">8. 링크</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>[링크문구](링크주소)
+[jihun blog](http://cjh5414.github.io)
+&lt;링크주소&gt;
+&lt;http://cjh5414.github.io&gt;
+</code></pre>
+</div>
+<p><a href="http://cjh5414.github.io">jihun blog</a>
+<br />
+<a href="http://cjh5414.github.io">http://cjh5414.github.io</a></p>
+
+<p><br /></p>
+<h2 id="section-17">참고 자료</h2>
+<p><a href="http://blog.kalkin7.com/2014/02/05/wordpress-markdown-quick-reference-for-koreans/">http://blog.kalkin7.com/2014/02/05/wordpress-markdown-quick-reference-for-koreans/</a>
+<a href="https://wikidocs.net/1678">https://wikidocs.net/1678</a><br />
+<a href="https://gist.github.com/ihoneymon/652be052a0727ad59601">https://gist.github.com/ihoneymon/652be052a0727ad59601</a><br />
+<a href="http://sergeswin.com/1013">http://sergeswin.com/1013</a></p>
+
 
             </section>
         

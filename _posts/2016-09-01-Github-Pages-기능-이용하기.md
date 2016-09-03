@@ -15,19 +15,27 @@ repository의 이름은 반드시 _[username]_.github.io 로 지정해야한다.
 
 ### 2. Clone the repository
 terminal을 실행시키고 project를 clone 하고자 하는 폴더로 이동한 후 다음 명령을 실행한다.  
+```
 $ git clone https://github.com/_[username]_/_[username]_.github.io
+```
 
 ### 3. Create an index.html
-clone한 project 폴더로 이동한다.  
+clone한 project 폴더로 이동한다. 
+``` 
 $ cd _[username]_.github.io  
+```
 개인 사이트에 보여질 index.html을 작성한다.  
+```
 $ echo "Hello World" > index.html  
+```
 
 ### 4. Push
 작성한 index.html을 commit, push한다.  
+```
 $ git add --all  
 $ git commit -m "Initialize Github Pages"  
 $ git push -u origin master  
+```
 
 http://_[username]_.github.io 주소로 확인한다.  
 ![New Repository](/images/githubpages/githubpages_result.png)
