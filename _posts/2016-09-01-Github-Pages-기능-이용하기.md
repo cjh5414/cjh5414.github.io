@@ -8,13 +8,14 @@ Github에서 무료로 호스팅하는 공개 웹페이지이다. 웹 서버를 
 
 ## Github Pages 만들기
 
-### 1. Create a Repository  
+### 1. Create a Repository 
 github에 로그인을 하고 새로운 repository를 생성한다.  
 repository의 이름은 반드시 _[username]_.github.io 로 지정해야한다.  
 ![New Repository](/images/githubpages/githubpages_new.png)  
 
-### 2. Clone the repository  
+### 2. Clone the repository
 terminal을 실행시키고 project를 clone 하고자 하는 폴더로 이동한 후 다음 명령을 실행한다.    
+
 ```
 $ git clone https://github.com/_[username]_/_[username]_.github.io
 ```
@@ -44,5 +45,5 @@ $ git push -u origin master
 https://_[username]_.github.io 주소로 확인한다.  
 ![New Repository](/images/githubpages/githubpages_result.png)  
 
-### 5. 참고 자료  
+### 5. 참고 자료
 <https://pages.github.com>
