@@ -7,7 +7,6 @@ layout: post
 Github에서 무료로 호스팅하는 공개 웹페이지이다. 웹 서버를 구축하지 않고도 github의 repository에 index.html 파일을 넣는 것 만으로 간편하게 개인 사이트를 만들 수 있다.
 
 ## Github Pages 만들기  
-
 ### 1. Create a Repository
 github에 로그인을 하고 새로운 repository를 생성한다.  
 repository의 이름은 반드시 _[username]_.github.io 로 지정해야한다.  
