@@ -20,21 +20,18 @@ $ git clone https://github.com/_[username]_/_[username]_.github.io
 ```
 
 ### 3. Create an index.html
-clone한 project 폴더로 이동한다. 
-
+clone한 project 폴더로 이동한다.
 ``` 
-$ cd _[username]_.github.io  
+$ cd _[username]_.github.io
 ```
 
-개인 사이트에 보여질 index.html을 작성한다.  
-
+개인 사이트에 보여질 index.html을 작성한다.
 ```
-$ echo "Hello World" > index.html  
+$ echo "Hello World" > index.html
 ```
 
 ### 4. Push
-작성한 index.html을 commit, push한다.  
-
+작성한 index.html을 commit, push한다.
 ```
 $ git add --all  
 $ git commit -m "Initialize Github Pages"  
