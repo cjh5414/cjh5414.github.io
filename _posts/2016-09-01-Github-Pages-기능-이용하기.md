@@ -13,11 +13,13 @@ repository의 이름은 반드시 _[username]_.github.io 로 지정해야한다.
 ![New Repository](/images/githubpages/githubpages_new.png)  
 
 ### 2. Clone the repository
-terminal을 실행시키고 project를 clone 하고자 하는 폴더로 이동한 후 다음 명령을 실행한다.
+terminal을 실행시키고 project를 clone 하고자 하는 폴더로 이동한 후 다음 명령을 실행한다.  
 
 ```
 $ git clone https://github.com/_[username]_/_[username]_.github.io
 ```
+
+-------
 
 <!--
 ### 3. Create an index.html
@@ -44,6 +46,6 @@ https://_[username]_.github.io 주소로 확인한다.
 ### 5. 참고 자료
 <https://pages.github.com>
 
--------
+
 
 -->
