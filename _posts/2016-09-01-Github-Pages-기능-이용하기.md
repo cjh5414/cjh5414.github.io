@@ -18,6 +18,7 @@ terminal을 실행시키고 project를 clone 하고자 하는 폴더로 이동�
 $ git clone https://github.com/_[username]_/_[username]_.github.io
 ```
 
+<!--
 ### 3. Create an index.html
 clone한 project 폴더로 이동한다.  
 ```
@@ -41,3 +42,7 @@ https://_[username]_.github.io 주소로 확인한다.
 
 ### 5. 참고 자료
 <https://pages.github.com>
+
+-------
+
+-->
