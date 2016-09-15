@@ -6,6 +6,7 @@ layout: post
 PEP8을 잘 지킬 수 있도록 도와주는 도구들이 많이 있다. 그 중에서 pep8, flake8, autopep8에 대해서 알아본다.
 
 PEP8이 적용되지 않은 예제코드  
+
 ```
 import sys
 
@@ -16,12 +17,15 @@ print(add(1,2))
 ```
 
 ## pep8  
+
 ### Installation  
+
 ```
 pip install pep8
 ```
 
 ### Using  
+
 ```
 pep8 test.py
 ```
@@ -41,12 +45,15 @@ tab을 사용하지 마라.
 등의 결과를 볼 수 있다.
 
 ## flake8  
+
 ### Installation  
+
 ```
 pip install flake8
 ```  
 
 ### Using  
+
 ```
 flake8 test.py
 ```
@@ -88,7 +95,9 @@ test.py:6:12: E231 missing whitespace after ','
 - `~/.config/flake8`의 환경설정 파일을 통해 79라인 규칙을 100라인으로 늘리는 등의 설정을 변경할 수도 있다.  
 
 ## autopep8  
+
 ### Installation  
+
 ```
 pip install autopep8
 ```
