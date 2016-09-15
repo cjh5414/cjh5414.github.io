@@ -5,7 +5,7 @@ layout: post
 
 PEP8을 잘 지킬 수 있도록 도와주는 도구들이 많이 있다. 그 중에서 pep8, flake8, autopep8에 대해서 알아본다.
 
-PEP8이 적용되지 않은 예제코드  
+- PEP8이 적용되지 않은 예제코드  
 
 ```
 import sys
@@ -103,11 +103,15 @@ pip install autopep8
 ```
 
 ### Using  
+
 - 아래의 명령으로 pep8을 적용한 후의 코드의 상태를 출력할 수 있다.  
+
 ```
 autopep8 test.py
-```
+```  
+
 출력결과.  
+
 ```
 import sys
 
@@ -116,9 +120,9 @@ def add(x, y):
     return x + y
 
 print(add(1, 2))
-```
+```  
 
-- 옵션을 통해 파일 자체를 pep8을 적용하여 변경시켜준다.  
+- aggressive 옵션을 추가하면 파일 자체를 pep8을 적용한 상태의 코드로 변경시켜준다.  
 ```
 autopep8 --in-place --aggressive --aggressive test.py
 ```
