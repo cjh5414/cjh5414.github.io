@@ -23,11 +23,13 @@ import_test/
 ```  
 
 - hello.py  
+
 ```
 hello_str = 'Hello!'
 ```  
 
 - plus_and_minus.py  
+
 ```
 def plus(a, b):
 	return a+b
@@ -69,7 +71,7 @@ $ python
 3
 ```  
 
-- 별칭 사용  - as  
+### 별칭 사용  - as  
 ```
 >>> import calc.plus_and_minus as pm
 >>> pm.plus(1,2)
