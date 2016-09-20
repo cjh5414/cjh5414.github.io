@@ -12,7 +12,8 @@ from module import submodule
 from . import submodule
 ```  
 
-<br>
+<br>  
+
 ## 예제
 - 파일 구조
 
@@ -39,7 +40,7 @@ def minus(a, b):
 	return a-b
 ```  
 
-<br>
+<br>  
 ### python shell을 실행시켜서 몇 가지 형태의 import문을 확인해본다.  
 
 ```
@@ -81,7 +82,7 @@ $ python
 1
 ```  
 
-<br>
+<br>  
 ## 주의사항  
 
 ### PEP8은 다음과 같은 순서로 그룹을 지을 것을 제안한다.  
@@ -97,7 +98,7 @@ $ python
 명시적 성격의 상대 임포트(explicit relative import)를 통해 모듈의 패키지를 하드 코딩하거나 구조적으로 종속된 모듈을 어렵게 분리해야 하는 경우들을 피해 갈 수 있다.
 
 
-<br>
+<br>  
 ## 참고자료  
 Two Scoops of Django - 대니얼 로이 그린펠드, 오드리 로이 그린펠드
 
