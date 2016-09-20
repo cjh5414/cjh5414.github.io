@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+  		<title>Choi Jihun</title>
+  		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  		<meta name="description" content="" />
+  		<meta name="keywords" content="" />
+  		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+  		<script src="/js/jquery.min.js"></script>
+  		<script src="/js/jquery.poptrox.min.js"></script>
+  		<script src="/js/skel.min.js"></script>
+  		<script src="/js/init.js"></script>
+      <!-- <noscript> -->
+        <link rel="stylesheet" href="/css/skel.css" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/style-xlarge.css" />
+      <!-- </noscript> -->
+  		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+  	</head>
+
+	<body id="top">
+
+      <header id="header">
+          <a href="#" class="image avatar"><img src="/images/avatar.jpg" alt="" /></a>
+          <h1><strong>Choi Jihun</strong>
+	  <!--
+	  <h1><strong>I am <a href="/">Strata</a></strong>, a super simple<br />
+          responsive site template freebie<br />
+          crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1>
+	  -->
+      </header>
+
+
+        <div id="main">
+    <article>
+        <header class="major">
+            <h2 class="post-title">진행 중인 프로젝트에 travis-ci 붙이기</h2>
+                <p class="post-meta">Sep 19, 2016</p>
+        </header>
+
+        <section>
+            <p>현재 ‘클린 코드를 위한 테스트 주도 개발’이라는 책을 보면서 To-Do list 프로젝트를 따라해보고 있다.
+git으로 관리하는 이 프로젝트에 travis-ci를 붙여보고자 한다.
+<a href="https://docs.travis-ci.com/user/getting-started/">https://docs.travis-ci.com/user/getting-started/</a> 여기에 가면 사용법이 나와있다.</p>
+
+<h2 id="travisyml-">.travis.yml 추가</h2>
+
+<p>사용되는 언어, 버전, 스크립트 등의 내용을 작성한다.<br />
+python은 <a href="https://docs.travis-ci.com/user/languages/python/">https://docs.travis-ci.com/user/languages/python/</a> 를 참고하면 된다.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>language: python
+python:
+  - "3.5"
+# command to install dependencies
+install: "sudo pip install -r requirements.txt"
+# command to run tests
+script: python manage.py test lists/
+sudo: required
+</code></pre>
+</div>
+
+<h2 id="requirementstxt-">requirements.txt 만들기</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ pip freeze &gt; requirements.txt
+</code></pre>
+</div>
+
+<h2 id="travis-ci-">해당 프로젝트 travis-ci 설정</h2>
+
+<p><a href="https://travis-ci.org/profile">https://travis-ci.org/profile</a> 에 접속하여 해당 프로젝트에 체크표시를 한다.</p>
+
+<p><img src="/images/travis-ci/project-travis.png" alt="travis-ci" /></p>
+
+<h2 id="commit">변경사항 commit</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git add .travis.yml
+git add requirements.txt
+git commit -m "add .travis.yml and requirements.txt"
+git push origin master
+</code></pre>
+</div>
+
+<h2 id="section">확인</h2>
+<p><a href="https://travis-ci.org/">https://travis-ci.org/</a> 에 접속하여 결과를 확인한다.<br />
+git push를 하면 travis-ci가 알아서 테스트를 진행한다.</p>
+
+<p><img src="/images/travis-ci/project-travis-result.png" alt="travis-ci" /></p>
+
+<p>결과는 메일로도 발송된다.</p>
+
+<p><img src="/images/travis-ci/project-travis-email.png" alt="travis-ci" /></p>
+
+
+        </section>
+        
+        <footer>
+            <div class="row">
+            
+            
+                <article class="6u 12u(small) excerpt">
+                    <header>
+                        <h2><a href="/2016/09/15/pep8-%EC%A0%81%EC%9A%A9-flake8,autopep8.html">PEP8 tools - pep8, flake8, autopep8</a></h2>
+                    </header>
+                    <section>
+                        <p>PEP8을 잘 지킬 수 있도록 도와주는 도구들이 많이 있다. 그 중에서 pep8, flake8, autopep8에 대해서 알아본다.</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="/2016/09/15/pep8-%EC%A0%81%EC%9A%A9-flake8,autopep8.html" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            
+            
+            
+                <article class="6u$ 12u(small) excerpt f-right">
+                    <header>
+                        <h2><a href="/2016/09/20/python-import.html">Python import</a></h2>
+                    </header>
+                    <section>
+                        <h2 id="import">import</h2>
+<p>import는 ‘수입하다’라는 뜻으로 python에서는 다른 모듈 내의 코드에 접근을 가능하게 해주는 역할을 한다. import를 사용하는 벙법에는 여러가지 형태가 있다.</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="/2016/09/20/python-import.html" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+            
+            </div>
+        </footer>
+
+    </article>
+
+</div>
+
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="icons">
+
+              
+              <li>
+                <a href="https://github.com/cjh5414" class="icon fa-github">
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+              
+
+              
+              <li>
+                <a href="https://twitter.com/example" class="icon fa-twitter">
+                  <span class="label">Twitter</span>
+                </a>
+              </li>
+              
+
+              
+              <li>
+                <a href="https://linkedin.com/in/example" class="icon fa-linkedin">
+                  <span class="label">LinkedIn</span>
+                </a>
+              </li>
+              
+
+              
+              <li>
+                <a href="https://plus.google.com/example" class="icon fa-google-plus">
+                  <span class="label">Google+</span>
+                </a>
+              </li>
+              
+
+              
+              <li>
+                <a href="https://www.facebook.com/example" class="icon fa-facebook">
+                  <span class="label">Facebook</span>
+                </a>
+              </li>
+              
+
+              
+              <li>
+                <a href="#" class="icon fa-dribbble">
+                  <span class="label">Dribbble</span>
+                </a>
+              </li>
+              
+
+              
+              <li>
+                <a href="mailto:cjh5414@gmail.com" class="icon fa-envelope-o">
+                  <span class="label">Email</span>
+                </a>
+              </li>
+              
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Untitled</li>
+                <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                <li>Demo Images: <a href="https://unsplash.com/">Unsplash</a></li>
+                <li>Jekyll Template: <a href="https://cloudcannon.com">Cloud Cannon</a></li>
+            </ul>
+        </footer>
+
+	</body>
+</html>

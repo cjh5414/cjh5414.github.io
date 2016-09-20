@@ -41,6 +41,7 @@ def minus(a, b):
 ```  
 
 <br>  
+
 ### python shell을 실행시켜서 몇 가지 형태의 import문을 확인해본다.  
 
 ```
@@ -83,6 +84,7 @@ $ python
 ```  
 
 <br>  
+
 ## 주의사항  
 
 ### PEP8은 다음과 같은 순서로 그룹을 지을 것을 제안한다.  
@@ -99,6 +101,7 @@ $ python
 
 
 <br>  
+
 ## 참고자료  
 Two Scoops of Django - 대니얼 로이 그린펠드, 오드리 로이 그린펠드
 
