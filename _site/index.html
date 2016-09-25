@@ -18,6 +18,17 @@
   		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
   	</head>
 
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84670277-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
 	<body id="top">
 
       <header id="header">
@@ -36,119 +47,79 @@
     <section>
         
             <header class="major">
-                <h2>Python import</h2>
-                <p class="post-meta">Sep 20, 2016</p>
+                <h2>Upstart를 이용하여 부팅 시 실행되는 프로세스 설정하기</h2>
+                <p class="post-meta">Sep 22, 2016</p>
             </header>
 
             <section>
-                <h2 id="import">import</h2>
-<p>import는 ‘수입하다’라는 뜻으로 python에서는 다른 모듈 내의 코드에 접근을 가능하게 해주는 역할을 한다. import를 사용하는 벙법에는 여러가지 형태가 있다.</p>
+                <p>Ubuntu에서 Upstart를 이용하는 방법을 예제를 통해 알아보자.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>import module
-from module import submodule
-from . import submodule
+<h2 id="section">작업 폴더 위치</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ pwd
+
+/home/ubuntu/upstart_test
 </code></pre>
 </div>
 
 <p><br /></p>
 
-<h2 id="section">예제</h2>
+<h2 id="upstart--">Upstart 스크립트 작성</h2>
+
+<p>스크립트는 /etc/init에 만들고 확장자는 .conf로 해야한다.</p>
+
+<p><strong><em>/etc/init/upstart_test_script.conf</em></strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>description "upstart test"
+
+start on startup
+stop on shutdown
+
+respawn
+
+setuid ubuntu
+chdir /home/ubuntu/upstart_test
+
+exec echo "Hello World!" &gt; hello.txt
+</code></pre>
+</div>
+
 <ul>
-  <li>파일 구조</li>
+  <li>start on net-device-up : 부팅 되면 실행 ( start on net-device-up : 인터넷에 연결 되면 실행 )</li>
+  <li>respawn : 프로세스가 다운되면 자동으로 재시작</li>
+  <li>chdir : 현재 디렉터리</li>
+  <li>exec : 실제 프로세스 실행</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>import_test/
-	hello.py
-	calc/
-		plus_and_minus.py
+<p><br /></p>
+
+<h2 id="section-1">스크립트 문법 체크</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ init-checkconf /etc/init/upstart_test_script.conf
+
+File /etc/init/upstart_test_script.conf: syntax ok
 </code></pre>
 </div>
-
-<ul>
-  <li>hello.py</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>hello_str = 'Hello!'
-</code></pre>
-</div>
-
-<ul>
-  <li>plus_and_minus.py</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>def plus(a, b):
-	return a+b
-
-def minus(a, b):
-	return a-b
-</code></pre>
-</div>
+<p>스크립트 문법 오류가 있는지 검사한다.</p>
 
 <p><br /></p>
 
-<h3 id="python-shell-----import-">python shell을 실행시켜서 몇 가지 형태의 import문을 확인해본다.</h3>
+<h2 id="start---">start 명령을 이용해서 확인</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd import_test
-$ python
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo start upstart_test_script
+
+upstart_test_script start/running, process 1825
+
+$ ls /home/ubuntu/upstart_test
+hello.txt
+
+$ cat /home/ubuntu/upstart_test/hello.txt
+Hello World!
 </code></pre>
 </div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt;&gt; import hello
-&gt;&gt;&gt; hello.hello_str
-'Hello!'
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt;&gt; from hello import hello_str
-&gt;&gt;&gt; hello_str
-'Hello!'
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt;&gt; from calc import plus_and_minus
-&gt;&gt;&gt; plus_and_minus.plus(1,2)
-3
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt;&gt; from calc.plus_and_minus import plus
-&gt;&gt;&gt; plus(1,2)
-3
-</code></pre>
-</div>
-
-<h3 id="as">별칭 사용  - as</h3>
-<div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt;&gt; import calc.plus_and_minus as pm
-&gt;&gt;&gt; pm.plus(1,2)
-3
-&gt;&gt;&gt; pm.minus(2,1)
-1
-</code></pre>
-</div>
-
-<p><br /></p>
-
-<h2 id="section-1">주의사항</h2>
-
-<h3 id="pep8-------">PEP8은 다음과 같은 순서로 그룹을 지을 것을 제안한다.</h3>
-<ol>
-  <li>표준 라이브러리 임포트</li>
-  <li>연관 외부 라이버르리 임포트</li>
-  <li>로컬 애플리케이션 또는 라이브러리에 한정된 임포트</li>
-</ol>
-
-<h3 id="import---">import * 는 피하자.</h3>
-<p>코드가 복잡해지고 어떤 모듈이 어떤 함수, 변수를 불러오는지 파악하기 힘들어져서 가독성이 떨어진다.<br />
-또한, import한 다른 파이썬 모듈이 현재 작업하는 모듈의 것을 덮어버리는 문제가 발생 할 수 있기 때문에 위험하다.</p>
-
-<h3 id="section-2">명시적 성격의 상대 임포트를 이용하자.</h3>
-<p>명시적 성격의 상대 임포트(explicit relative import)를 통해 모듈의 패키지를 하드 코딩하거나 구조적으로 종속된 모듈을 어렵게 분리해야 하는 경우들을 피해 갈 수 있다.</p>
-
-<p><br /></p>
-
-<h2 id="section-3">참고자료</h2>
-<p>Two Scoops of Django - 대니얼 로이 그린펠드, 오드리 로이 그린펠드</p>
-
+<p>hello.txt파일이 만들어진 것을 확인할 수 있다.
+start명령을 통하지 않더라도 start on 으로 설정한 방법에 따라 알아서 실행될 것이다.</p>
 
             </section>
         
@@ -158,6 +129,25 @@ $ python
             
 
                 <article class="6u 12u(small)">
+                    <header>
+                        <h2><a href="/2016/09/20/python-import.html">Python import</a></h2>
+                    </header>
+                    <section>
+                        <h2 id="import">import</h2>
+<p>import는 ‘수입하다’라는 뜻으로 python에서는 다른 모듈 내의 코드에 접근을 가능하게 해주는 역할을 한다. import를 사용하는 벙법에는 여러가지 형태가 있다.</p>
+
+
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="/2016/09/20/python-import.html" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+
+            
+
+                <article class="6u$ 12u(small)">
                     <header>
                         <h2><a href="/2016/09/19/project-travis-ci.html">진행 중인 프로젝트에 travis-ci 붙이기</a></h2>
                     </header>
@@ -177,7 +167,7 @@ git으로 관리하는 이 프로젝트에 travis-ci를 붙여보고자 한다.
 
             
 
-                <article class="6u$ 12u(small)">
+                <article class="6u 12u(small)">
                     <header>
                         <h2><a href="/2016/09/15/pep8-%EC%A0%81%EC%9A%A9-flake8,autopep8.html">PEP8 tools - pep8, flake8, autopep8</a></h2>
                     </header>
@@ -195,7 +185,7 @@ git으로 관리하는 이 프로젝트에 travis-ci를 붙여보고자 한다.
 
             
 
-                <article class="6u 12u(small)">
+                <article class="6u$ 12u(small)">
                     <header>
                         <h2><a href="/2016/09/07/pep8.html">Python Coding Convention PEP8</a></h2>
                     </header>
@@ -214,7 +204,7 @@ git으로 관리하는 이 프로젝트에 travis-ci를 붙여보고자 한다.
 
             
 
-                <article class="6u$ 12u(small)">
+                <article class="6u 12u(small)">
                     <header>
                         <h2><a href="/2016/09/05/travis-ci.html">Travis-ci를 이용하여 python 'Hello world' 작성하기</a></h2>
                     </header>
@@ -233,7 +223,7 @@ git으로 관리하는 이 프로젝트에 travis-ci를 붙여보고자 한다.
 
             
 
-                <article class="6u 12u(small)">
+                <article class="6u$ 12u(small)">
                     <header>
                         <h2><a href="/2016/09/03/markdown.html">마크다운(Markdown)</a></h2>
                     </header>
@@ -252,7 +242,7 @@ git으로 관리하는 이 프로젝트에 travis-ci를 붙여보고자 한다.
 
             
 
-                <article class="6u$ 12u(small)">
+                <article class="6u 12u(small)">
                     <header>
                         <h2><a href="/2016/09/01/Github-Pages-%EA%B8%B0%EB%8A%A5-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0.html">Github Pages 기능 이용하기</a></h2>
                     </header>

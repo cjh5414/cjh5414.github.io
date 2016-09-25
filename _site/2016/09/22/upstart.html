@@ -45,62 +45,79 @@
         <div id="main">
     <article>
         <header class="major">
-            <h2 class="post-title">진행 중인 프로젝트에 travis-ci 붙이기</h2>
-                <p class="post-meta">Sep 19, 2016</p>
+            <h2 class="post-title">Upstart를 이용하여 부팅 시 실행되는 프로세스 설정하기</h2>
+                <p class="post-meta">Sep 22, 2016</p>
         </header>
 
         <section>
-            <p>현재 ‘클린 코드를 위한 테스트 주도 개발’이라는 책을 보면서 To-Do list 프로젝트를 따라해보고 있다.
-git으로 관리하는 이 프로젝트에 travis-ci를 붙여보고자 한다.
-<a href="https://docs.travis-ci.com/user/getting-started/">https://docs.travis-ci.com/user/getting-started/</a> 여기에 가면 사용법이 나와있다.</p>
+            <p>Ubuntu에서 Upstart를 이용하는 방법을 예제를 통해 알아보자.</p>
 
-<h2 id="travisyml-">.travis.yml 추가</h2>
+<h2 id="section">작업 폴더 위치</h2>
 
-<p>사용되는 언어, 버전, 스크립트 등의 내용을 작성한다.<br />
-python은 <a href="https://docs.travis-ci.com/user/languages/python/">https://docs.travis-ci.com/user/languages/python/</a> 를 참고하면 된다.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ pwd
 
-<div class="highlighter-rouge"><pre class="highlight"><code>language: python
-python:
-  - "3.5"
-# command to install dependencies
-install: "sudo pip install -r requirements.txt"
-# command to run tests
-script: python manage.py test lists/
-sudo: required
+/home/ubuntu/upstart_test
 </code></pre>
 </div>
 
-<h2 id="requirementstxt-">requirements.txt 만들기</h2>
+<p><br /></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ pip freeze &gt; requirements.txt
+<h2 id="upstart--">Upstart 스크립트 작성</h2>
+
+<p>스크립트는 /etc/init에 만들고 확장자는 .conf로 해야한다.</p>
+
+<p><strong><em>/etc/init/upstart_test_script.conf</em></strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>description "upstart test"
+
+start on startup
+stop on shutdown
+
+respawn
+
+setuid ubuntu
+chdir /home/ubuntu/upstart_test
+
+exec echo "Hello World!" &gt; hello.txt
 </code></pre>
 </div>
 
-<h2 id="travis-ci-">해당 프로젝트 travis-ci 설정</h2>
+<ul>
+  <li>start on net-device-up : 부팅 되면 실행 ( start on net-device-up : 인터넷에 연결 되면 실행 )</li>
+  <li>respawn : 프로세스가 다운되면 자동으로 재시작</li>
+  <li>chdir : 현재 디렉터리</li>
+  <li>exec : 실제 프로세스 실행</li>
+</ul>
 
-<p><a href="https://travis-ci.org/profile">https://travis-ci.org/profile</a> 에 접속하여 해당 프로젝트에 체크표시를 한다.</p>
+<p><br /></p>
 
-<p><img src="/images/travis-ci/project-travis.png" alt="travis-ci" /></p>
+<h2 id="section-1">스크립트 문법 체크</h2>
 
-<h2 id="commit">변경사항 commit</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ init-checkconf /etc/init/upstart_test_script.conf
 
-<div class="highlighter-rouge"><pre class="highlight"><code>git add .travis.yml
-git add requirements.txt
-git commit -m "add .travis.yml and requirements.txt"
-git push origin master
+File /etc/init/upstart_test_script.conf: syntax ok
+</code></pre>
+</div>
+<p>스크립트 문법 오류가 있는지 검사한다.</p>
+
+<p><br /></p>
+
+<h2 id="start---">start 명령을 이용해서 확인</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo start upstart_test_script
+
+upstart_test_script start/running, process 1825
+
+$ ls /home/ubuntu/upstart_test
+hello.txt
+
+$ cat /home/ubuntu/upstart_test/hello.txt
+Hello World!
 </code></pre>
 </div>
 
-<h2 id="section">확인</h2>
-<p><a href="https://travis-ci.org/">https://travis-ci.org/</a> 에 접속하여 결과를 확인한다.<br />
-git push를 하면 travis-ci가 알아서 테스트를 진행한다.</p>
-
-<p><img src="/images/travis-ci/project-travis-result.png" alt="travis-ci" /></p>
-
-<p>결과는 메일로도 발송된다.</p>
-
-<p><img src="/images/travis-ci/project-travis-email.png" alt="travis-ci" /></p>
-
+<p>hello.txt파일이 만들어진 것을 확인할 수 있다.
+start명령을 통하지 않더라도 start on 으로 설정한 방법에 따라 알아서 실행될 것이다.</p>
 
         </section>
         
@@ -109,25 +126,6 @@ git push를 하면 travis-ci가 알아서 테스트를 진행한다.</p>
             
             
                 <article class="6u 12u(small) excerpt">
-                    <header>
-                        <h2><a href="/2016/09/15/pep8-%EC%A0%81%EC%9A%A9-flake8,autopep8.html">PEP8 tools - pep8, flake8, autopep8</a></h2>
-                    </header>
-                    <section>
-                        <p>PEP8을 잘 지킬 수 있도록 도와주는 도구들이 많이 있다. 그 중에서 pep8, flake8, autopep8에 대해서 알아본다.</p>
-
-
-                    </section>
-                    <footer>
-                        <ul class="actions">
-                            <li><a href="/2016/09/15/pep8-%EC%A0%81%EC%9A%A9-flake8,autopep8.html" class="button">Read More</a></li>
-                        </ul>
-                    </footer>
-                </article>
-            
-            
-            
-            
-                <article class="6u$ 12u(small) excerpt f-right">
                     <header>
                         <h2><a href="/2016/09/20/python-import.html">Python import</a></h2>
                     </header>
@@ -143,6 +141,8 @@ git push를 하면 travis-ci가 알아서 테스트를 진행한다.</p>
                         </ul>
                     </footer>
                 </article>
+            
+            
             
             </div>
         </footer>
