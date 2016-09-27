@@ -17,7 +17,7 @@ title: About
 To work at the position of software engineer and contribute to the organization by using my skills in programming and development. To acquire expertise in handling projects successfully under minimum supervision.
 
 
-## Experience  
+## Experience   
 
 - Hands recognition and tracking using computer vision
 - Develop emebedded audio streaming server with java, raspberry pi and client with android
@@ -25,7 +25,7 @@ To work at the position of software engineer and contribute to the organization 
 - Test-driven development with python Django
 - Chatting and game Socket Programming using java
 - c, c++, java, algorithm and computer architecture theory tutoring to younger friend from school
-- Training Software Maestro 7th 
+- Training Software Maestro 7th  
 
 
 ## Technical Skills  
@@ -34,8 +34,14 @@ To work at the position of software engineer and contribute to the organization 
 - Database like MySQL
 - Configuration Management tools like GIT
 - Networking like TCP/IP, UDP
-- Test-driven development
+- Test-driven development  
+  
+  
+   
 
+
+
+        
 
 ## Education  
 
