@@ -1,6 +1,7 @@
 ---
-layout: default
-bodyclass: single
+layout: page
+title: About
+permalink: /about/
 ---
 
 # Choi Ji Hun  
