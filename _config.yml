@@ -20,9 +20,9 @@ title: jihun's blog
 description: "jihuns's blog"
 keywords: "Jekyll"
 url: https://cjh5414.github.io
-# baseurl: ""
+baseurl: ""
 domain_name: https://cjh5414.github.io
-# google_analytics: UA-52446115-1
+google_analytics: UA-52446115-1
 repo: http://github.com/cjh5414
 disqus_shortname: "nandothemes"
 

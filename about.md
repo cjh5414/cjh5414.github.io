@@ -52,5 +52,6 @@ Bachelor’s degree Computer Systems Engineering
 <br>  
   
 ## Awards Career  
-Hansung University Capstone design 1st prize – Sound catcher, 2015.09.23
+
+Hansung University Capstone design 1st prize – Sound catcher, 2015.09.23  
 Hansung University Engineering contest 2nd prize – FingerKeyboard, 2016.06.13 
