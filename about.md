@@ -22,13 +22,13 @@ To work at the position of software engineer and contribute to the organization 
 
 ## Experience   
 
-- Hands recognition and tracking using computer vision  
-- Develop emebedded audio streaming server with java, raspberry pi and client with android  
-- Develop two users battle item tetris game using C language  
-- Test-driven development with python Django  
-- Chatting and game Socket Programming using java  
-- c, c++, java, algorithm and computer architecture theory tutoring to younger friend from school  
-- Training Software Maestro 7th    
+* Hands recognition and tracking using computer vision  
+* Develop emebedded audio streaming server with java, raspberry pi and client with android  
+* Develop two users battle item tetris game using C language  
+* Test-driven development with python Django  
+* Chatting and game Socket Programming using java  
+* c, c++, java, algorithm and computer architecture theory tutoring to younger friend from school  
+* Training Software Maestro 7th    
   
 <br>  
   
