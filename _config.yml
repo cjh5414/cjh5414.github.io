@@ -1,25 +1,42 @@
-# Site settings
+permalink   : /:categories/:year/:title/
+markdown    : kramdown
+highlighter : pygments
 
-title: jihun # Title of your site
-email: cjh5414@gmail.com # Your contant email
+paginate: 2 #6
+comments: true
+paginate_path: "/page/:num"
 
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "cjh5414.github.io" # the base hostname & protocol for your site
+source: source
+destination: _site
+sass:
+  sass_dir: _scss
+  style: compressed
 
-# Social links.
-# Replace the word 'example' with your username if you want to include the icon in the left sidebar
-# Delete the word 'example' if you don't want to include the icon in the left sidebar
+cover: /assets/images/default-cover.png
 
-twitter_username:     example  # Replace this with your Twitter username
-github_username:      cjh5414  # Replace this with your GitHub username
-linkedin_username:    example  # Replace this with your LinkedIn username
-google_plus_username: example  # Replace this with your Google+ username
-facebook_username:    example  # Replace this with your Facebook username
-dribbble_username:    example  # Replace this with your Dribbble username
+# site title, description, meta_description, meta_keywords
+# Details for the RSS feed generator
+name: Mug Jekyll theme
+title: Mug
+description: "A free Jekyll theme for download"
+keywords: "Jekyll, theme, mug, free, download, SEO, blog, web"
+url: http://nandomoreira.me
+baseurl: "/mug"
+domain_name: nandomoreira.me
+# google_analytics: UA-52446115-1
+repo: http://github.com/nandomoreirame/mug
+disqus_shortname: "nandothemes"
 
-# Build settings
-markdown: kramdown
+author:
+  name      : Fernando Moreira
+  image     : /assets/images/author.jpg
+  email     : nandomoreira.me@gmail.com
+  url       : http://nandomoreira.me
+  facebook  : http://facebook.com/fernando.dev
+  twitter   : http://twitter.com/nandomoreirame
+  instagram : http://instagram.com/nandomoreira.me
+  github    : http://github.com/nandomoreirame
+  linkedin  : http://linkedin.com/in/nandomoreirame
+  bio       : "Desenvolvedor Front-end/Wordpress entusiasta de performance, design responsivo e usabilidade, sempre em busca do melhor projeto e de um bom café."
+
+exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]
