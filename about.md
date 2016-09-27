@@ -12,25 +12,25 @@ title: About
 ### blog : cjh5414@github.io  
  
 
-</br>  
+<br>  
 
 ## Objective  
 
 To work at the position of software engineer and contribute to the organization by using my skills in programming and development. To acquire expertise in handling projects successfully under minimum supervision.
  
-</br>  
+<br>  
 
 ## Experience   
 
-- Hands recognition and tracking using computer vision
-- Develop emebedded audio streaming server with java, raspberry pi and client with android
-- Develop two users battle item tetris game using C language
-- Test-driven development with python Django
-- Chatting and game Socket Programming using java
-- c, c++, java, algorithm and computer architecture theory tutoring to younger friend from school
-- Training Software Maestro 7th  
+- Hands recognition and tracking using computer vision  
+- Develop emebedded audio streaming server with java, raspberry pi and client with android  
+- Develop two users battle item tetris game using C language  
+- Test-driven development with python Django  
+- Chatting and game Socket Programming using java  
+- c, c++, java, algorithm and computer architecture theory tutoring to younger friend from school  
+- Training Software Maestro 7th    
   
-</br>  
+<br>  
   
 ## Technical Skills  
 
@@ -40,7 +40,7 @@ To work at the position of software engineer and contribute to the organization 
 - Networking like TCP/IP, UDP
 - Test-driven development    
  
-</br>  
+<br>  
   
 ## Education  
 
@@ -48,7 +48,7 @@ Hansung University
 Bachelor’s degree Computer Systems Engineering  
 4.23/4.5 GPA  
  
-</br>  
+<br>  
   
 ## Awards Career  
 Hansung University Capstone design 1st prize – Sound catcher, 2015.09.23
