@@ -16,7 +16,7 @@ title: About
 
 ## Objective  
 
-To work at the position of software engineer and contribute to the organization by using my skills in programming and development. To acquire expertise in handling projects successfully under minimum supervision.
+To work at the position of software engineer and contribute to the organization by using my skills in programming and development. To acquire expertise in handling projects successfully under minimum supervision.  
  
 <br>  
 
