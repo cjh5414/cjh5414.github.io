@@ -28,15 +28,14 @@ repo: http://github.com/nandomoreirame/mug
 disqus_shortname: "nandothemes"
 
 author:
-  name      : Fernando Moreira
+  name      : Choi Ji Hun
   image     : /assets/images/author.jpg
-  email     : nandomoreira.me@gmail.com
-  url       : http://nandomoreira.me
-  facebook  : http://facebook.com/fernando.dev
-  twitter   : http://twitter.com/nandomoreirame
-  instagram : http://instagram.com/nandomoreira.me
-  github    : http://github.com/nandomoreirame
-  linkedin  : http://linkedin.com/in/nandomoreirame
-  bio       : "Desenvolvedor Front-end/Wordpress entusiasta de performance, design responsivo e usabilidade, sempre em busca do melhor projeto e de um bom café."
+  email     : cjh5414@gmail.com
+  url       : cjh5414.github.io
+  facebook  : http://facebook.com/profile.php?id=100003159672828
+  twitter   : http://twitter.com/
+  instagram : http://instagram.com/
+  github    : http://github.com/cjh5414
+
 
 exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]
