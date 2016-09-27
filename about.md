@@ -34,11 +34,11 @@ To work at the position of software engineer and contribute to the organization 
   
 ## Technical Skills  
 
-- Programming Language like C, C++, JAVA and Python
-- Database like MySQL
-- Configuration Management tools like GIT
-- Networking like TCP/IP, UDP
-- Test-driven development    
+- Programming Language like C, C++, JAVA and Python  
+- Database like MySQL  
+- Configuration Management tools like GIT  
+- Networking like TCP/IP, UDP  
+- Test-driven development      
  
 <br>  
   
