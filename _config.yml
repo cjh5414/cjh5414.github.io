@@ -6,7 +6,6 @@ paginate: 2 #6
 comments: true
 paginate_path: "/page/:num"
 
-source: .
 destination: _site
 sass:
   sass_dir: _scss
@@ -18,11 +17,11 @@ cover: /assets/images/default-cover.png
 # Details for the RSS feed generator
 name: Choi Ji Hun
 title: jihun's blog
-description: "A free Jekyll theme for download"
-keywords: "Jekyll, theme, mug, free, download, SEO, blog, web"
-url: http://nandomoreira.me
-baseurl: ""
-domain_name: nandomoreira.me
+description: "jihuns's blog"
+keywords: "Jekyll"
+url: https://cjh5414.github.io
+# baseurl: ""
+domain_name: https://cjh5414.github.io
 # google_analytics: UA-52446115-1
 repo: http://github.com/cjh5414
 disqus_shortname: "nandothemes"
