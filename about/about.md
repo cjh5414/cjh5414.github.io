@@ -6,7 +6,9 @@ title: About
 # Choi Ji Hun  
 
 ### e-mail : cjh5414@gmail.com  
+
 ### github : https://github.com/cjh5414  
+
 ### blog : cjh5414@github.io  
  
 
