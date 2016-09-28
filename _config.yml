@@ -1,20 +1,20 @@
 # Site settings
-title: Zetsu
-email: zetsu@domain.com
+title: jihun's blog
+email: cjh5414@gmail.com
 description: Um lindo tema feito para jekyll e com o <3
 baseurl: ""
-url: "http://nandomoreira.me"
+url: "https://cjh5414.github.io"
 
 author:
-  name     : 'Fernando Moreira'
-  email    : hi@nandomoreira.me
-  url      : http://nandomoreira.me
-  facebook : http://facebook.com/fernando.dev
-  twitter  : http://twitter.com/nandomoreirame
+  name     : 'Choi Ji Hun'
+  email    : cjh5414@gmail.com
+  url      : https://cjh5414.github.io
+  facebook : https://www.facebook.com/profile.php?id=100003159672828
+  twitter  : http://twitter.com/
 
-github: https://github.com/nandomoreirame/zetsu
-disqus_shortname: "fernandomoreira"
-google_analytics: UA-52446115-1
+github: https://github.com/cjh5414
+disqus_shortname: "cjh5414"
+google_analytics: UA-84670277-1
 
 paginate: 4
 comments: true
