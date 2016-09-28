@@ -12,17 +12,18 @@ permalink: /about/
 
 ### blog : cjh5414@github.io  
 
+<br>  
+
+
 
 ## Objective  
 
-<br>  
-
 To work at the position of software engineer and contribute to the organization by using my skills in programming and development. To acquire expertise in handling projects successfully under minimum supervision.
+
+<br>  
 
 
 ## Experience  
-
-<br>  
 
 - Hands recognition and tracking using computer vision
 - Develop emebedded audio streaming server with java, raspberry pi and client with android
