@@ -2,7 +2,6 @@
 layout: page
 title: About
 permalink: /about/
-slug: about
 ---
 
 ### Choi Ji Hun 
@@ -41,9 +40,9 @@ To work at the position of software engineer and contribute to the organization 
 
 ## Education  
 
-Hansung University
-Bachelor’s degree Computer Systems Engineering
-4.23/4.5 GPA
+Hansung University  
+Bachelor’s degree Computer Systems Engineering  
+4.23/4.5 GPA  
 
 
 
