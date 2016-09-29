@@ -23,13 +23,13 @@ To work at the position of software engineer and contribute to the organization 
 
 ## Experience  
 
-- Hands recognition and tracking using computer vision
-- Develop emebedded audio streaming server with java, raspberry pi and client with android
-- Develop two users battle item tetris game using C language
+- Develop hand recognition and tracking using computer vision
+- Develop embedded audio streaming server with java, raspberry pi and client with android
+- Develop item battle tetris game by two users using C language
 - Test-driven development with python Django
 - Chatting and game Socket Programming using java
-- c, c++, java, algorithm and computer architecture theory tutoring to younger friend from school
-- Training Software Maestro 7th 
+- C, C++, Java, Algorithm and computer architecture theory tutoring to younger friend from school
+- Take a Software Maestro 7th course
  
 <br>  
 
@@ -59,6 +59,6 @@ Bachelor’s degree Computer Systems Engineering
 
 ## Awards Career  
 
-- Hansung University Capstone design 1st prize – Sound catcher, 2016.06.13
-- Hansung University Engineering contest 2nd prize – FingerKeyboard, 2015.09.23 
-- Hansung University Engineering contest 4nd prize – Sound catcher, 2016.09.28 
+- 2016 Hansung University Capstone design 1st prize – Sound catcher, 2016.06.13
+- 2015 Hansung University Engineering contest 2nd prize – FingerKeyboard, 2015.09.23 
+- 2016 Hansung University Engineering contest 4nd prize – Sound catcher, 2016.09.28 
