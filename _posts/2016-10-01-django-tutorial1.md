@@ -11,7 +11,7 @@ layout: post
 
 ## Install & setting  
 
-```python
+```
 # 프로젝트 폴더 생성
 $ mkdir django_tutorial
 $ cd django_tutorial
@@ -29,6 +29,12 @@ $ python --version
 Python 3.5.2
 $ python -m django --version
 1.10
+
+# git setting
+$ git init
+$ echo ".env" >> .gitignore
+$ git remote add origin https://github.com/__username__/__repository__ 
 ```  
+
 
 ## Creating a project
