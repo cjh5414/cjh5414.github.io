@@ -30,10 +30,14 @@ Python 3.5.2
 $ python -m django --version
 1.10
 
-# git setting
+# git 설정
 $ git init
 $ echo ".env" >> .gitignore
-$ git remote add origin https://github.com/__username__/__repository__ 
+$ git remote add origin https://github.com/**username**/**repository**.git
+$ git add .
+$ git status
+$ git commit -m "django_tutorial project repository 생성"
+$ git push origin master
 ```  
 
 
