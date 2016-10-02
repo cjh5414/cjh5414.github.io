@@ -16,7 +16,7 @@ github: https://github.com/cjh5414
 disqus_shortname: "cjh5414"
 google_analytics: UA-84670277-1
 
-paginate: 4
+paginate: 6 # 6
 comments: true
 paginate_path: "/page/:num"
 
