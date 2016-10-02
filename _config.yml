@@ -14,6 +14,7 @@ author:
 
 github: https://github.com/cjh5414
 disqus_shortname: "cjh5414"
+
 google_analytics: UA-84670277-1
 
 paginate: 6 # 6
@@ -25,5 +26,6 @@ sass:
   sass_dir: _sass
 
 # Build settings
-markdown  : kramdown
+#markdown : kramdown
+markdown : redcarpet
 permalink : /:title/
