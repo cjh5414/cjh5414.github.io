@@ -5,8 +5,8 @@
       <time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ post.date | date: "%b %-d, %Y" }}</time>
       <span class="post-author">by {{ site.author.name }}</span>
     </span>
+    <br>
   </header>
-  <br>
   <div class="post-content">
     {{ post.content | strip_html | truncatewords: 30 }} <a href="{{ post.url | prepend: site.baseurl }}" class="readmore">Read more &raquo;</a>
   </div>
