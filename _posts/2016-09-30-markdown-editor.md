@@ -2,7 +2,10 @@
 title: Markdown Editor for Mac
 layout: post
 ---
-
+<br></br>
+<br></br>
+<br></br>
+<h1> test
 > mac에서 무료인 Markdown Editor를 몇 가지 사용해보고 장단점을 비교해봤다.    
 MacDown, Sublime Text 3, Atom을 사용해봤는데 가장 마음에 들고 추천하고 싶은 Editor는 Atom이다.  
 프로젝트 폴더 관리 기능을 제공하기 때문에 문서 작업을 하면서 동시에 이미지 파일을 저장하던지, 새로운 파일을 추가한다던지 등의 파일 관리를 할 수 있고 무엇보다 2000개가 넘는 패키지를 지원하고 있어서 매우 다양한 기능들을 사용할 수 있는 장점이 있다.
