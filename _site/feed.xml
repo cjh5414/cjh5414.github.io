@@ -1,22 +1,311 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Zetsu</title>
+    <title>jihun&#39;s blog</title>
     <description>Um lindo tema feito para jekyll e com o &lt;3</description>
-    <link>http://nandomoreira.me/</link>
-    <atom:link href="http://nandomoreira.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 28 Sep 2016 13:33:45 +0900</pubDate>
-    <lastBuildDate>Wed, 28 Sep 2016 13:33:45 +0900</lastBuildDate>
+    <link>https://cjh5414.github.io/</link>
+    <atom:link href="https://cjh5414.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 03 Oct 2016 12:19:12 +0900</pubDate>
+    <lastBuildDate>Mon, 03 Oct 2016 12:19:12 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>Upstart 보다는 Systemd</title>
-        <description>&lt;p&gt;얼마 전 &lt;a href=&quot;https://cjh5414.github.io/2016/09/22/upstart.html&quot;&gt;upstart에 대한 포스팅&lt;/a&gt;을 한 적이 있는데 upstart와는 비교가 되지 않고 사람들이 많이 사용하고 있는 &lt;a href=&quot;https://www.freedesktop.org/wiki/Software/systemd/&quot;&gt;Systemd&lt;/a&gt;에 대해서 알아보았다.&lt;/p&gt;
+        <title>Django tutorial 1</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://docs.djangoproject.com/en/1.10/intro/tutorial01/&quot;&gt;Django 홈페이지&lt;/a&gt;에 있는 튜토리얼을 따라해보면서 장고에 대한 공부를 진행할 계획이다. python 버전은 3.5.2, django 버전은 1.10을 사용하고 가상 환경을 설정하여 진행한다. python 개발환경에 관한 내용은 &lt;a href=&quot;https://cjh5414.github.io/python-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/&quot;&gt;여기&lt;/a&gt;를 참고하면 된다. 또한 진행중인 튜토리얼은 &lt;a href=&quot;https://github.com/cjh5414/django_tutorial&quot;&gt;github&lt;/a&gt;으로 관리한다.&lt;/p&gt;
 
+&lt;p&gt;이 튜토리얼에서는 기초적인 투표 어플리케이션을 만드는 과정을 보여준다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;공개된 사이트로 사용자들이 투표 내용을 볼 수 있고, 투표에 참여할 수도 있다.&lt;/li&gt;
+  &lt;li&gt;관리자 사이트로 투표를 추가, 변경, 삭제 할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;install--setting&quot;&gt;Install &amp;amp; setting&lt;/h2&gt;
+
+&lt;p&gt;```
+# 프로젝트 폴더 생성
+$ mkdir django_tutorial
+$ cd django_tutorial&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;가상 환경 설정&lt;/h1&gt;
+&lt;p&gt;$ pyenv virtualenv 3.5.2 django_tutorial
+$ echo “pyenv activate django_tutorial” &amp;gt; .env
+$ pyenv activate django_tutorial&lt;/p&gt;
+
+&lt;h1 id=&quot;django-&quot;&gt;Django 설치&lt;/h1&gt;
+&lt;p&gt;$ pip install django==1.10&lt;/p&gt;
+
+&lt;h1 id=&quot;python-django-version-&quot;&gt;python, django version 확인&lt;/h1&gt;
+&lt;p&gt;$ python –version
+Python 3.5.2
+$ python -m django –version
+1.10&lt;/p&gt;
+
+&lt;h1 id=&quot;git-&quot;&gt;git 설정&lt;/h1&gt;
+&lt;p&gt;$ git init
+$ echo “.env” » .gitignore
+$ git remote add origin https://github.com/username/repository.git
+$ git add .
+$ git status
+$ git commit -m “django_tutorial project repository 생성”
+$ git push origin master
+```&lt;/p&gt;
+
+&lt;h2 id=&quot;creating-a-project&quot;&gt;Creating a project&lt;/h2&gt;
 </description>
-        <pubDate>Mon, 26 Sep 2016 00:00:00 +0900</pubDate>
-        <link>http://nandomoreira.me/systemd/</link>
-        <guid isPermaLink="true">http://nandomoreira.me/systemd/</guid>
+        <pubDate>Sat, 01 Oct 2016 12:00:08 +0900</pubDate>
+        <link>https://cjh5414.github.io/django-tutorial1/</link>
+        <guid isPermaLink="true">https://cjh5414.github.io/django-tutorial1/</guid>
+        
+        
+        <category>django</category>
+        
+      </item>
+    
+      <item>
+        <title>Markdown Editor for Mac</title>
+        <description>&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;mac에서 무료인 Markdown Editor를 몇 가지 사용해보고 장단점을 비교해봤다.  &lt;br /&gt;
+MacDown, Sublime Text 3, Atom을 사용해봤는데 가장 마음에 들고 추천하고 싶은 Editor는 Atom이다.&lt;br /&gt;
+프로젝트 폴더 관리 기능을 제공하기 때문에 문서 작업을 하면서 동시에 이미지 파일을 저장하던지, 새로운 파일을 추가한다던지 등의 파일 관리를 할 수 있고 무엇보다 2000개가 넘는 패키지를 지원하고 있어서 매우 다양한 기능들을 사용할 수 있는 장점이 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;macdown&quot;&gt;MacDown&lt;/h2&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;설치&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://macdown.uranusjr.com/&quot;&gt;MacDown 다운로드&lt;/a&gt; 에 들어가서 페이지 하단의 버튼을 클릭하면 된다. 다운받은 앱을 실행 시켜보면 다음과 같은 오류 메세지가 나온다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/md-editor/error.png&quot; alt=&quot;error&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;시스템 환경설정 -&amp;gt; 보안 및 개인 정보 보호 -&amp;gt; 일반&lt;/p&gt;
+
+&lt;p&gt;자물쇠 모양을 클릭하고 다음에서 다운로드한 App 허용을 ‘모든 곳’으로 바꿔준다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/md-editor/setting.png&quot; alt=&quot;setting&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;사용&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/md-editor/use.png&quot; alt=&quot;macdown&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;좌측 검은색 부분에 텍스트를 입력하면 우측 하얀부분에 마크다운이 적용된 결과가 바로 출력된다. 입력 부분에도 마크다운 문법에 따라 텍스트의 색이 다르게 표시된다.&lt;br /&gt;
+마우스  우클릭을 하면 맞춤법검사, 읽어주기, 단어검색 등의 추가적인 기능이 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;사용 후기&lt;/h3&gt;
+
+&lt;p&gt;디자인이 매우 깔끔하다. 입력하는 내용을 바로바로 볼 수 있어서 편리하다.
+파일 목록을 보여주는 기능이 없어서 다소 불편하다.&lt;/p&gt;
+
+&lt;h2 id=&quot;sublime-text-3&quot;&gt;Sublime Text 3&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;설치 &amp;amp; 사용&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.sublimetext.com/3&quot;&gt;Sublime Text3 다운로드&lt;/a&gt; 에 들어가서 운영체제에 맞는 버젼을 다운받는다.&lt;/p&gt;
+
+&lt;p&gt;마크다운을 조금 더 편리하게 사용하기 위해 플러그인을 설치한다.&lt;/p&gt;
+
+&lt;p&gt;Sublime Text를 실행하고 단축키 Ctrl + ` 을 입력한 후 아래 내용을 복사해서 붙여넣는다. ( &lt;a href=&quot;https://packagecontrol.io/installation#st3&quot;&gt;https://packagecontrol.io/installation#st3&lt;/a&gt; 참고 )&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+import urllib.request,os,hashlib; h = &#39;df21e130d211cfc94d9b0905775a7c0f&#39; + &#39;1e3d39e33b79698005270310898eea76&#39;; pf = &#39;Package Control.sublime-package&#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &#39;http://packagecontrol.io/&#39; + pf.replace(&#39; &#39;, &#39;%20&#39;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&#39;Error validating download (got %s instead of %s), please try manual install&#39; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &#39;wb&#39; ).write(by)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;단축키 &lt;code&gt;Ctrl+Shift+P&lt;/code&gt;을 입력하면 창이 뜬다. &lt;code&gt;install&lt;/code&gt;을 입력하여 자동완성 되는 &lt;code&gt;Package Control: Install Package&lt;/code&gt;을 클릭한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Markdown&lt;/code&gt;을 입력하여 원하는 플러그인을 설치한다.&lt;/p&gt;
+
+&lt;p&gt;여기서는 Markdown Editing과 Markdown preview 를 사용했다.&lt;/p&gt;
+
+&lt;p&gt;Markdown Editing을 설치한 후에 sublime을 다시 시작하고 새로운 파일을 만든다. 우측 하단에 확장자를 클릭하여 Markdown Editing을 클릭한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/md-editor/sublime-md-editing.png&quot; alt=&quot;Sublime Markdown Editing&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Markdown preview는 설치 후에 설정이 필요하다. 단축키 &lt;code&gt;command + ,&lt;/code&gt; 를 입력하여 설정 파일을 열고 아래의 텍스트를 입력하고 저장한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+{ &quot;keys&quot;: [&quot;alt+m&quot;], &quot;command&quot;: &quot;markdown_preview&quot;, &quot;args&quot;: {&quot;target&quot;: &quot;browser&quot;, &quot;parser&quot;:&quot;markdown&quot;} }
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;다시 Markdown Editing으로 돌아와서 단축키 &lt;code&gt;Ctrl+Shift+P&lt;/code&gt;를 입력한다. 검색창에 ‘Markdown Preview’를 입력하면 자동완성되는 “Markdown Preview: Python Markdown: Preview in Browser”를 실행한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/md-editor/sublime-md-preview.png&quot; alt=&quot;Sublime Markdown Editing&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;사용 후기&lt;/h3&gt;
+
+&lt;p&gt;우선 플러그인 설치부터 사용하기까지 너무 번거롭고 불편하다. 블로그 작성 초기에 markdown을 사용하기 위해 이미 설치되어 있는 sublime text로 확장자만 변경하여 사용했었는데 이 때 불편함을 많이 느껴서 markdown을 찾아보는 계기가 되었다. sublime text를 이용하여 markdown을 사용하는 것은 추천하지 않는다.&lt;/p&gt;
+
+&lt;h2 id=&quot;atom&quot;&gt;Atom&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;설치&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://atom.io/&quot;&gt;Atom 다운로드&lt;/a&gt; 에서 다운받을 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;사용&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/md-editor/atom-use.png&quot; alt=&quot;Atom use&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;내용을 입력하고 &lt;code&gt;Ctrl+Shift+m&lt;/code&gt;단축키를 입력하면 좌측에 결과가 출력된다.&lt;/p&gt;
+
+&lt;p&gt;settings&lt;code&gt;command+,&lt;/code&gt; 에 들어가서 core settings, editor settings, keybindings, themes 등을 설정하면 편리한 기능들을 더 많이 사용할 수 있다. 특히, 2000개나 넘는 packages가 존재하고 있어서 필요한 패키지를 설치하여 유용하게 사용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;settings의 사용법을 자세히 설명해 놓은 동영상이 있다.
+&lt;a href=&quot;https://www.youtube.com/watch?v=U5POoGSrtGg&quot;&gt;https://www.youtube.com/watch?v=U5POoGSrtGg&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-7&quot;&gt;사용 후기&lt;/h3&gt;
+
+&lt;p&gt;개인적으로 가장 마음에 드는 에디터이다. 기능이 많고 내가 원하던 기능을 갖추고 있어서 애용하고 있다. 블로그 포스팅에 사용하는 경우에는 새로운 포스트를 추가하거나 이미지를 올리는 등의 파일을 관리할 필요가 있는데, atom은 글을 작성하면서 동시에 프로젝트 폴더를 관리도 할 수 있어서 매우 편리하다. git-plus라는 패키지를 설치해서 terminal에서 git 명령을 치거나 git 관련 프로그램을 사용하지 않고 단축키로 간편하게 git을 사용하고 있다.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 30 Sep 2016 00:00:00 +0900</pubDate>
+        <link>https://cjh5414.github.io/markdown-editor/</link>
+        <guid isPermaLink="true">https://cjh5414.github.io/markdown-editor/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>python 개발 환경 구축하기 - pyenv, virtualenv, autoenv</title>
+        <description>&lt;h1 id=&quot;pyenvhttpsgithubcomyyuupyenv&quot;&gt;&lt;a href=&quot;https://github.com/yyuu/pyenv&quot;&gt;pyenv&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;Simple Python Version Management. 다양한 python version을 설치하고 쉽게 바꿔가면서 사용할 수 있도록 해준다.&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;설치하기&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;
+$ brew update  
+$ brew install pyenv
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;pyenv-init-bashprofile-&quot;&gt;pyenv init을 ~/.bash_profile에 추가하기&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;
+$ echo &#39;eval &quot;$(pyenv init -)&quot;&#39; &amp;gt;&amp;gt; ~/.bash_profile
+$ source ~/.bash_profile
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;pyenv-&quot;&gt;pyenv 사용하기&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;
+$ pyenv version
+system (set by /Users/jihun/.pyenv/version)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;pyenv version&lt;/code&gt;명령으로 현재 사용중인 python version을 확인 할 수 있다. 기본 설정은 system으로 시스템에 설치된 파이썬을 의미한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+$ pyenv versions
+* system (set by /Users/jihun/.pyenv/version)
+  3.5.2
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;pyenv versions&lt;/code&gt;명령은 컴퓨터에 설치된 python version 리스트를 보여준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+$ pyenv install --list
+$ pyenv install 3.5.2
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;–list 옵션으로 설치할 수 있는 python리스트를 확인하고 원하는 version을 지정하여 설치한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+$ pyenv shell 3.5.2
+$ python -V
+Python 3.5.2
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;pyenv shell&lt;/code&gt; 뒤에 사용하고 싶은 version을 입력하여 실행하면 해당 python version이 적용된다. python version 확인 명령(python -V)을 통해 제대로 적용 됐는지 확인한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;virtualenvhttpsgithubcomyyuupyenv-virtualenv&quot;&gt;&lt;a href=&quot;https://github.com/yyuu/pyenv-virtualenv&quot;&gt;virtualenv&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;Virtual Python Environment builder. 다양한 파이썬 환경을 구축하고 사용할 수 있도록 해준다. 프로젝트마다 독립된 개발환경을 제공하기 때문에 프로젝트들의 환경변수들이 꼬이는 일이 발생하지 않는다.&lt;br /&gt;
+단독으로 &lt;a href=&quot;https://pypi.python.org/pypi/virtualenv&quot;&gt;virtualenv&lt;/a&gt;을 사용할 수도 있지만 여기서는 &lt;a href=&quot;https://github.com/yyuu/pyenv-virtualenv&quot;&gt;pyenv-virtualenv&lt;/a&gt; 를 사용하여 pyenv로 virtualenv까지 관리한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;설치하기&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;
+$ brew install pyenv-virtualenv
+$ echo &#39;eval &quot;$(pyenv virtualenv-init -)&quot;&#39; &amp;gt;&amp;gt; ~/.bash_profile
+$ source ~/.bash_profile
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;사용하기&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;
+$ pyenv virtualenv 3.5.2 virtualenv-test-3.5.2
+$ pyenv versions
+* system (set by /Users/jihun/.pyenv/version)
+  3.5.2
+  3.5.2/envs/virtualenv-test-3.5.2
+  virtualenv-test-3.5.2
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;‘pyenv virtualenv &lt;em&gt;PYTHON_VERSION&lt;/em&gt; &lt;em&gt;NAME&lt;/em&gt; ‘명령으로 새로운 개발 환경을 만들고 새성된 것을 확인한다&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+$ pyenv activate virtualenv-test-3.5.2
+(virtualenv-test-3.5.2) ... $ python -V
+Python 3.5.2
+(virtualenv-test-3.5.2) ... $ pip install django
+(virtualenv-test-3.5.2) ... $ pip list &amp;gt; requirements.txt
+(virtualenv-test-3.5.2) ... $ pyenv deactivate
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;activate를 통해 만들어진 가상환경을 실행시킨다. 필요한 패키지들을 설치하고 requirements.txt를 생성한다. 반대로 빠져나올 때는 deactivate명령을 사용한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+$ pip install -r requirements.txt  
+&lt;/code&gt;&lt;br /&gt;
+설치 해놨던 동일한 패키지들을 다른 환경에서도 위의 명령으로 간편하게 사용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;autoenvhttpsgithubcomkennethreitzautoenv&quot;&gt;&lt;a href=&quot;https://github.com/kennethreitz/autoenv&quot;&gt;autoenv&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;pyenv, virtualenv를 사용하다 보면 activate하는 것을 잊어버리는 경우가 빈번하고 매번 설정하는 것이 번거롭다. autoenv는 특정 프로젝트 폴더로 들어가면 자동으로 개발 환경을 설정해준다.&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;설치하기&lt;/h2&gt;
+
+&lt;p&gt;```
+$ brew install autoenv&lt;/p&gt;
+
+&lt;p&gt;$ echo ‘source /usr/local/opt/autoenv/activate.sh’ » ~/.bash_profile
+$ source ~/.bash_profile&lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;사용하기&lt;/h2&gt;
+
+&lt;p&gt;```&lt;br /&gt;
+# 프로젝트 폴더 : env_test&lt;/p&gt;
+
+&lt;p&gt;$ cd env_test
+$ touch .env
+$ echo “pyenv activate virtualenv-test-3.5.2” &amp;gt; .env
+autoenv:
+autoenv: WARNING:
+autoenv: This is the first time you are about to source /Users/jihun/Development/env_test/.env:
+autoenv:
+autoenv:   — (begin contents) —————————————
+autoenv:     pyenv activate virtualenv-test-3.5.2
+autoenv:
+autoenv:   — (end contents) —————————————–
+autoenv:
+autoenv: Are you sure you want to allow this? (y/N) y
+```&lt;/p&gt;
+
+&lt;p&gt;.env파일의 내용은 해당 파일이 존재하는 폴더로 이동할 때마다 실행된다. 따라서 pyenv, virtualenv를 따로 설정해주지 않아도 프로젝트 폴더로 이동하면 자동으로 개발 환경이 설정된다.&lt;br /&gt;
+(.env 파일은 .gitignore에 추가하면 좋을 것 같다)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;참고자료&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://dobest.io/how-to-set-python-dev-env/&quot;&gt;https://dobest.io/how-to-set-python-dev-env/&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 29 Sep 2016 00:00:00 +0900</pubDate>
+        <link>https://cjh5414.github.io/python-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/</link>
+        <guid isPermaLink="true">https://cjh5414.github.io/python-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/</guid>
         
         
       </item>
@@ -56,7 +345,7 @@ chdir /home/ubuntu/upstart_test&lt;/p&gt;
 ```&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;start on net-device-up : 부팅 되면 실행 ( start on net-device-up : 인터넷에 연결 되면 실행 )&lt;/li&gt;
+  &lt;li&gt;start on startup: 부팅 되면 실행 ( start on net-device-up : 인터넷에 연결 되면 실행 )&lt;/li&gt;
   &lt;li&gt;respawn : 프로세스가 다운되면 자동으로 재시작&lt;/li&gt;
   &lt;li&gt;chdir : 현재 디렉터리&lt;/li&gt;
   &lt;li&gt;exec : 실제 프로세스 실행&lt;/li&gt;
@@ -93,8 +382,8 @@ Hello World!
 start명령을 통하지 않더라도 start on 으로 설정한 방법에 따라 알아서 실행될 것이다.&lt;/p&gt;
 </description>
         <pubDate>Thu, 22 Sep 2016 00:00:00 +0900</pubDate>
-        <link>http://nandomoreira.me/upstart/</link>
-        <guid isPermaLink="true">http://nandomoreira.me/upstart/</guid>
+        <link>https://cjh5414.github.io/upstart/</link>
+        <guid isPermaLink="true">https://cjh5414.github.io/upstart/</guid>
         
         
       </item>
@@ -211,8 +500,8 @@ $ python
 
 </description>
         <pubDate>Tue, 20 Sep 2016 00:00:00 +0900</pubDate>
-        <link>http://nandomoreira.me/python-import/</link>
-        <guid isPermaLink="true">http://nandomoreira.me/python-import/</guid>
+        <link>https://cjh5414.github.io/python-import/</link>
+        <guid isPermaLink="true">https://cjh5414.github.io/python-import/</guid>
         
         
       </item>
@@ -272,8 +561,8 @@ git push를 하면 travis-ci가 알아서 테스트를 진행한다.&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 19 Sep 2016 00:00:00 +0900</pubDate>
-        <link>http://nandomoreira.me/project-travis-ci/</link>
-        <guid isPermaLink="true">http://nandomoreira.me/project-travis-ci/</guid>
+        <link>https://cjh5414.github.io/project-travis-ci/</link>
+        <guid isPermaLink="true">https://cjh5414.github.io/project-travis-ci/</guid>
         
         
       </item>
@@ -422,8 +711,8 @@ autopep8 --in-place --aggressive --aggressive test.py
 
 </description>
         <pubDate>Thu, 15 Sep 2016 00:00:00 +0900</pubDate>
-        <link>http://nandomoreira.me/pep8-%EC%A0%81%EC%9A%A9-flake8,autopep8/</link>
-        <guid isPermaLink="true">http://nandomoreira.me/pep8-%EC%A0%81%EC%9A%A9-flake8,autopep8/</guid>
+        <link>https://cjh5414.github.io/pep8-%EC%A0%81%EC%9A%A9-flake8,autopep8/</link>
+        <guid isPermaLink="true">https://cjh5414.github.io/pep8-%EC%A0%81%EC%9A%A9-flake8,autopep8/</guid>
         
         
       </item>
@@ -520,8 +809,8 @@ long_variable = 3
 &lt;a href=&quot;https://spoqa.github.io/2012/08/03/about-python-coding-convention.html&quot;&gt;https://spoqa.github.io/2012/08/03/about-python-coding-convention.html&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 07 Sep 2016 00:00:00 +0900</pubDate>
-        <link>http://nandomoreira.me/pep8/</link>
-        <guid isPermaLink="true">http://nandomoreira.me/pep8/</guid>
+        <link>https://cjh5414.github.io/pep8/</link>
+        <guid isPermaLink="true">https://cjh5414.github.io/pep8/</guid>
         
         
       </item>
@@ -643,8 +932,8 @@ git push origin master
 
 </description>
         <pubDate>Mon, 05 Sep 2016 00:00:00 +0900</pubDate>
-        <link>http://nandomoreira.me/travis-ci/</link>
-        <guid isPermaLink="true">http://nandomoreira.me/travis-ci/</guid>
+        <link>https://cjh5414.github.io/travis-ci/</link>
+        <guid isPermaLink="true">https://cjh5414.github.io/travis-ci/</guid>
         
         
       </item>
@@ -823,8 +1112,8 @@ git push origin master
 &lt;/링크주소&gt;
 </description>
         <pubDate>Sat, 03 Sep 2016 00:00:00 +0900</pubDate>
-        <link>http://nandomoreira.me/markdown/</link>
-        <guid isPermaLink="true">http://nandomoreira.me/markdown/</guid>
+        <link>https://cjh5414.github.io/markdown/</link>
+        <guid isPermaLink="true">https://cjh5414.github.io/markdown/</guid>
         
         
       </item>
@@ -878,205 +1167,9 @@ $ git push -u origin master
 &lt;hr /&gt;
 </description>
         <pubDate>Thu, 01 Sep 2016 00:00:00 +0900</pubDate>
-        <link>http://nandomoreira.me/Github-Pages-%EA%B8%B0%EB%8A%A5-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0/</link>
-        <guid isPermaLink="true">http://nandomoreira.me/Github-Pages-%EA%B8%B0%EB%8A%A5-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0/</guid>
+        <link>https://cjh5414.github.io/Github-Pages-%EA%B8%B0%EB%8A%A5-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0/</link>
+        <guid isPermaLink="true">https://cjh5414.github.io/Github-Pages-%EA%B8%B0%EB%8A%A5-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0/</guid>
         
-        
-      </item>
-    
-      <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 08 Aug 2015 12:00:08 +0900</pubDate>
-        <link>http://nandomoreira.me/welcome-to-jekyll/</link>
-        <guid isPermaLink="true">http://nandomoreira.me/welcome-to-jekyll/</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</title>
-        <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.&lt;/p&gt;
-
-&lt;p&gt;Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.&lt;/p&gt;
-
-&lt;p&gt;Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.&lt;/p&gt;
-
-&lt;p&gt;Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.&lt;/p&gt;
-
-&lt;p&gt;Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero.&lt;/p&gt;
-
-&lt;p&gt;Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia.&lt;/p&gt;
-
-&lt;p&gt;Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus.&lt;/p&gt;
-
-&lt;p&gt;Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci.&lt;/p&gt;
-
-&lt;p&gt;Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 07 Aug 2015 12:00:08 +0900</pubDate>
-        <link>http://nandomoreira.me/lorem-ipsum-dolor/</link>
-        <guid isPermaLink="true">http://nandomoreira.me/lorem-ipsum-dolor/</guid>
-        
-        
-        <category>lorem</category>
-        
-      </item>
-    
-      <item>
-        <title>Lorem ipsum dolor sit amet</title>
-        <description>&lt;p&gt;&lt;strong&gt;Pellentesque habitant morbi tristique&lt;/strong&gt; senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. &lt;em&gt;Aenean ultricies mi vitae est.&lt;/em&gt; Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, &lt;code&gt;commodo vitae&lt;/code&gt;, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. &lt;a href=&quot;#&quot;&gt;Donec non enim&lt;/a&gt; in turpis pulvinar facilisis. Ut felis.&lt;/p&gt;
-
-&lt;h1&gt;Header Level 1&lt;/h1&gt;
-&lt;h2&gt;Header Level 2&lt;/h2&gt;
-
-&lt;p&gt;Unordered list&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/li&gt;
-  &lt;li&gt;Aliquam tincidunt mauris eu risus.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.&lt;/p&gt;&lt;/blockquote&gt;
-
-&lt;h3&gt;Header Level 3&lt;/h3&gt;
-
-&lt;p&gt;Ordered list&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/li&gt;
-  &lt;li&gt;Aliquam tincidunt mauris eu risus.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nf&quot;&gt;#header&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;300px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;80px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h4&gt;Header Level 4&lt;/h4&gt;
-&lt;h5&gt;Header Level 5&lt;/h5&gt;
-&lt;h6&gt;Header Level 6&lt;/h6&gt;
-</description>
-        <pubDate>Fri, 07 Aug 2015 12:00:08 +0900</pubDate>
-        <link>http://nandomoreira.me/lorem/</link>
-        <guid isPermaLink="true">http://nandomoreira.me/lorem/</guid>
-        
-        
-        <category>lorem</category>
-        
-      </item>
-    
-      <item>
-        <title>The quick, brown fox jumps over a lazy dog</title>
-        <description>&lt;p&gt;The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz.&lt;/p&gt;
-
-&lt;p&gt;Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. Sex-charged fop blew my junk TV quiz. How quickly daft jumping zebras vex.&lt;/p&gt;
-
-&lt;p&gt;Two driven jocks help fax my big quiz. Quick, Baz, get my woven flax jodhpurs! “Now fax quiz Jack! “ my brave ghost pled. Five quacking zephyrs jolt my wax bed. Flummoxed by job, kvetching W. zaps Iraq. Cozy sphinx waves quart jug of bad milk.&lt;/p&gt;
-
-&lt;p&gt;A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box. Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack! Blowzy red vixens fight for a quick jump.&lt;/p&gt;
-
-&lt;p&gt;Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch “Jeopardy! “, Alex Trebek’s fun TV quiz game. Woven silk pyjamas exchanged for blue quartz. Brawny gods just flocked up to quiz and vex him.&lt;/p&gt;
-
-&lt;p&gt;Adjusting quiver and bow, Zompyc[1] killed the fox. My faxed joke won a pager in the cable TV quiz show. Amazingly few discotheques provide jukeboxes. My girl wove six dozen plaid jackets before she quit. Six big devils from Japan quickly forgot how to waltz.&lt;/p&gt;
-
-&lt;p&gt;Big July earthquakes confound zany experimental vow. Foxy parsons quiz and cajole the lovably dim wiki-girl. Have a pick: twenty six letters - no forcing a jumbled quiz! Crazy Fredericka bought many very exquisite opal jewels.&lt;/p&gt;
-
-&lt;p&gt;Sixty zippers were quickly picked from the woven jute bag. A quick movement of the enemy will jeopardize six gunboats. All questions asked by five watch experts amazed the judge. Jack quietly moved up front and seized the big ball of wax.&lt;/p&gt;
-
-&lt;p&gt;The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox.&lt;/p&gt;
-
-&lt;p&gt;Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. Sex-charged fop blew my junk TV quiz. How quickly daft jumping zebras vex. Two driven jocks help fax my big quiz. Quick, Baz, get my woven flax jodhpurs!&lt;/p&gt;
-
-&lt;p&gt;“Now fax quiz Jack! “ my brave ghost pled. Five quacking zephyrs jolt my wax bed. Flummoxed by job, kvetching W. zaps Iraq. Cozy sphinx waves quart jug of bad milk. A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box. Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack! Blowzy red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV&lt;/p&gt;
-</description>
-        <pubDate>Thu, 06 Aug 2015 12:00:08 +0900</pubDate>
-        <link>http://nandomoreira.me/the-quick-brown-fox/</link>
-        <guid isPermaLink="true">http://nandomoreira.me/the-quick-brown-fox/</guid>
-        
-        
-        <category>lorem</category>
-        
-      </item>
-    
-      <item>
-        <title>A wonderful serenity has taken possession of my entire soul</title>
-        <description>&lt;p&gt;A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.&lt;/p&gt;
-
-&lt;p&gt;I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.&lt;/p&gt;
-
-&lt;p&gt;I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.&lt;/p&gt;
-
-&lt;p&gt;When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath of that universal love which bears and sustains us, as it floats around us in an eternity of bliss; and then, my friend, when darkness overspreads my eyes, and heaven and earth seem to dwell in my soul and absorb its power, like the form of a beloved mistress, then I often think with longing, Oh, would I could describe these conceptions, could impress upon paper all that is living so full and warm within me, that it might be the mirror of my soul, as my soul is the mirror of the infinite God!&lt;/p&gt;
-
-&lt;p&gt;O my friend – but it is too much for my strength – I sink under the weight of the splendour of these visions!&lt;/p&gt;
-
-&lt;p&gt;A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.&lt;/p&gt;
-
-&lt;p&gt;I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.&lt;/p&gt;
-
-&lt;p&gt;I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.&lt;/p&gt;
-
-&lt;p&gt;I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.&lt;/p&gt;
-
-&lt;p&gt;When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and&lt;/p&gt;
-</description>
-        <pubDate>Wed, 05 Aug 2015 12:00:08 +0900</pubDate>
-        <link>http://nandomoreira.me/a-wonderful-serenity-has-taken/</link>
-        <guid isPermaLink="true">http://nandomoreira.me/a-wonderful-serenity-has-taken/</guid>
-        
-        
-        <category>lorem</category>
-        
-      </item>
-    
-      <item>
-        <title>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</title>
-        <description>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&lt;/p&gt;
-
-&lt;p&gt;A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.&lt;/p&gt;
-
-&lt;p&gt;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&lt;/p&gt;
-
-&lt;p&gt;The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.&lt;/p&gt;
-
-&lt;p&gt;When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.&lt;/p&gt;
-
-&lt;p&gt;Pityful a rethoric question ran over her cheek, then she continued her way. On her way she met a copy.&lt;/p&gt;
-
-&lt;p&gt;The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word “and” and the Little Blind Text should turn around and return to its own, safe country.&lt;/p&gt;
-
-&lt;p&gt;But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their projects again and again. And if she hasn’t been rewritten, then they are still using her.&lt;/p&gt;
-
-&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.&lt;/p&gt;
-
-&lt;p&gt;It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&lt;/p&gt;
-
-&lt;p&gt;The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline&lt;/p&gt;
-</description>
-        <pubDate>Tue, 04 Aug 2015 12:00:08 +0900</pubDate>
-        <link>http://nandomoreira.me/far-far-away/</link>
-        <guid isPermaLink="true">http://nandomoreira.me/far-far-away/</guid>
-        
-        
-        <category>lorem</category>
         
       </item>
     
