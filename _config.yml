@@ -5,6 +5,9 @@ description: Um lindo tema feito para jekyll e com o <3
 baseurl: ""
 url: "https://cjh5414.github.io"
 
+source : .
+destination: _site
+
 author:
   name     : 'Choi Ji Hun'
   email    : cjh5414@gmail.com
