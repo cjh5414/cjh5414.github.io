@@ -47,8 +47,16 @@ $ git push origin master
 
 ## Creating a project  
 
+django_tutorial의 상위 폴더로 이동하여 mysite 프로젝트를 생성한 후 mysite의 하위 파일들을 django_tutorial폴더로 이동한다.
+> 이렇게 하는 이유는 위에서 설정한 개발환경을 그대로 프로젝트에 적용하면서 mysite으로 생성된 프로젝트 폴더 이름을 django_tutorial로 하기 위함이다.
+
 ```
+$ cd ..
 $ django-admin startproject mysite
+$ ls
+django_tutorial   mysite
+$ mv mysite/* django_tutorial/
+$ cd django_tutorial
 $ tree .
 .
 └── mysite
@@ -59,7 +67,6 @@ $ tree .
         ├── urls.py
         └── wsgi.py
 ```  
-위와 같은 구조의 프로젝트 폴더가 생성된다.  
 
 <br>  
 
@@ -169,7 +176,29 @@ $ python manage.py runserver
 
 _polls/views.py_ 의 index 페이지가 뜨는 것을 확인할 수 있다.  
 
-> 브라우저에서 'localhost:8000/polls/' url을 호출하면 _mysite.urls.py_ 의 urlpatterns에 정의된 r'^polls/'과 맵핑이 되고 include된 _polls.urls.py_ 에서 views.index를 호출하여 'Hello world' 페이지가 반환되는 것이다.
+> 브라우저에서 'localhost:8000/polls/' url을 호출하면 _mysite.urls.py_ 의 urlpatterns에 정의된 r'^polls/'과 맵핑이 되고 include된 _polls.urls.py_ 에서 views.index를 호출하여 'Hello world' 페이지가 반환되는 것이다.  
+
+<br>  
+
+## commit & push  
+
+변경 사항을 확인하고 commit, push 하자.  
+
+```
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	db.sqlite3
+	manage.py
+	mysite/
+	polls/
+
+$ git add .
+$ git commit -m "프로젝트 생성 및 Hello world"
+$ git push origin master
+```  
 
 <br>  
 
