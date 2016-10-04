@@ -94,7 +94,7 @@ $ python manage.py runserver 8080
 $ python manage.py runserver 0.0.0.0:8000
 ```  
 
-> 개발 서버가 실행 중일 때 코드를 변경하면 서버가 자동적으로 reload된다. (하지만 파일을 추가하는 등의 몇몇 사항들은 제외된다.)
+> 개발 서버가 실행 중일 때 코드를 변경하면 서버가 자동적으로 reload된다. (하지만 파일을 추가하는 등의 몇몇 사항들은 reload 되지 않는다.)
 
 <br>  
 
@@ -157,7 +157,8 @@ _mysite/urls.py_ 파일을 열어서 include를 import하고 'polls.urls'을 inc
 
 ## 결과 확인  
 
-서버를 실행시킨다.
+서버를 실행시킨다.  
+
 ```
 $ python manage.py runserver
 ```  
@@ -168,7 +169,7 @@ $ python manage.py runserver
 
 _polls/views.py_ 의 index 페이지가 뜨는 것을 확인할 수 있다.  
 
-브라우저에서 'localhost:8000/polls/' url을 호출하면 _mysite.urls.py_ 의 urlpatterns에 정의된 r'^polls/'과 맵핑이 되고 include된 _polls.urls.py_ 에서 views.index를 호출하여 'Hello world' 페이지가 반환되는 것이다.
+> 브라우저에서 'localhost:8000/polls/' url을 호출하면 _mysite.urls.py_ 의 urlpatterns에 정의된 r'^polls/'과 맵핑이 되고 include된 _polls.urls.py_ 에서 views.index를 호출하여 'Hello world' 페이지가 반환되는 것이다.
 
 <br>  
 
