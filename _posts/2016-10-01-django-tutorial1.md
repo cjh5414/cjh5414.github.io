@@ -157,7 +157,8 @@ urlpatterns = [
 ]
 ```  
 
-_mysite/urls.py_ 파일을 열어서 include를 import하고 'polls.urls'을 include한다.  
+_mysite/urls.py_ 파일을 열어서 include를 import하고 'polls.urls'을 include한다.   
+
 ```python
 # mysite/urls.py
 
