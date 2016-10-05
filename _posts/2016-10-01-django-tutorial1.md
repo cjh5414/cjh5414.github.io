@@ -139,7 +139,7 @@ def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
 ```  
 
-이 view를 호출하기 위해서는 URL을 지정해 줘야 한다.
+view를 호출하기 위해서는 URL을 지정해 줘야 한다.
 
 > 기본적으로 URLconf는 mysite/settings.py 파일에 ROOT_URLCONF = 'mysite.urls'으로 설정 되어있다. 우리의 polls앱에 polls/urls.py을 작성하여 이용하려면 mysite/urls.py에 include 해줘야 한다.
 
@@ -158,7 +158,17 @@ urlpatterns = [
 ```  
 
 _mysite/urls.py_ 파일을 열어서 include를 import하고 'polls.urls'을 include한다.  
+```python
+# mysite/urls.py
 
+from django.conf.urls import include, url
+from django.contrib import admin
+
+urlpatterns = [
+    url(r'^polls/', include('polls.urls')),
+    url(r'^admin/', admin.site.urls),
+]
+```  
 
 <br>  
 
