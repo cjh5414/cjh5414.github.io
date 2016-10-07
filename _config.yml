@@ -1,7 +1,7 @@
 # Site settings
-title: jihun's blog
+title: jihun's Development blog
 email: cjh5414@gmail.com
-description: Um lindo tema feito para jekyll e com o <3
+# description: Um lindo tema feito para jekyll e com o <3
 baseurl: ""
 url: "https://cjh5414.github.io"
 
