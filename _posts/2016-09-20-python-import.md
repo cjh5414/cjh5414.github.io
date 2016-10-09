@@ -1,7 +1,11 @@
 ---
 title: Python import
 layout: post
+categories: python
+comments: true
 ---
+
+<br>  
 
 ## import  
 import는 '수입하다'라는 뜻으로 python에서는 다른 모듈 내의 코드에 접근을 가능하게 해주는 역할을 한다. import를 사용하는 벙법에는 여러가지 형태가 있다.  
@@ -104,5 +108,3 @@ $ python
 
 ## 참고자료  
 Two Scoops of Django - 대니얼 로이 그린펠드, 오드리 로이 그린펠드
-
-

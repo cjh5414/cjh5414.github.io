@@ -1,7 +1,11 @@
 ---
 title: Github Pages 기능 이용하기
 layout: post
+categories: blog
+comments: true
 ---
+
+<br>  
 
 ## Github의 Pages란?
 Github에서 무료로 호스팅하는 공개 웹페이지이다. 웹 서버를 구축하지 않고도 github의 repository에 index.html 파일을 넣는 것 만으로 간편하게 개인 사이트를 만들 수 있다.

@@ -1,7 +1,11 @@
 ---
 title: PEP8 tools - pep8, flake8, autopep8
 layout: post
+categories: python
+comments: true
 ---
+
+<br>  
 
 PEP8을 잘 지킬 수 있도록 도와주는 도구들이 많이 있다. 그 중에서 pep8, flake8, autopep8에 대해서 알아본다.
 
@@ -131,6 +135,3 @@ autopep8 --in-place --aggressive --aggressive test.py
 <https://pypi.python.org/pypi/pep8><br>  
 <https://pypi.python.org/pypi/flake8><br>
 <https://pypi.python.org/pypi/autopep8>
-
-
-

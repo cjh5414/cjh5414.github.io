@@ -1,7 +1,11 @@
 ---
 title: 진행 중인 프로젝트에 travis-ci 붙이기
 layout: post
+categories: test
+comments: true
 ---
+
+<br>  
 
 현재 '클린 코드를 위한 테스트 주도 개발'이라는 책을 보면서 To-Do list 프로젝트를 따라해보고 있다.
 git으로 관리하는 이 프로젝트에 travis-ci를 붙여보고자 한다.  
@@ -55,4 +59,3 @@ git push를 하면 travis-ci가 알아서 테스트를 진행한다.
 결과는 메일로도 발송된다.  
 
 ![travis-ci](/images/travis-ci/project-travis-email.png)
-
