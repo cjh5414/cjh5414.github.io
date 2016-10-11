@@ -80,6 +80,11 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
             logoutLink.onclick = function(){ navigator.id.logout(); }
         }
 
+    [...]
+
+    });
+</script>
+
 [...]
 
 <div class="navbar">
@@ -138,7 +143,8 @@ assert.equal(requestWasCalled, true);
 
 결과가 다르게 나오지만 계속해서 다음 내용을 진행해보면
 
-```html
+_accounts/static/accounts.js_  
+```js
 window.Superlists = {
 	Accounts: {}
 }
