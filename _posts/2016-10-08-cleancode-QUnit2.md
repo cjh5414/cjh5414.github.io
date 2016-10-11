@@ -81,7 +81,7 @@ $(document).ready(function(){
 });
 ```  
 
-```html
+```
 <div class="navbar">
     {% if user.email %}
         <p>로그인 상태 {{ user.email }}</p>
