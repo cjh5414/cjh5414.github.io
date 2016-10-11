@@ -80,7 +80,6 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
             logoutLink.onclick = function(){ navigator.id.logout(); }
         }
 
-    [...]
 
     });
 </script>
