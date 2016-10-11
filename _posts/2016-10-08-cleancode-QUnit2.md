@@ -83,13 +83,12 @@ $(document).ready(function(){
 
 ```html
 <div class="navbar">
-    {% if user.email %}
-        <p>로그인 상태 {{ user.email }}</p>
+    ...
+        <p>로그인 상태 ... </p>
         <p><a id="id_logout" href="..." >로그아웃</a></p>
-    {% else %}
+    ...
         <a href="#" id="id_login">로그인</a>
-    {% endif %}
-    <p>사용자 : {{ user }}</p>
+    ...
 </div>
 ```    
 
