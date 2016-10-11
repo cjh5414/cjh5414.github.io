@@ -66,7 +66,7 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
 `id_login`을 찾지 못하고있다. `lists/templates/base.html`을 열어서 확인해보니 id를 `login`과 `logout`을 사용하고 있다.
 해당 부분들을 찾아서 `id_login`과 `id_logout`으로 바꿔주자. (뒤에서 id_xxx를 계속 사용한다.)  
 
-```
+```js
 $(document).ready(function(){
     var loginLink = document.getElementById('id_login');
     if(loginLink){
@@ -76,4 +76,18 @@ $(document).ready(function(){
     if(logoutLink){
         logoutLink.onclick = function(){ navigator.id.logout(); }
     }
+...
+});
 ```  
+
+```html
+<div class="navbar">
+    {% if user.email %}
+        <p>로그인 상태 {{ user.email }}</p>
+        <p><a id="id_logout" href="{% url 'logout' %}" >로그아웃</a></p>
+    {% else %}
+        <a href="#" id="id_login">로그인</a>
+    {% endif %}
+    <p>사용자 : {{ user }}</p>
+</div>
+```    
