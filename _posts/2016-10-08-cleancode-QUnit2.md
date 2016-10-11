@@ -67,8 +67,6 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
 해당 부분들을 찾아서 `id_login`과 `id_logout`으로 바꿔주자. (뒤에서 id_xxx를 계속 사용한다.)  
 
 ```html
-[...]
-
 <script>
     $(document).ready(function(){
         var loginLink = document.getElementById('id_login');
@@ -84,7 +82,7 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
     });
 </script>
 
-[...]
+
 
 <div class="navbar">
     {% if user.email %}
@@ -95,8 +93,6 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
     {% endif %}
     <p>사용자 : {{ user }}</p>
 </div>
-
-[...]
 
 ```   
 
