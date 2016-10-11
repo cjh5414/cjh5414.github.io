@@ -249,7 +249,7 @@ def listing(request):
 
 _list/template/list.html_  
 
-```html
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -261,11 +261,11 @@ _list/template/list.html_
 
     {% load el_pagination_tags %}
 
-	{% paginate contacts %}
-	{% for contact in contacts %}
-    	{{ contact.text }} <br/>
-	{% endfor %}
-	{% show_pages %}
+	  {% paginate contacts %}
+	  {% for contact in contacts %}
+      	{{ contact.text }} <br/>
+	  {% endfor %}
+	  {% show_pages %}
 
 </div>
 </body>
