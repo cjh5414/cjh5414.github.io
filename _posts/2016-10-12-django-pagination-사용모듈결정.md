@@ -4,11 +4,11 @@ layout: post
 date:   2016-10-12
 categories: blog
 comments: true
----  
+---
 
 <br>  
 
-django를 사용하여 진행 중인 프로젝트에 pagination 기능이 필요해졌다. django pagination 을 검색해보니 [Django Documentation Pagination] (https://docs.djangoproject.com/en/1.10/topics/pagination/) 에 내부 모듈로 Paginator을 이용하여서 구현하는 방법이 나와있었다.
+django를 사용하여 진행 중인 프로젝트에 pagination 기능이 필요해졌다. django pagination 을 검색해보니 [Django Documentation Pagination](https://docs.djangoproject.com/en/1.10/topics/pagination/) 에 내부 모듈로 Paginator을 이용하여서 구현하는 방법이 나와있었다.
 
 예제를 만들어서 테스트 해봤는데 간단해서 금방 사용법을 익힐 수 있었다.  
 
@@ -28,7 +28,7 @@ django를 사용하여 진행 중인 프로젝트에 pagination 기능이 필요
 - django-bootstrap-pagination  
 - django-pure-pagination  
 
-등 많은 패키지들이 있었는데 그 중에 view 수가 많고 최근까지 업데이트가 된 (다른 것들에 비해) 'django EL pagination'을 사용해봤다. 마찬가지로 (docs)<http://django-el-pagination.readthedocs.io/en/latest/> 에 있는 예제들을 따라해봤다.  
+등 많은 패키지들이 있었는데 그 중에 view 수가 많고 최근까지 업데이트가 된 (다른 것들에 비해) 'django EL pagination'을 사용해봤다. 마찬가지로 [django EL pagination docs](http://django-el-pagination.readthedocs.io/en/latest/) 에 있는 예제들을 따라해봤다.  
 
 ![digg1](/images/pagination/digg1.png)   
 
