@@ -38,6 +38,7 @@ django를 사용하여 진행 중인 프로젝트에 pagination 기능이 필요
 
 > 예제 사용 방법과 문제점 해결 방법 등 구체적인 내용은 [여기](https://cjh5414.github.io/django-pagination/)에 작성 돼 있다.  
 
+<br>  
 
 ## 외부 패키지 장점  
 
