@@ -304,10 +304,10 @@ return render(request, template, context)
 _list/template/list.html_ 을 작성할 때  
 
 ```
-"{{ block.super }} in a base template?" % self.__class__.__name__  
+"{ { block.super } } in a base template?" % self.__class__.__name__  
 ```  
 
-라는 오류가 발생하면 html 파일에서 `{{ block.super }}`를 제거 해주면 된다.  
+라는 오류가 발생하면 html 파일에서 `{ { block.super } }`를 제거 해주면 된다.  
 
 > twitter style 에서는 scroll을 해서 pagination을 하는 방법도 제공한다. 자세한 내용은 [여기](http://django-el-pagination.readthedocs.io/en/latest/twitter_pagination.html)를 참고하면 된다.  
 
