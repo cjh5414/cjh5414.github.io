@@ -60,4 +60,4 @@ $ gs
  nothing to commit, working directory clean
 ```  
 
-매우 편리하다 :)  
+매우 편리하군 :)  
