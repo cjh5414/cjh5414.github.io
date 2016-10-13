@@ -13,7 +13,7 @@ comments: true
 <br>  
 
 ## _~/.bash_profile_ 에 alias 추가
-1
+
 ```
 $ echo "alias _별명_='_원래 명령어_'" >> ~/.bash_profile
 $ echo "alias gb='git branch'" >> ~/.bash_profile
