@@ -33,7 +33,7 @@ def test_delete_only_post_selected_to_delete(self):
     self.assertEqual(other_post.is_delete, False)
 ```
 
-_삭제 처리를 하는 delete_post의 일부_  
+_삭제 처리를 하는 views.py delete_post()함수의 일부_  
 
 ```python
 post = Post.objects.get(id=post_id)
