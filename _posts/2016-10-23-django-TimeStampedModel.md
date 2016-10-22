@@ -10,6 +10,8 @@ comments: true
 
 django에서 models에 데이터 생성 시간, 업데이트 시간을 기록하기 위해 create_time, modified_time 필드를 설정해 주는 경우가 자주 있다. 이 필드들은 많은 모델들에서 사용되는 필드이므로 TimeStampedModel에 한 번만 필드를 지정해놓고 상속을 받아서 사용하는 것이 좋다. 일일이 두 가지 필드를 해당 모델들에 추가할 필요가 없고, 추가하지 않아서 발생하는 문제들을 방지할 수 있는 장점이 있다.  
 
+<br>  
+
 ### 추상화 기초 클래스  
 
 _core/models.py_  
