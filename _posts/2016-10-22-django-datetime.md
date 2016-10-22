@@ -10,7 +10,9 @@ comments: true
 
 > django에서 특정 model에 생설될 때의 시간을 기록하기 위한 created time 필드를 추가하고 단위테스트를 하는 과정에서 발생하는 문제에 대해서 다룬다.  
 
-## Unittest  
+<br>  
+
+### Unittest  
 
 데이터가 생성 될 때의 시간이 잘 저장되는지 테스트하기 위하여 Comment의 객체를 하나 생성하여 DB에 저장하고 직후의 시간 값을 저장해서 그 둘의 차이가 1초보다 작은지를 테스트한다.  
 
@@ -26,6 +28,10 @@ def test_saving_create_time(self):
     self.assertGreater(timedelta(minutes=1), time_after_create - comment_.create_time)
 ```  
 
+<br>  
+
+### models.py  
+
 model에 시간을 저장하기 위한 필드를 추가한다. `auto_now_add=True`를 추가하면 데이터가 생성되어 처음 저장 될 때 동작한다. (`auto_now=True`는 데이터가 수정될 때마다 갱신된다.)  
 
 ```python
@@ -35,6 +41,11 @@ class Comment(models.Model):
 ```
 
 모델이 변경되었으니 `$ python manage.py makemigrations`을 실행시켜 준다.  
+
+<br>  
+
+### Error  
+
 테스트를 돌려보면 아래와 같은 에러 메세지가 뜬다.  
 
 ```
