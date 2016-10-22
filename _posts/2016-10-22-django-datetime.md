@@ -54,6 +54,11 @@ TypeError: can't subtract offset-naive and offset-aware datetimes
 
 create_time의 dafault 값은 `django.utils.timezone.now` 으로 time zone이 `utc`로 지정된 것이고, 테스트 코드에서 datetime.now()는 time zone이 지정되지 않은 것으로 두 값의 type이 달라서 발생하는 에러이다.  
 
+
+<br>  
+
+### Resolve  
+
 ```python
 def test_saving_create_time(self):
     comment_ = Comment()
