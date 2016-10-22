@@ -13,6 +13,7 @@ django에서 models에 데이터 생성 시간, 업데이트 시간을 기록하
 ### 추상화 기초 클래스  
 
 _core/models.py_  
+
 ```python
 from django.db import models
 
@@ -33,9 +34,10 @@ class TimeStampedModel(models.Model):
 
 <br>  
 
-### 상속받은 클래스 사용 예시  
+### 상속받은 클래스 사용 예시   
 
-_board/models.py_  
+_board/models.py_   
+
 ```python
 from django.db import models
 
@@ -45,4 +47,4 @@ class Comment(TimeStampedModel):
     [...]
 ```  
 
-Comment 모델은 created_time, modified_time 필드를 따로 지정하지 않아도 TimeStampedModel을 상속 받았기 때문에 데이터가 생성될 때, 수정될 때의 시간이 기록된다.  
+Comment 모델은 created_time, modified_time 필드를 따로 지정하지 않아도 TimeStampedModel을 상속 받았기 때문에 데이터가 생성될 때, 수정될 때의 시간이 기록된다.   
