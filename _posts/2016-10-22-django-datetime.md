@@ -8,7 +8,7 @@ comments: true
 
 <br>  
 
-> django에서 특정 model에 생설될 때의 시간을 기록하기 위한 created time 필드를 추가하고 단위테스트를 하는 과정에서 발생하는 문제에 대해서 다룬다.  
+> django에서 특정 model에 생성될 때의 시간을 기록하기 위한 created time 필드를 추가하고 단위테스트를 하는 과정에서 발생하는 문제에 대해서 다룬다.  
 
 <br>  
 
