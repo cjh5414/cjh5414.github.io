@@ -2,7 +2,7 @@
 layout: post
 title:  "django model created time test issue - datetime"
 date:   2016-10-22
-categories: test
+categories: django
 comments: true
 ---
 

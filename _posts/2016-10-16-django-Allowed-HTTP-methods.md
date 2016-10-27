@@ -2,7 +2,7 @@
 layout: post
 title:  "django에서 사용하지 않는 GET 접근방식 처리하기 - django Allowed HTTP methods"
 date:   2016-10-16
-categories: test
+categories: django
 comments: true
 ---
 
