@@ -8,7 +8,7 @@ categories: test
 <br>  
 
 여러가지 모델에 공통적으로 필요한 created_time 필드를 가지고 있는 TimeStampedModel 추상 모델을 상속 받아서 모델들을 구현하고 있다. (TimeStampedModel abstract model에 관한 내용은 [여기](https://cjh5414.github.io/django-TimeStampedModel/)를 참고하면 된다.)  
-각각의 모델들에 created_time이 잘 저장되는지 확인하기 위해 테스트 코드를 작성하는데 새로운 모델을 추가할 때마다 테스트 코드를 추가하면 코드의 중복이 발생한다. 이를 해결하기 위해 추상 모델인 TimeStampedMode에서 한 번만 테스트를 작성해 보기로 했다. 하지만 abstract model을 테스트 하기 위해서는 DB에 테이블이 생성되지 않기 때문에 일반적인 model 테스트와는 다르게 추가적인 작업이 필요하다.  
+각각의 모델들에 created_time이 잘 저장되는지 확인하기 위해 테스트 코드를 작성하는데 새로운 모델을 추가할 때마다 테스트 코드를 추가하면 코드의 중복이 발생한다. 이를 해결하기 위해서는 추상 모델인 TimeStampedMode 에서 한 번만 테스트를 작성하면 된다. 하지만 abstract model을 테스트 하기 위해서는 DB에 테이블이 생성되지 않기 때문에 일반적인 model 테스트와는 다르게 추가적인 작업이 필요하다.  
 
 <br>  
 
@@ -53,17 +53,18 @@ class TestTimeStampedModel(TestCase):
 
 creaed_time이 제대로 저장 됐는지 확인하기 위해 TimeStampedModel의 객체를 생성하고 저장한 후 시간을 기록한다. 기록한 시간과 created_time의 오차가 1초 이내 인지를 테스트하는 코드이다.  
 
-테스트를 돌려보면 `AttributeError: 'NoneType' object has no attribute 'attname'`라는 에러가 발생한다. 에러 메세지의 정확한 의미는 잘 모르겠지만 예상했던대로 save()부분에서 에러가 발생했다.  
+테스트를 돌려보면 `AttributeError: 'NoneType' object has no attribute 'attname'`라는 에러가 발생한다. 에러 메세지의 정확한 의미는 잘 모르겠지만 예상했던대로 save() 부분에서 에러가 발생했다.  
 
 <br>  
 
 ### TestModelInheritedTimeStampedModel  
 
-실제로 모델을 사용하는 것과 같이 TimeStampedModel을 상속 받은 test model을 생성하여 테스트하면 해결된다.  
+실제로 모델을 사용하는 것과 같이 TimeStampedModel을 상속 받은 test model을 생성하여 테스트 하면 해결이 된다.  
 
 test code에 TimeStampedModel을 상속 받은 TestModelInheritedTimeStampedModel 테스트 클래스를 생성하고 테스트에서 생성하는 객체의 모델을 TestModelInheritedTimeStampedModel으로 바꿔준다.
 
 _core/tests/test_models.py_  
+
 ```python
 [...]
 class TestModelInheritedTimeStampedModel(TimeStampedModel):
