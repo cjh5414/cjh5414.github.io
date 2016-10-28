@@ -77,7 +77,8 @@ class TestModelInheritedTimeStampedModel(TimeStampedModel):
             test_model = TestModelInheritedTimeStampedModel()
             test_model.save()
 
-[...]
+            [...]
+
 ```  
 
 <br>  
