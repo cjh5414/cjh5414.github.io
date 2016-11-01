@@ -2,7 +2,7 @@
 layout: post
 title:  "django Key Error request.POST.get() 사용 문제"
 date:   2016-10-27
-categories: test
+categories: django
 comments: true
 ---
 
