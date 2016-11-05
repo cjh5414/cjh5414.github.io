@@ -102,7 +102,7 @@ upload된 파일은 file의 url을 href로 지정하고 download를 넣어주면
 
 _uploaded.html_  
 
-```
+```html
 <a id="id_uploaded_file" href="{ uploadFileModel.file.url }" download>{{ uploadFileModel.file.name }}</a>
 ```  
 
