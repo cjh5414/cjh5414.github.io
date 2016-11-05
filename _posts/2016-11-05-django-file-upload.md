@@ -92,8 +92,8 @@ _upload.html_
 ```
 [...]
   <form method="post" enctype="multipart/form-data" novalidate>
-    {% csrf_token %}
-    {{ form.as_p }}
+    `{% csrf_token %}`
+    `{{ form.as_p }}`
     <button type="submit">Upload</button>
   </form>
 [...]
