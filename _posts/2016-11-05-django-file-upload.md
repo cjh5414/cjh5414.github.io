@@ -86,12 +86,13 @@ __init__ 함수에서 `self.fields['file'].required = False` 설정을 통해 fi
 file upload를 하기 위해서는 form에 `enctype="multipart/form-data"`을 추가해줘야 한다.  
 `novalidate`는 form 제출 시에 유효성 검사를 하지 않게 해준다.  
 
+
 _upload.html_  
 
-```html
+```
 [...]
   <form method="post" enctype="multipart/form-data" novalidate>
-    {\% csrf_token \%}
+    {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Upload</button>
   </form>
