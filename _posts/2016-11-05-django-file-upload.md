@@ -89,15 +89,13 @@ file upload를 하기 위해서는 form에 `enctype="multipart/form-data"`을 �
 _upload.html_  
 
 ```html
-{% extends 'base.html' %}
-
-{% block content %}
+[...]
   <form method="post" enctype="multipart/form-data" novalidate>
-    {% csrf_token %}
+    {\% csrf_token \%}
     {{ form.as_p }}
     <button type="submit">Upload</button>
   </form>
-{% endblock %}
+[...]
 ```  
 
 upload된 파일은 file의 url을 href로 지정하고 download를 넣어주면 다운 받을 수 있다.  
