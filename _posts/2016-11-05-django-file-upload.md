@@ -89,7 +89,7 @@ file upload를 하기 위해서는 form에 `enctype="multipart/form-data"`을 �
 
 _upload.html_  
 
-```
+```html
 [...]
   <form method="post" enctype="multipart/form-data" novalidate>
     { form.as_p }
@@ -103,14 +103,14 @@ upload된 파일은 file의 url을 href로 지정하고 download를 넣어주면
 _uploaded.html_  
 
 ```html
-<a id="id_uploaded_file" href="{{ uploadFileModel.file.url }}" download>{{ post.file.name }}</a>
+<a id="id_uploaded_file" href="{ uploadFileModel.file.url }" download>{{ post.file.name }}</a>
 ```  
 
 <br>  
 
 ## Upload View  
 
-UploadFileForm 객체를 생성하여 rendering 할 때 `form`으로 넘겨주면 html에서 `{{ form.as_p }}`을 통해 file 필드가 `<input type="file" name="" />`으로 생성된다.  
+UploadFileForm 객체를 생성하여 rendering 할 때 `form`으로 넘겨주면 html에서 `{ form.as_p }`을 통해 file 필드가 `<input type="file" name="" />`으로 생성된다.  
 POST로 form이 제출되면 upload 파일의 정보는 request.FILES을 통해 전달되고 form 유효성 검사 후에 `form.save()`을 하면 settings에서 설정한 `MEDIA_ROOT` 위치에 파일이 저장된다.  
 
 _views.py_  
