@@ -92,7 +92,8 @@ _upload.html_
 ```html
 [...]
   <form method="post" enctype="multipart/form-data" novalidate>
-    {{ form.as_p }}
+    { csrf_token }
+    { form.as_p }
     <button type="submit">Upload</button>
   </form>
 [...]
@@ -102,8 +103,8 @@ upload된 파일은 file의 url을 href로 지정하고 download를 넣어주면
 
 _uploaded.html_  
 
-```html
-<a id="id_uploaded_file" href="{ uploadFileModel.file.url }" download>{{ uploadFileModel.file.name }}</a>
+```python
+<a id="id_uploaded_file" href="{ uploadFileModel.file.url }" download>{ uploadFileModel.file.name }</a>
 ```  
 
 <br>  
