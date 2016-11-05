@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "form 유효성 검사 비활성화 - novalidate"
-date:   2016-10-28
+date:   2016-11-01
 categories: html
 ---
 
