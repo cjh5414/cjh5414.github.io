@@ -64,4 +64,4 @@ is_valid() 에서 유효성 검사의 성공 여부와 관계없이 form 데이�
 
 ### 참고자료  
 
-_Two Scoops of Django - 대니얼 로이 그린팰드, 오드리 로이 그린펠드 지음 | 김승진 옮김_   
+Two Scoops of Django - 대니얼 로이 그린팰드, 오드리 로이 그린펠드 지음 / 김승진 옮김   
