@@ -4,9 +4,10 @@ title: About
 permalink: /about/
 ---
 
-# Choi Ji Hun  
 
-### e-mail : <cjh5414@gmail.com>  
+# Choi Ji Hun   
+
+### e-mail : <cjh5414@gmail.com>   
 
 ### github : <https://github.com/cjh5414>    
 
