@@ -3,7 +3,6 @@ layout: post
 title:  "좋은 커밋 메세지 작성하기"
 date:   2016-10-18
 categories: git
-comments: true
 ---
 
 <br>  

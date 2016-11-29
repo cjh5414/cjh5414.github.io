@@ -3,7 +3,6 @@ layout: post
 title:  "django TimeStampedModel 상속 이용하기"
 date:   2016-10-23
 categories: test
-comments: true
 ---
 
 <br>  
