@@ -33,6 +33,21 @@ def hello_function():
     print('함수 끝')
 ```  
 
+각각 함수를 호출해서 결과를 확인해보면 아래와 같은 메세지가 출력된다.  
+
+```
+함수 시작
+hi
+함수 끝
+함수 시작
+hello
+함수 끝
+```  
+
+<br>  
+
+### 함수를 이용한 decorator  
+
 중복되는 부분인 `print('함수 시작')`, `print('함수 끝')`를 decorator 함수로 만들어서 사용해 보려고 한다.  
 
 ```python
@@ -50,4 +65,21 @@ def hi_function():
 @decorator_exam
 def hello_function():
     print('hello')
+```  
+
+두 함수를 호출해서 확인해보면 decorator를 적용하기 전의 결과와 동일하다.
+
+<br>  
+
+### class를 이용한 decorator  
+
+```python
+class DecoratorExam:
+    def __init__(self, func):
+        self.func = func
+
+    def __call__(self, *args, **kwargs):
+        print('함수 시작')
+        self.func(*args, **kwargs)
+        print('함수 끝')
 ```  
