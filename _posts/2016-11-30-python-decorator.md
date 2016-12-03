@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "python decorator 만들기 ( 작성중 )"
+title:  "python decorator 만들기 - decorator가 지정될 함수의 self 이용"
 date:   2016-11-30
 categories: python
 ---
