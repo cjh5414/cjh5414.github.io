@@ -83,3 +83,42 @@ class DecoratorExam:
         self.func(*args, **kwargs)
         print('함수 끝')
 ```  
+
+<br>  
+
+### decorator 지정 될 함수의 self 이용하기  
+
+게시판의 기능 테스트에서 시작 전에 매번 수행되는 로그인 부분을 decorator 함수를 만들어서 사용한 예제이다.  
+decorator 함수에 self를 통해서 로그인을 수행한다.  
+
+```python
+from functools import wraps
+
+def login_test_user(self):
+    if hasattr(self, 'browser'):
+        self.browser.get(self.live_server_url)
+        self.browser.find_element_by_id('login_button').click()
+        self.browser.find_element_by_id('id_username').send_keys(self.test_user.username)
+        self.browser.find_element_by_id('id_password').send_keys('kboard123')
+        self.browser.find_element_by_class_name('btn-primary').click()
+
+def login_test_user_with_browser(method):
+    @wraps(method)
+    def _impl(self, *args, **kwargs):
+        login_test_user(self)
+        method(self, *args, **kwargs)
+
+    return _impl
+```  
+
+게시글이 삭제되는지 테스트하는 코드에 decorator를 지정해서 이용한다. 호출되는 decorator 함수는 DeletePostTest 객체의 self를 통해서 로그인을 수행한다.  
+
+```python
+class DeletePostTest(FunctionalTest):
+    @login_test_user_with_browser
+    def test_delete_post(self):
+        # 지훈이는 게시글을 삭제하는 기능이 제대로 동작하는지 확인하기 위해 기본 게시판으로 이동한다.
+        self.move_to_default_board()
+
+        [...]
+```
