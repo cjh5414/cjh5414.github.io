@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "python decorator 만들기 - decorator가 지정될 함수의 self 이용"
+title:  "python decorator 만들기 - decorator가 지정될 함수의 self 이용하기"
 date:   2016-11-30
 categories: python
 ---
 
 <br>  
 
-> TDD, Django 기반의 프로젝트를 진행하면서 Functional test 시작 부분에 자주 사용되는 코드를 decorator를 이용하여 구현해보았다. 기본적인 decorator를 구현하는 방법에 대해서 먼저 알아보았고 decorator 함수 내에서 decorator가 지정될 함수의 self를 이용하는 방법에 대해서도 알아보았다.  
+> TDD, Django 기반의 프로젝트를 진행하면서 Functional test 시작 부분에 자주 사용되는 코드를 decorator를 이용하여 구현해보았다. 기본적인 decorator를 구현하는 방법에 대해서 먼저 알아보았고 decorator 함수 내에서 decorator가 지정될 함수의 self를 이용하여 구현하였다.   
 
 <br>  
 
@@ -88,8 +88,8 @@ class DecoratorExam:
 
 ### decorator 지정 될 함수의 self 이용하기  
 
-게시판의 기능 테스트에서 시작 전에 매번 수행되는 로그인 부분을 decorator 함수를 만들어서 사용한 예제이다.  
-decorator 함수에 self를 통해서 로그인을 수행한다.  
+게시판의 기능 테스트에서 시작 전에 매번 수행되는 로그인 부분을 decorator 함수를 만들어서 사용한 부분이다.  
+decorator가 지정된 함수의 self를 통해서 로그인을 수행한다.  
 
 ```python
 from functools import wraps
@@ -111,7 +111,8 @@ def login_test_user_with_browser(method):
     return _impl
 ```  
 
-게시글이 삭제되는지 테스트하는 코드에 decorator를 지정해서 이용한다. 호출되는 decorator 함수는 DeletePostTest 객체의 self를 통해서 로그인을 수행한다.  
+게시글이 삭제되는지 테스트하는 코드에 decorator를 지정해서 이용한다.  
+호출되는 decorator 함수는 DeletePostTest 객체의 self를 통해서 로그인을 수행한다.  
 
 ```python
 class DeletePostTest(FunctionalTest):
@@ -121,4 +122,6 @@ class DeletePostTest(FunctionalTest):
         self.move_to_default_board()
 
         [...]
-```
+```  
+
+자주 사용되는 로그인 기능을 매번 작성하지 않고 decorator를 이용하여서 가독성과 재사용성을 높일 수 있었다.  
