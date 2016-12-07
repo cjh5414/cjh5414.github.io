@@ -43,7 +43,7 @@ print my_func_a.__name__
 
 위의 결과를 보면 알 수 있듯이 my_func_a()라는 함수의 name과 doc를 출력해보면 원하는 결과를 얻지 못하는 것을 확인할 수 있다.  
 
-@without_wraps decorator를 지정하면 `__wrapper()`라는 함수가 my_func_a()를 감싸주기 때문에 name과 doc이 `__wrapper`로 출력되기 때문이다.  
+@without_wraps decorator를 지정하면 `__wrapper()`라는 함수가 `my_func_a()`를 감싸주기 때문에 name과 doc이 `__wrapper`로 출력되기 때문이다.  
 
 <br>  
 
