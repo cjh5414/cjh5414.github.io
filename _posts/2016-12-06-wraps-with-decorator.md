@@ -11,8 +11,10 @@ categories: python
 
 <br>  
 
-여러 함수들의 시작, 종료에 공통적으로 사용되는 코드가 있는 경우 decorator를 만들어서 사용하면 매우 유용하다. ([python decorator 사용법](https://cjh5414.github.io/python-decorator/)])  
+여러 함수들의 시작, 종료에 공통적으로 사용되는 코드가 있는 경우 decorator를 만들어서 사용하면 매우 유용하다. ([python decorator 사용법](https://cjh5414.github.io/python-decorator/))  
 하지만 decorator를 이용한 코드는 디버깅하기 어려운 단점이 있다.  
+
+<br>  
 
 ### @wraps를 사용하지 않는 경우  
 
