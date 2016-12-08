@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-# Choi Ji Hun    
+### Choi Ji Hun   
