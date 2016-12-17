@@ -106,6 +106,6 @@ $ python3 line-notify.py [ACCESS_TOKEN] [MESSAGE]
 
 <br>  
 
-## 참고자료  
+## 참고자료   
 
 [LINE Notify API Document](https://notify-bot.line.me/doc/en/)를 보면 더 자세한 내용을 확인 할 수 있다.  
