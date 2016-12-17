@@ -87,6 +87,8 @@ except requests.exceptions.RequestException:
     print('HTTP Request failed')
 ```  
 
+<br>  
+
 ### How to use  
 
 <https://github.com/cjh5414/line-notify.git> 을 clone 한다.  
