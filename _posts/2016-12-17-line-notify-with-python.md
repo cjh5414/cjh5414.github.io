@@ -45,7 +45,7 @@ categories: python
 ```
 $ curl -X POST -H 'Authorization: Bearer <access_token>' -F 'message=foobar' https://notify-api.line.me/api/notify
 {"status":200,"message":"ok"}
-```
+```  
 
 <access_token> 자리에 조금 전에 생성한 token 값을 넣어준다.   
 'message=foobar' 부분에 notify 하고싶은 내용을 작성한다.   
