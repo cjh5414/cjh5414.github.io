@@ -84,18 +84,18 @@ try:
         status_code=response.status_code))
 except requests.exceptions.RequestException:
     print('HTTP Request failed')
-```
+```  
 
 ### How to use  
 
 <https://github.com/cjh5414/line-notify.git> 을 clone 한다.  
 
 command line에 아래의 형태로 실행한다.  
-[ACCESS_TOKEN]에는 저장해둔 token 값을, [MESSAGE]에는 원하는 메세지를 ' '를 붙여서 넣어주면 된다.  
+[ACCESS_TOKEN]에는 저장해둔 token 값을, [MESSAGE]에는 원하는 메세지를 ' '를 붙여서 넣어주면 된다.   
 
 ```
 $ python3 line-notify.py [ACCESS_TOKEN] [MESSAGE]
-```  
+```   
 
 <br>  
 
