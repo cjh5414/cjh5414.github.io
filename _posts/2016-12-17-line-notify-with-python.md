@@ -55,38 +55,6 @@ $ curl -X POST -H 'Authorization: Bearer <access_token>' -F 'message=foobar' htt
 
 ## Line Notify with python  
 
-```python  
-import sys
-import requests
-
-
-if len(sys.argv) != 3:
-    print('error: wrong arguments')
-    print('usage: python line-notify.py [ACCESS_TOKEN] [MESSAGE]')
-    sys.exit()
-
-ACCESS_TOKEN = sys.argv[1]
-MESSAGE = sys.argv[2]
-
-URL = 'https://notify-api.line.me/api/notify'
-MESSAGE_FIELD = {'message' : MESSAGE}
-LINE_HEADERS = {
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'Authorization': 'Bearer ' + ACCESS_TOKEN
-}
-
-try:
-    response = requests.post(
-        url=URL,
-        headers=LINE_HEADERS,
-        data=MESSAGE_FIELD
-    )
-    print('Response HTTP Status Code: {status_code}'.format(
-        status_code=response.status_code))
-except requests.exceptions.RequestException:
-    print('HTTP Request failed')
-```  
-
 ### How to use  
 
 <https://github.com/cjh5414/line-notify.git> 을 clone 한다.  
