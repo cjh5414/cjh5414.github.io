@@ -7,7 +7,7 @@ categories: python
 
 <br>  
 
-> Line에서 Http 호출을 이용하여 라인 메시지를 보낼 수 있는 기능을 제공한다. Command line 과 python 을 이용하여 Line Notify를 이용하는 방법에 대해서 알아보았다.  
+> Line에서 Http 호출을 이용하여 라인 메시지를 보낼 수 있는 기능을 제공한다.  Command line 과 python 을 이용하여 Line Notify를 이용하는 방법에 대해서 알아보았다.  
 
 <br>  
 
@@ -23,7 +23,7 @@ categories: python
 
 첫번째 빈 칸에는 Line 대화창에서 notification을 제공하는 주체의 이름을 지정한다.  
 
-두번째 빈 칸에는 notifications을 보낼 대화창을 선택한다.  그룹이 존재하면 해당 그룹을 선택할 수 있고 자신에게 보내고 싶을 때는 `1-on-1 chat with LINE Notify`를 선택하면 된다.  
+두번째 빈 칸에는 notifications을 보낼 대화창을 선택한다. 그룹이 존재하면 해당 그룹을 선택할 수 있고, 자신에게 보내고 싶을 때는 `1-on-1 chat with LINE Notify`를 선택하면 된다.  
 
 
 ![line notify group](/images/line-notify/line-notify-group.png)  
@@ -40,19 +40,19 @@ categories: python
 
 <br>   
 
-## Line Notify with Command line  
+## Line Notify with Command line   
 
 ```
 $ curl -X POST -H 'Authorization: Bearer <access_token>' -F 'message=foobar' https://notify-api.line.me/api/notify
 {"status":200,"message":"ok"}
 ```
 
-<access_token> 자리에 조금 전에 생성한 token 값을 넣어어준다.  
-'message=foobar' 부분에 notify 하고싶은 내용을 작성한다.  
+<access_token> 자리에 조금 전에 생성한 token 값을 넣어준다.   
+'message=foobar' 부분에 notify 하고싶은 내용을 작성한다.   
 
-<br>  
+<br>   
 
-## Line Notify with python
+## Line Notify with python  
 
 ```python
 import sys
