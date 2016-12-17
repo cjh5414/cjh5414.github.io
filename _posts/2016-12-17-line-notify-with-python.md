@@ -44,11 +44,11 @@ categories: python
 
 ```
 $ curl -X POST -H 'Authorization: Bearer <access_token>' -F 'message=foobar' https://notify-api.line.me/api/notify  
-
 {"status":200,"message":"ok"}   
 ```    
 
 <access_token> 자리에 조금 전에 생성한 token 값을 넣어준다.   
+
 'message=foobar' 부분에 notify 하고싶은 내용을 작성한다.   
 
 <br>   
@@ -91,7 +91,8 @@ except requests.exceptions.RequestException:
 
 <https://github.com/cjh5414/line-notify.git> 을 clone 한다.  
 
-command line에 아래의 형태로 실행한다.  
+command line에 아래의 형태로 실행한다.   
+
 [ACCESS_TOKEN]에는 저장해둔 token 값을, [MESSAGE]에는 원하는 메세지를 ' '를 붙여서 넣어주면 된다.   
 
 ```
