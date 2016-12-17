@@ -47,6 +47,64 @@ $ curl -X POST -H 'Authorization: Bearer <access_token>' -F 'message=foobar' htt
 {"status":200,"message":"ok"}
 ```
 
+<access_token> 자리에 조금 전에 생성한 token 값을 넣어어준다.  
+'message=foobar' 부분에 notify 하고싶은 내용을 작성한다.  
+
+<br>  
+
+## Line Notify with python
+
+```python
+import sys
+import requests
+
+
+if len(sys.argv) != 3:
+    print('error: wrong arguments')
+    print('usage: python line-notify.py [ACCESS_TOKEN] [MESSAGE]')
+    sys.exit()
+
+ACCESS_TOKEN = sys.argv[1]
+MESSAGE = sys.argv[2]
+
+URL = 'https://notify-api.line.me/api/notify'
+MESSAGE_FIELD = {'message' : MESSAGE}
+LINE_HEADERS = {
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Authorization': 'Bearer ' + ACCESS_TOKEN
+}
+
+try:
+    response = requests.post(
+        url=URL,
+        headers=LINE_HEADERS,
+        data=MESSAGE_FIELD
+    )
+    print('Response HTTP Status Code: {status_code}'.format(
+        status_code=response.status_code))
+except requests.exceptions.RequestException:
+    print('HTTP Request failed')
+```
+
+### How to use  
+
+<https://github.com/cjh5414/line-notify.git> 을 clone 한다.  
+
+command line에 아래의 형태로 실행한다.  
+[ACCESS_TOKEN]에는 저장해둔 token 값을, [MESSAGE]에는 원하는 메세지를 ' '를 붙여서 넣어주면 된다.  
+
+```
+$ python3 line-notify.py [ACCESS_TOKEN] [MESSAGE]
+```
+
+<br>  
+
+## Result  
+
+![line notify result](/images/line-notify/notify-result.png)    
+
+
+<br>  
 
 ## 참고자료  
 
