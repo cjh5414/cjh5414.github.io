@@ -95,11 +95,11 @@ command line에 아래의 형태로 실행한다.
 
 ```
 $ python3 line-notify.py [ACCESS_TOKEN] [MESSAGE]
-```
+```  
 
 <br>  
 
-## Result  
+## Result   
 
 ![line notify result](/images/line-notify/notify-result.png)    
 
