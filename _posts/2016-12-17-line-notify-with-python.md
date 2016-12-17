@@ -13,7 +13,7 @@ categories: python
 
 ## Access Token Generate  
 
-먼저 [Line Notify](https://notify-bot.line.me/my/)에 로그인을 한다.  
+먼저 [Line Notify](https://notify-bot.line.me/my/)에 로그인을 한 후,
 
 하단의 `Generate token` 버튼을 클릭한다.  
 
@@ -34,7 +34,7 @@ categories: python
 
 <br>  
 
-`Generate toekn` 버튼을 누르면 token이 생성된다. `Close` 버튼을 누르면 token 값을 다시 볼 수 없으므로 복사하여 따로 저장해두도록 하자.
+`Generate toekn` 버튼을 누르면 token이 생성된다. `Close` 버튼을 누르면 token 값을 다시 볼 수 없으므로 token 값을 복사하여 따로 저장해두도록 하자.
 
 ![line notify token](/images/line-notify/line-notify-token.png)  
 
