@@ -40,10 +40,10 @@ categories: python
 
 <br>   
 
-## Line Notify with Command line   
+## Line Notify with Command line  
 
 ```
-$ curl -X POST -H 'Authorization: Bearer <access_token>' -F 'message=foobar' https://notify-api.line.me/api/notify  
+$ curl -X POST -H 'Authorization: Bearer <access_token>' -F 'message=foobar' https://notify-api.line.me/api/notify
 {"status":200,"message":"ok"}   
 ```    
 
@@ -55,7 +55,7 @@ $ curl -X POST -H 'Authorization: Bearer <access_token>' -F 'message=foobar' htt
 
 ## Line Notify with python  
 
-```python
+```python  
 import sys
 import requests
 
