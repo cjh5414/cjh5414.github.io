@@ -71,7 +71,6 @@ MESSAGE = sys.argv[2]
 URL = 'https://notify-api.line.me/api/notify'
 MESSAGE_FIELD = {'message' : MESSAGE}
 LINE_HEADERS = {
-    'Content-Type': 'application/x-www-form-urlencoded',
     'Authorization': 'Bearer ' + ACCESS_TOKEN
 }
 
