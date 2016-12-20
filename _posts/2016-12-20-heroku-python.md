@@ -88,8 +88,8 @@ clock을 사용한 이유는 Scheduler를 이용하여 특정 시간에 주기�
 파일 작성이 완료됐으면   
 
 ```
-git add ...
-git commit ...
+git add [...]
+git commit [...]
 git push heroku master
 ```  
 
