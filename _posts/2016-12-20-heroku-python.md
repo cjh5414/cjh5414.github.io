@@ -86,6 +86,7 @@ $ echo 'clock: python 파일명.py' > Procfile
 clock을 사용한 이유는 Scheduler를 이용하여 특정 시간에 주기적으로 process를 실행시키기 위함이다.  
 
 파일 작성이 완료됐으면   
+
 ```
 git add ...
 git commit ...
