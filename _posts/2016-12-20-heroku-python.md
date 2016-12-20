@@ -11,7 +11,7 @@ categories: python
 
 ## Heroku 설치  
 
-Heroku에 가입을 하고 [Heroku Dev Center](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) 에서 운영체제에 맞는 installer을 다운받아서 설치한다.  
+[Heroku](https://dashboard.heroku.com/apps)에 가입을 하고 [Heroku Dev Center](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) 에서 운영체제에 맞는 installer을 다운받아서 설치한다.  
 
 <br>  
 
