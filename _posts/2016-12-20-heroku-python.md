@@ -17,11 +17,18 @@ categories: python
 
 ## Heroku에 python code 올리기  
 
-먼저 git으로 관리되고 있는 프로젝트 폴더로 이동한다. (배포에 git을 이용하기 때문에 설치가 되어있어야 한다)  
+먼저 git으로 관리되고 있는 프로젝트 폴더로 이동한다.   
+(배포에 git을 이용하기 때문에 설치가 되어있어야 한다)   
 
-배포하기 위해 heroku에 앱을 생성한다.
+CLI를 이용하여 login과 heroku에 앱을 생성한다.
 
 ```
+$ heroku login
+Enter your Heroku credentials.
+Email:
+Password (typing will be hidden):
+Authentication successful.
+
 $ heroku create
 Creating app... done, ⬢ [heroku_app_name]
 https://[heroku_app_name].herokuapp.com/ | https://git.heroku.com/[heroku_app_name].git
