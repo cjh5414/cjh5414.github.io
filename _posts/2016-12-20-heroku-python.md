@@ -20,7 +20,7 @@ categories: python
 먼저 git으로 관리되고 있는 프로젝트 폴더로 이동한다.   
 (배포에 git을 이용하기 때문에 설치가 되어있어야 한다)   
 
-CLI를 이용하여 login과 heroku에 앱을 생성한다.
+CLI를 이용하여 login을 하고 heroku에 앱을 생성한다.
 
 ```
 $ heroku login
@@ -35,8 +35,7 @@ https://[heroku_app_name].herokuapp.com/ | https://git.heroku.com/[heroku_app_na
 ```   
 
 앱이 생성되었다는 메세지와 함께 생성된 앱의 이름(heroku_app_name)이 표시된다.  
-<https://dashboard.heroku.com/apps>에 가서 로그인하여 확인해보면 동일한 이름의 앱이 생성된 것을 확인할 수 있다.  
-또한 앱이 생성됨과 동시에 `heroku` 라는 이름의 git remote가 자동으로 설정된다.  
+<https://dashboard.heroku.com/apps>에 가서 로그인하여 확인해보면 동일한 이름의 앱이 생성된 것을 확인할 수 있다. 또한 앱이 생성됨과 동시에 `heroku` 라는 이름의 git remote가 자동으로 설정된다.  
 
 ```
 $ git remote -v
@@ -48,7 +47,8 @@ origin	https://github.com/[...].git (push)
 
 위의 명령으로 확인해 볼 수 있다.  
 
-이제부터는
+이제부터는  
+
 ```
 $ git push heroku master
 ```  
@@ -89,7 +89,7 @@ $ echo 'clock: python 파일명.py' > Procfile
 - urgentworker  
 - clock  
 
-등을 사용할 수 있지만 정확한 사용법은 잘 모르겠다  
+등을 사용할 수 있지만 정확한 사용법은 잘 모르겠다.  
 clock을 사용한 이유는 Scheduler를 이용하여 특정 시간에 주기적으로 process를 실행시키기 위함이다.  
 
 파일 작성이 완료됐으면   
@@ -118,14 +118,42 @@ $ heroku create --buildpack heroku/python
 
 <br>  
 
-### APScheduler 이용하기
+## APScheduler 이용하기  
 
-### timezone 맞추기
+```
+$ pip install apscheduler
+```  
 
-`heroku config:add TZ="America/Los_Angeles"`
+```
+$ pip freeze > requirements.txt
+```  
 
+```python
+from apscheduler.schedulers.blocking import BlockingScheduler
 
-### 참고자료  
+sched = BlockingScheduler()
+
+@sched.scheduled_job('interval', minutes=3)
+def timed_job():
+    print('This job is run every three minutes.')
+
+@sched.scheduled_job('cron', day_of_week='mon-fri', hour=17)
+def scheduled_job():
+    print('This job is run every weekday at 5pm.')
+
+sched.start()
+```  
+
+<br>  
+
+## timezone 맞추기  
+
+```
+heroku config:add TZ="Asia/Seoul"
+```  
+
+## 참고자료  
 
 <https://devcenter.heroku.com/categories/python>  
-<https://hyesun03.github.io/2016/10/10/heroku/>
+<https://hyesun03.github.io/2016/10/10/heroku/>  
+<https://devcenter.heroku.com/articles/clock-processes-python>  
