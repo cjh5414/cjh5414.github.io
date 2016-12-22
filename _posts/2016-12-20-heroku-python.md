@@ -124,6 +124,7 @@ $ heroku create --buildpack heroku/python
 $ pip install apscheduler
 ```  
 
+새로운 패키지를 설치했으니 requirements.txt을 업데이트 해야한다.  
 ```
 $ pip freeze > requirements.txt
 ```  
