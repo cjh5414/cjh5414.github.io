@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "python 코드를 Heroku에 올리고 특정 시간에 실행하도록 하기 ( 작성중 )"
+title:  "python 코드를 Heroku에 올리고 특정 시간에 실행하도록 하기"
 date:   2016-12-20
 categories: python
 ---
@@ -120,11 +120,14 @@ $ heroku create --buildpack heroku/python
 
 ## APScheduler 이용하기  
 
+python에 지정한 시간마다 특정 함수를 실행시킬 수 있도록 해주는 패키지가 존재한다.  
+
 ```
 $ pip install apscheduler
 ```  
 
 새로운 패키지를 설치했으니 requirements.txt을 업데이트 해야한다.  
+
 ```
 $ pip freeze > requirements.txt
 ```  
@@ -145,16 +148,35 @@ def scheduled_job():
 sched.start()
 ```  
 
+첫 번째 지정한 데코레이터(`@sched.scheduled_job('interval', minutes=3)`)는 3분 간격으로 아래의 함수를 호출한다는 의미로 `This job is run every three minutes.` 이라는 메세지를 출력한다.  
+
+두 번째 지정한 데코레이터(`@sched.scheduled_job('cron', day_of_week='mon-fri', hour=17)`)는 평일 17시 마다 `scheduled_job()` 함수를 호출하여 `This job is run every weekday at 5pm.`이라는 메세지를 출력한다.  
+
+`sched.start()`를 통해 scheduler가 동작을 시작한다.  
+
 <br>  
 
 ## timezone 맞추기  
 
+> 원하는 시간에 프로그램이 실행되도록 하려면 timezone이 나의 시간과 일치해야한다.  
+
 ```
-heroku config:add TZ="Asia/Seoul"
+SEOUL_TZ = pytz.timezone('Asia/Seoul')
+today_index = datetime.now(SEOUL_TZ).weekday()
 ```  
+
+위의 코드는 timezone을 `Asia/Seoul`로 설정하고 오늘이 무슨 요일인지를 index로 알려주는 예시이다.(월요일 = 0)     
+
+```
+$ heroku config:add TZ="Asia/Seoul"
+```  
+
+heroku 서버의 timezone도 맞춰서 설정해줘야 한다. CLI를 통해서 timezone을 지정하여 위의 명령을 실행하면 된다.  
+
+<br>  
 
 ## 참고자료  
 
 <https://devcenter.heroku.com/categories/python>  
-<https://hyesun03.github.io/2016/10/10/heroku/>  
 <https://devcenter.heroku.com/articles/clock-processes-python>  
+<https://hyesun03.github.io/2016/10/10/heroku/>  
