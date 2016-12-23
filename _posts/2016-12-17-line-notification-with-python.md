@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Line Notify with python"
+title:  "Line Notification with python"
 date:   2016-12-17
 categories: python
 ---
@@ -53,7 +53,7 @@ $ curl -X POST -H 'Authorization: Bearer <access_token>' -F 'message=foobar' htt
 
 <br>   
 
-## Line Notify with python  
+## Line Notification with python  
 
 ```python  
 import sys
