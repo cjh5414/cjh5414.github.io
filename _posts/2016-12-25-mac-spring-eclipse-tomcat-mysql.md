@@ -41,27 +41,27 @@ Core의 tar.gz을 선택하여 다운로드한다.
 
 > 아래의 과정은 압축을 풀어서 생성된 폴더의 위치를 변경하고 심볼릭 링크를 설정함으로써 tomcat에 쉽게 접근하기 위함이다. 후추에 tomcat의 버전을 변경할 일이 있으면 대체가 용이해진다.  
 
-#### 1. terminal에서 아래의 명령을 실행하여 tomcat 폴더의 위치를 변경한다.(/user/local 폴더가 없다면 만들어준다.)  
+1. __terminal에서 아래의 명령을 실행하여 tomcat 폴더의 위치를 변경한다.(/user/local 폴더가 없다면 만들어준다.)__  
 
 ```
 $ sudo mkdir -p /usr/local
 $ sudo mv ~/Downloads/apache-tomcat-8.0.39 /usr/local/
 ```  
 
-#### 2. Tomcat에 접근하기 쉽도록 심볼릭 링크를 설정한다.(기존의 Tomcat 폴더가 이미 존재한다면 지우고 다시 만든다.)  
+2. __Tomcat에 접근하기 쉽도록 심볼릭 링크를 설정한다.(기존의 Tomcat 폴더가 이미 존재한다면 지우고 다시 만든다.)__  
 
 ```
 $ sudo rm -f /Library/Tomcat
 $ sudo ln -s /usr/local/apache-tomcat-8.0.39 /Library/Tomcat
 ```  
 
-#### 3. 파일의 소유자를 바꾼다.   
+3. __파일의 소유자를 바꾼다.__   
 
 ```
 $ sudo chown <user> /Library/Tomcat
 ```   
 
-#### 4. Tomcat/bin의 모든 script를 실행가능하도록 한다.  
+4. __Tomcat/bin의 모든 script를 실행가능하도록 한다.__  
 
 ```
 $ sudo chmod +x /Library/Tomcat/bin/*.sh
