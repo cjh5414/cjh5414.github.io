@@ -41,7 +41,7 @@ Core의 tar.gz을 선택하여 다운로드한다.
 
 > 아래의 과정은 압축을 풀어서 생성된 폴더의 위치를 변경하고 심볼릭 링크를 설정함으로써 tomcat에 쉽게 접근하기 위함이다. 후추에 tomcat의 버전을 변경할 일이 있으면 대체가 용이해진다.  
 
-__1. terminal에서 아래의 명령을 실행하여 tomcat 폴더의 위치를 변경한다.(/user/local 폴더가 없다면 만들어준다.)__  
+__1. terminal에서 아래의 명령을 실행하여 tomcat 폴더의 위치를 변경한다.(/user/local 폴더가 없다면 만들어준다.)__   
 
 ```
 $ sudo mkdir -p /usr/local
@@ -100,11 +100,26 @@ Using CLASSPATH:       /Library/Tomcat/bin/bootstrap.jar:/Library/Tomcat/bin/tom
 
 ## MySQL Install   
 
+> HomeBrew를 통한 설치방법 입니다.  
 
+__1. mysql 설치__  
+
+```
+$ brew install mysql
+```  
+
+__2. mysql 시작__  
+
+```
+$ mysql.server start
+Starting MySQL
+. SUCCESS!
+```  
 
 <br>  
 
 ## 참고자료  
 
-<http://nillk.tistory.com/5>  
-<https://wolfpaulus.com/journal/mac/tomcat8/>  
+<http://nillk.tistory.com/5>   
+<https://wolfpaulus.com/journal/mac/tomcat8/>   
+<https://github.com/helloheesu/SecretlyGreatly/wiki/%EB%A7%A5%EC%97%90%EC%84%9C-mysql-%EC%84%A4%EC%B9%98-%ED%9B%84-%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0>  
