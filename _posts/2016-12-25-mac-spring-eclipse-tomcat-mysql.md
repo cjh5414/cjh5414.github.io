@@ -55,7 +55,7 @@ $ sudo rm -f /Library/Tomcat
 $ sudo ln -s /usr/local/apache-tomcat-8.0.39 /Library/Tomcat
 ```  
 
-_3. 파일의 소유자를 바꾼다.__   
+__3. 파일의 소유자를 바꾼다.__   
 
 ```
 $ sudo chown <user> /Library/Tomcat
