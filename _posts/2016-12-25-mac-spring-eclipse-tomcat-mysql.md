@@ -26,13 +26,13 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode)
 
 ## Eclipse Install  
 
-[Eclipse Download](http://www.eclipse.org/downloads/)에서 최신 버전의 Eclipse를 다운받는다. 압축을 풀고 설치를 진행하면 된다.  
+[Eclipse Download](http://www.eclipse.org/downloads/) 에서 최신 버전의 Eclipse를 다운받는다. 압축을 풀고 설치를 진행하면 된다.  
 
 <br>  
 
 ## Tomcat Install  
 
-[Tomcat](http://tomcat.apache.org/)에서 좌측 Download에 원하는 버젼을 선택한다.  
+[Tomcat](http://tomcat.apache.org/) 에서 좌측 Download에 원하는 버젼을 선택한다.  
 Core의 tar.gz을 선택하여 다운로드하고 압축을 푼다.  
 
 ![Tomcat Download](/images/mac-spring-setting/tomcat-download.png)  
@@ -123,5 +123,4 @@ Starting MySQL
 ## 참고자료  
 
 <http://nillk.tistory.com/>  
-
 <https://wolfpaulus.com/journal/mac/tomcat8/>  
