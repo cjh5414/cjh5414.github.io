@@ -122,6 +122,5 @@ Starting MySQL
 
 ## 참고자료  
 
-- <http://nillk.tistory.com/>  
-
+- <http://nillk.tistory.com/>   
 - <https://wolfpaulus.com/journal/mac/tomcat8/>  
