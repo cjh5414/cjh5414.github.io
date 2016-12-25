@@ -177,6 +177,8 @@ heroku 서버의 timezone도 맞춰서 설정해줘야 한다. CLI를 통해서 
 
 ## 참고자료  
 
-<https://devcenter.heroku.com/categories/python>  
+<https://devcenter.heroku.com/categories/python>   
+
 <https://devcenter.heroku.com/articles/clock-processes-python>  
+
 <https://hyesun03.github.io/2016/10/10/heroku/>  
