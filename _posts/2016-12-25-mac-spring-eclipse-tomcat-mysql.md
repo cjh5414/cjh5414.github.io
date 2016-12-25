@@ -13,7 +13,7 @@ categories: python
 
 [JDK Download](https://java.com/ko/download/mac_download.jsp)
 에서 설치 프로그램을 다운받아서 실행한다.   
-CLI로 java를 실행시켰을 때 아래와 같이 나오면 설치가 잘 된 것이다.  
+terminal에 아래의 명령으로 설치가 잘 됐는지 확인할 수 있다.   
 
 ```
 $ java -version
