@@ -65,6 +65,40 @@ $ sudo chmod +x /Library/Tomcat/bin/*.sh
 
 <br>  
 
+### Tomcat Install 확인  
+
+```
+$ /Library/Tomcat/bin/startup.sh
+Using CATALINA_BASE:   /Library/Tomcat
+Using CATALINA_HOME:   /Library/Tomcat
+Using CATALINA_TMPDIR: /Library/Tomcat/temp
+Using JRE_HOME:        /Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home
+Using CLASSPATH:       /Library/Tomcat/bin/bootstrap.jar:/Library/Tomcat/bin/tomcat-juli.jar
+Tomcat started.
+```  
+
+위와 같이 startup.sh을 실행 후 웹 브라우저에 `http://localhost:8080/`을 입력하여 아래의 결과가 나오면 정상작동 하는 것이다.  
+
+![Tomcat Test](/images/mac-spring-setting/tomcat-test.png)  
+
+종료하는 방법은 아래와 같다.  
+
+```
+$ /Library/Tomcat/bin/shutdown.sh
+Using CATALINA_BASE:   /Library/Tomcat
+Using CATALINA_HOME:   /Library/Tomcat
+Using CATALINA_TMPDIR: /Library/Tomcat/temp
+Using JRE_HOME:        /Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home
+Using CLASSPATH:       /Library/Tomcat/bin/bootstrap.jar:/Library/Tomcat/bin/tomcat-juli.jar
+```  
+
+<br>  
+
+## MySQL Install   
+
+
+
+<br>  
 
 ## 참고자료  
 
