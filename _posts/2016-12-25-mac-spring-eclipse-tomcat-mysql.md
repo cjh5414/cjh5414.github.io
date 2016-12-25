@@ -33,11 +33,11 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode)
 ## Tomcat Install  
 
 [Tomcat](http://tomcat.apache.org/)에서 좌측 Download에 원하는 버젼을 선택한다.  
-Core의 tar.gz을 선택하여 다운로드한다.  
+Core의 tar.gz을 선택하여 다운로드하고 압축을 푼다.  
 
 ![Tomcat Download](/images/mac-spring-setting/tomcat-download.png)  
 
-압축을 푼다.  
+<br>  
 
 > 아래의 과정은 압축을 풀어서 생성된 폴더의 위치를 변경하고 심볼릭 링크를 설정함으로써 tomcat에 쉽게 접근하기 위함이다. 후추에 tomcat의 버전을 변경할 일이 있으면 대체가 용이해진다.  
 
@@ -85,6 +85,8 @@ Tomcat started.
 
 ![Tomcat Test](/images/mac-spring-setting/tomcat-test.png)  
 
+<br>  
+
 종료하는 방법은 아래와 같다.  
 
 ```
@@ -121,4 +123,5 @@ Starting MySQL
 ## 참고자료  
 
 <http://nillk.tistory.com/>  
+
 <https://wolfpaulus.com/journal/mac/tomcat8/>  
