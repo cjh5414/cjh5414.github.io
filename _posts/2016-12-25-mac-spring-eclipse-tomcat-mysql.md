@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Mac] Spring - Eclipse, Tomcat, MySQL"
+title:  "[Mac] Spring - Eclipse, Tomcat"
 date:   2016-12-20
 categories: python
 ---
@@ -100,26 +100,6 @@ Using CLASSPATH:       /Library/Tomcat/bin/bootstrap.jar:/Library/Tomcat/bin/tom
 
 <br>  
 
-## MySQL Install   
-
-> HomeBrew를 통한 설치방법 입니다.  
-
-__1. mysql 설치__  
-
-```
-$ brew install mysql
-```  
-
-__2. mysql 시작__  
-
-```
-$ mysql.server start
-Starting MySQL
-. SUCCESS!
-```  
-
-<br>  
-
 ## Eclipse tomcat setting  
 
 Eclipse에서 tomcat 서버를 사용하도록 설정한다.  
@@ -142,7 +122,6 @@ help -> Eclipse Marketplace 로 이동하여 STS를 검색한다.
 ![STS Install](/images/mac-spring-setting/sts-install.png)  
 
 설치가 완료되면 Eclipse를 재시작 한다.  
-
 
 <br>  
 
