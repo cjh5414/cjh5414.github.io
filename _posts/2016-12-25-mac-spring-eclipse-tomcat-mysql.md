@@ -120,6 +120,32 @@ Starting MySQL
 
 <br>  
 
+## Eclipse tomcat setting  
+
+Eclipse에서 tomcat 서버를 사용하도록 설정한다.  
+Eclipse를 실행하고 `command + ,` 키를 눌러서 preferences 창을 연다.  
+server -> Runtime Environments 로 이동하여 Add 버튼을 누르고 Apache Tomcat v8.0을 선택하고 다음 버튼을 누른다.  
+
+![Tomcat server](/images/mac-spring-setting/tomcat-server.png)  
+
+tomcat이 설치된 경로를 다음과 같이 입력하고 JRE를 선택한다.  
+
+![Tomcat position](/images/mac-spring-setting/tomcat-position.png)  
+
+<br>  
+
+## STS(Spring Tool Suite) Eclipse Plugin Install  
+
+help -> Eclipse Marketplace 로 이동하여 STS를 검색한다.  
+`Spring Tool Suite(STS) for Eclipse`를 Install 한다.  
+
+![STS Install](/images/mac-spring-setting/sts-install.png)  
+
+설치가 완료되면 Eclipse를 재시작 한다.  
+
+
+<br>  
+
 ## 참고자료  
 
 - <http://nillk.tistory.com/>   
