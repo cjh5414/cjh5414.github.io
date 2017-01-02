@@ -2,7 +2,7 @@
 layout: post
 title:  "[Mac] Spring - Eclipse, Tomcat"
 date:   2016-12-25
-categories: python
+categories: spring
 ---
 
 <br>  

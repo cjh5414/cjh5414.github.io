@@ -2,7 +2,7 @@
 layout: post
 title:  "Spring project start"
 date:   2016-12-30
-categories: python
+categories: spring
 ---
 
 > 이클립스를 통해서 기본적인 spring 프로젝트를 생성하는 방법에 대해서 알아본다.  
@@ -39,7 +39,7 @@ Deployed Resources > WEB-INF > views > home.jsp 파일을 보면 기본적으로
 
 <br>  
 
-아래와 같은 방법으로 tomcat 서버에서 실행해 볼 수 있다. 
+아래와 같은 방법으로 tomcat 서버에서 실행해 볼 수 있다.
 
 ![run on server](/images/spring-project/run on server.png)   
 
