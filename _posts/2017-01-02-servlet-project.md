@@ -11,7 +11,7 @@ categories: java
 
 <br/>  
 
-### Create Project    
+## Create Project    
 
 File -> New -> Dynamic Web Project 를 선택하여 새로운 프로젝트를 생성한다.   
 
@@ -44,7 +44,7 @@ web.xml 파일을 열어보면 `welcome-file`라는 태그가 많이 존재하�
 
 <br/>  
 
-### Create index.html     
+## Create index.html     
 
 웹 사이트를 호출했을 때 반환되는 index.html 을 생성한다. WebContent 폴더를 우클릭하여 New -> HTML File을 선택한다.  
 
@@ -90,7 +90,7 @@ username과 password를 입력해서 Press 버튼을 눌러보면
 
 <br/>  
 
-### Create DoLogin Servlet  
+## Create DoLogin Servlet  
 
 src폴더에 패키지를 하나 생성하고 그 아래에 servlet을 생성한다. POST만 사용할 것이므로 doGet 체크박스는 해제한다.   
 
@@ -146,7 +146,7 @@ public class DoLogin extends HttpServlet {
 
 <br/>  
 
-### Result  
+## Result  
 
 서버를 다시 실행해서 확인해보면 동일한 결과가 나타나고,  
 
