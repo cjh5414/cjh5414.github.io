@@ -9,6 +9,8 @@ categories: java
 
 > Eclipse를 이용하여 간단한 login 기능의 Servlet Project를 만들어 본다.  
 
+<br/>  
+
 ### Create Project    
 
 File -> New -> Dynamic Web Project 를 선택하여 새로운 프로젝트를 생성한다.   
