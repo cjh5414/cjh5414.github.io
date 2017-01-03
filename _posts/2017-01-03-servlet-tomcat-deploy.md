@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "tomcat을 이용한 servlet 배포"
+title:  "Tomcat을 이용한 servlet 배포"
 date:   2017-1-3
 categories: java
 ---
@@ -25,10 +25,10 @@ Web -> WAR file을 선택한다.
 
 ## Tomcat Run
 
-> Tomcat을 실행할 때는 항상 Eclipse의 tomcat이 실행되고 있는지 확인하고 종료한 후에 실행하는 것이 좋다.  
+> Tomcat을 실행하기 전에는 항상 Eclipse의 tomcat이 실행되고 있는지 확인하고 종료해주는 것이 좋다.  
 
 <br/>  
 
-Tomcat을 실행시키면 webapps에 존재하는 war 파일을 압축을 풀어서 폴더를 생성하고 실행한다.  
+Tomcat을 실행시키면 webapps에 존재하는 war 파일 압축을 풀고 폴더를 생성하여 실행한다.  
 
 ![Tomcat run](/images/servlet-deploy/tomcat run.png)  
