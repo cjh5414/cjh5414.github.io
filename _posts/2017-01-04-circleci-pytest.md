@@ -7,19 +7,21 @@ categories: CI
 
 <br/>  
 
-> github으로 관리하고 있는 프로젝트에 circleci를 붙이는 방법에 대해서 알아보았다. circleci와 같은 CI tools을 이용하면 git commit을 할때마다 알아서 build 하고 결과를 알려주기 때문에 매우 편리하고 compile, test, deployment 등을 자동화 할 수 있는 장점이 있다.  
+> github으로 관리하고 있는 프로젝트에 circleci를 붙이는 방법에 대해서 알아보았다. circleci와 같은 CI 툴을 이용하면 git commit을 할때마다 알아서 build 하고 결과를 알려주기 때문에 매우 편리하고 compile, test, deployment 등을 자동화 할 수 있는 장점이 있다.  
 
 <br/>  
 
-## Circleci Add projects  
+## CircleCI Add projects  
 
 [Circleci signup](https://circleci.com/signup/) 에 들어가서 github을 선택한다.   
 
 ![Circleci signup](/images/circleci-pytest/signup.png)  
 
+![Circleci add projects](/images/circleci-pytest/add projects.png)  
+
 1번에서 organization을 선택한다. 원하는 organization이 보이지 않는다면 [GitHub's application permissions](https://github.com/settings/connections/applications/78a2ba87f071c28e65bb)에 가서 해당 organization의 `Grant access`을 눌러주면 된다.  
 
-그 다음 2번에서 원하는 프로젝트의 Build project를 선택한다.  
+그 다음 2번에서 원하는 프로젝트의 `Build project`를 선택한다.  
 
 Build 결과는 [CircleCI Builds](https://circleci.com/dashboard) 에서 확인할 수 있다.  
 
@@ -93,5 +95,5 @@ dependencies:
 
 ## 참고자료  
 
-<https://circleci.com/docs/getting-started/>
+<https://circleci.com/docs/getting-started/>  
 <https://circleci.com/docs/manually/>
