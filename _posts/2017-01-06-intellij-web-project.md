@@ -2,7 +2,7 @@
 layout: post
 title:  "IntelliJ Web Project 생성 및 실행 (Tomcat Server)"
 date:   2017-1-6
-categories: CI
+categories: java
 ---
 
 > Eclipse를 이용하여 Java web framework 를 공부 중인데 불편한 점이 있어서 IntelliJ는 어떨까 해서 사용해보려고 한다. 우선 Tomcat을 사용하여 web application 을 생성하고 실행해 보았다.  
