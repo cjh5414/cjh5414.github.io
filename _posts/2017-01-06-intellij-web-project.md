@@ -40,6 +40,6 @@ project를 생성하면 _index.jsp_ 파일이 생성되는데 아래와 같다.
 
 ![index file](/images/intellij-project/index file.png)   
 
-그대로 server를 run 해보면 아래와 같은 결과와 함께 웹 브라우저가 자동으로 실행된다.  
+그대로 server를 run 해보면 웹 브라우저가 자동으로 실행되면서 _index.jsp_ 파일이 아래와 같은 결과로 출력된다.     
 
 ![Result](/images/intellij-project/result.png)   
