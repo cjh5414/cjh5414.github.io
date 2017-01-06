@@ -9,6 +9,15 @@ categories: java
 
 <br/>  
 
+## IntelliJ Install  
+
+[IntelliJ Download](https://www.jetbrains.com/idea/download/) 에 가면 쉽게 다운 받을 수 있다.  
+학생이면 학교메일을 통해 ultimate 버전을 무료로 사용할 수 있다.  
+[For Students](https://www.jetbrains.com/student/)  
+
+
+<br/>  
+
 ## Web Project Create  
 
 IntelliJ를 실행하고 `Create New Project`를 클릭한다.  
