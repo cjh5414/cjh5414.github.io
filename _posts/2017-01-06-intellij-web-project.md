@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "IntelliJ Web Project 생성 및 실행 - Tomcat"
+title:  "IntelliJ Web Project 생성 및 실행 (Tomcat Server)"
 date:   2017-1-6
 categories: CI
 ---
