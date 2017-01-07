@@ -79,6 +79,14 @@ Deploy to hansung-bab 부분을 자세히 보면 Heroku에 배포 되었다는 l
 
 ![Herkou Build Result Detail](/images/heroku-circleci-deployment/build result detail.png)  
 
+<br/>  
+
 Heroku에서도 확인해 보면 빌드가 성공하고 배포되었다는 메세지를 확인할 수 있다.  
 
 ![Herkou Deployment Result](/images/heroku-circleci-deployment/deployment result.png)  
+
+<br/>  
+
+## 참고자료  
+
+<https://circleci.com/docs/continuous-deployment-with-heroku/>  
