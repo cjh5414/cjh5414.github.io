@@ -40,9 +40,9 @@ categories: CI
 ### 3. Add deployment settings to your circle.yml file  
 
 배포 자동화를 위한 설정을 _circle.yml_ 파일을 이용한다.  
-아래와 같이 branch와 herkou의 appname을 입력한다.    
+아래와 같이 branch와 herkou의 _appname_ 을 입력한다.    
 
-github에 push가 되면 CircleCI는 _circle.yml_ 파일에 있는 설정들을 바탕으로 알아서 빌드를 수행한다. 그리고 아래와 같이 _cricle.yml_ 파일에 deployment를 설정해주면 위에서 설정한 Heroku의 정보들을 이용하여 heroku의 appname으로 배포를 수행한다.  
+github에 push가 되면 CircleCI는 _circle.yml_ 파일에 있는 설정들을 바탕으로 알아서 빌드를 수행한다. 그리고 아래와 같이 _cricle.yml_ 파일에 deployment를 설정해주면 위에서 설정한 Heroku의 정보들을 이용하여 heroku의 _appname_ 으로 배포를 수행한다.  
 
 _circle.yml_  
 
