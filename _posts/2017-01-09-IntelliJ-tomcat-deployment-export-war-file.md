@@ -9,7 +9,7 @@ categories: web
 
 ## Tomcat Deployment  
 
-Tomcat을 이용하여 배포할 때 `webapps`폴더 아래에 myapp.war 파일을 위치시키고 tomcat을 실행시키면 myapp 이름으로 폴더가 생성된다. 이 때 이 프로젝트는 `http://localhost:8080/myapp/index.jsp` 으로 url이 지정된다. url에서 myapp을 제거하고 `/`으로 시작하도록 하고 싶다면 `webapps/myapp` 하위에 존재하는 파일들을 `webapps/ROOT` 하위로 모두 옮기면 `http://localhost:8080/index.jsp` 처럼 사용할 수 있다.  
+Tomcat을 이용하여 배포할 때 _webapps_ 폴더 아래에 myapp.war 파일을 위치시키고 tomcat을 실행시키면 myapp 이름으로 폴더가 생성된다. 이 때 이 프로젝트는 `http://localhost:8080/myapp/index.jsp` 와 같이 url이 지정된다. url에서 myapp을 제거하고 `/`으로 시작하도록 하고 싶다면 _webapps/myapp/_ 하위에 존재하는 파일들을 _webapps/ROOT/_ 하위로 모두 옮기면 `http://localhost:8080/index.jsp` 처럼 사용할 수 있다.  
 
 <br/>  
 
@@ -20,19 +20,17 @@ web application을 생성하고 run server을 하면 out이라는 폴더가 생�
 
 ![After run server](/images/intellij-war/after run server.png)  
 
-`out/artifacts/`에 `myapp_war_exploded`폴더가 존재하는데 war파일이 풀어진 형태이다. 이 폴더를 그대로 톰켓의 `webapps/`에 복사하여도 배포가 가능하지만 war파일로 만들어서 관리하면 편리한 점이 있다.  
+_out/artifacts/myapp_war_exploded_ 폴더가 존재하는데 war파일이 풀어진 형태이다. 이 폴더를 그대로 톰켓의 _webapps/_ 에 복사해도 배포가 가능하지만 war파일로 만들어서 관리하는 방법도 있다.  
 
 <br/>  
 
 ## Export war file  
 
-`Command ⌘` + `↓` 키를 눌러서 Project Structure 창을 열고 좌측에서 Artifacts를 누른다.  
+`Command ⌘` + `↓` 키를 눌러서 Project Structure 창을 열고 좌측의 Artifacts를 누른다.  
 
 ![open artifacts](/images/intellij-war/open artifacts.png)   
 
-<br/>  
-
-중간에 `myapp:war exploded` 라고 보이는 위쪽에 + 버튼을 누르면 추가를 할 수 있는데 `Web Application: Archive`의 `For 'myapp:war exploded'`를 선택하면 된다. 기본으로 설정된 myapp의 war exploded에 대한 war파일을 생성하도록 build를 설정하는 것이다.  
+중간에 `myapp:war exploded` 라고 보이는 위 쪽에 + 버튼을 누르면 추가를 할 수 있는데 `Web Application: Archive`의 `For 'myapp:war exploded'`를 선택하면 된다. 기본으로 설정된 myapp의 war exploded에 대한 war파일을 생성하도록 build를 추가하는 것이다.  
 
 ![archive](/images/intellij-war/archive.png)  
 
@@ -50,12 +48,12 @@ web application을 생성하고 run server을 하면 out이라는 폴더가 생�
 
 ![Build](/images/intellij-war/build.png)  
 
-아래와 같은 창이 뜨면 `myapp:war` -> `Build`를 클릭하면 war을 생성하는 build가 실행된다.  
+아래와 같은 창이 뜨면 `myapp:war` -> `Build`를 클릭하여 war을 생성하는 build을 실행할 수 있다.  
 
 ![Build artifact](/images/intellij-war/build artifact.png)  
 
 <br/>  
 
-`out/artifacts/`를 보면 `myapp_war`라는 폴더가 생성되고 _myapp.war_ 파일도 생성 되었다.  
+_out/artifacts/myapp_war_ 라는 폴더가 생성되고 _myapp.war_ 파일도 생성 되었다.  
 
 ![war file created](/images/intellij-war/war file created.png)   
