@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "IntelliJ constructor, getter, setter code generation"
-date:   2017-01-09
+date:   2017-01-11
 categories: web
 ---
 
