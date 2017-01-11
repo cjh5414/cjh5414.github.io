@@ -6,7 +6,7 @@ categories: IntelliJ
 ---
 
 > 개발할 때 좋은 도구를 사용하는 것은 생산성을 증가시키기 때문에 중요한 요소라고 생각된다. 개발 도구의 유용한 기능들을 조사하고 익히는 노력들은 가치가 있고 능수능란하게 사용할 수 있게 되면 개발의 재미도 더해준다.  
-IntelliJ에서 constructor, getter, setter, toString, equals 등의 코드를 단축키 하나로 생성해주는 편리한 기능이 있다.  
+IntelliJ에는 constructor, getter, setter, toString, equals 등의 코드를 단축키 하나로 생성해주는 편리한 기능이 있다.  
 
 <br/>  
 
@@ -33,7 +33,9 @@ Window 에서는 `Ctrl` + `N`
 
 ![generator](/images/intellij-code-generator/generator.png)  
 
-원하는 것을 선택하면 Class의 Fields 리스트가 나온다. 코드를 생성하고 싶은 Field 들을 드래그하여 선택한 후 OK 버튼을 누르면 코드가 생성된다.  
+원하는 것을 선택하면 Class의 Fields 리스트가 나온다. 코드를 생성하고 싶은 Fields 를 드래그하여 선택한 후 OK 버튼을 누르면 코드가 생성된다.  
+
+<br/>  
 
 ### Constructor   
 
@@ -46,6 +48,8 @@ public Customer(String id, String name, String email) {
     this.email = email;
 }
 ```  
+
+<br/>  
 
 ### Getter & Setter  
 
@@ -77,13 +81,15 @@ public void setEmail(String email) {
 }
 ```
 
+<br/>  
+
 ### toString  
 
 ```java
 @Override
 public String toString() {
     return "Customer{" +
-          "id='" + id + '\'' +
+            "id='" + id + '\'' +
             ", name='" + name + '\'' +
             ", email='" + email + '\'' +
             '}';
