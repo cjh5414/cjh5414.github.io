@@ -26,7 +26,7 @@ _out/artifacts/myapp_war_exploded_ 폴더가 존재하는데 war파일이 풀어
 
 ## Export war file  
 
-`Command ⌘` + `↓` 키를 눌러서 Project Structure 창을 열고 좌측의 Artifacts를 누른다.  
+프로젝트명을 클릭하고 `Command ⌘` + `↓` 키를 눌러서 Project Structure 창을 열고 좌측의 Artifacts를 누른다.  
 
 ![open artifacts](/images/intellij-war/open artifacts.png)   
 
