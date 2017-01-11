@@ -10,7 +10,7 @@ IntelliJ에서 constructor, getter, setter, toString, equals 등의 코드를 �
 
 <br/>  
 
-### Code generation 단축키  
+### Customer Class  
 
 Customer class에 대해 constructor, getter, setter, toString 코드를 생성 해본다.  
 
@@ -21,6 +21,10 @@ public class Customer {
     private String email;
 }
 ```  
+
+<br/>  
+
+### Code generation 단축키  
 
 코드를 생성하고자 하는 위치로 커서를 이동한 후  
 Mac 에서는 `Command ⌘` + `N`   
