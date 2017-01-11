@@ -28,7 +28,7 @@ public class Customer {
 
 코드를 생성하고자 하는 위치로 커서를 이동한 후  
 Mac 에서는 `Command ⌘` + `N`   
-Window 에서는 `Ctrl` + `N`  
+Window 에서는 `Alt` + `Insert`  
 단축키를 누르면 아래와 같은 메뉴가 나타난다.  
 
 ![generator](/images/intellij-code-generator/generator.png)  
