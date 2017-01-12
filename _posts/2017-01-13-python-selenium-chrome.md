@@ -44,4 +44,4 @@ chromedriver PATH 에는 _/usr/local/bin/chromedriver_ 와 같이 다운받은 c
 $ python selenium-test.py
 ```  
 
-코드를 돌려보면 driver.get()애서 지정한 url으로 브라우저가 실행됐다가 종료되는 것을 확인할 수 있다.  
+코드를 돌려보면 driver.get()에서 지정한 url로 브라우저가 실행됐다가 종료되는 것을 확인할 수 있다.  
