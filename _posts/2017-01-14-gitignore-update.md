@@ -5,7 +5,7 @@ date:   2017-01-14
 categories: git
 ---
 
-> git을 사용할 때 git으로 관리하고 싶지 않은 파일들은 .gitignore 에 명시함으로써 관리하지 않도록 설정할 수 있다. 하지만 종종 무시할 파일을 .gitignore 에 추가하기 전에 git push 해버리는 경우가 있다. 이 때 뒤늦게 .gitignore 을 수정하여 push를 하지만 원격 저장소에서 해당 파일은 사라지지 않는다.  
+> git으로 관리하고 싶지 않은 파일들은 .gitignore 에 명시함으로써 해당 파일을 무시할 수 있다. 하지만 종종 무시할 파일을 .gitignore 에 추가하기 전에 git push 해버리는 경우가 있다. 이 때 뒤늦게 .gitignore 을 수정하여 push를 하지만 원격 저장소에서 해당 파일은 사라지지 않는다.  
 
 <br/>  
 
