@@ -1,16 +1,17 @@
 ---
 layout: post
-title:  "Selenium with python, chrome"
+title:  "Selenium with python, chrome, pytest"
 date:   2017-01-13
 categories: python
 ---
 
 <br/>  
 
-## Install Selenium  
+## Install Selenium, pytest
 
 ```
 $ pip install selenium
+$ pip install pytest
 ```  
 
 <br/>  
@@ -44,4 +45,24 @@ chromedriver PATH 에는 _/usr/local/bin/chromedriver_ 와 같이 다운받은 c
 $ python selenium-test.py
 ```  
 
-코드를 돌려보면 driver.get()에서 지정한 url로 브라우저가 실행됐다가 종료되는 것을 확인할 수 있다.  
+코드를 돌려보면 driver.get()에서 지정한 url로 브라우저가 실행됐다가 종료되는 것을 확인할 수 있다.   
+
+<br/>  
+
+## pytest  
+
+selenium을 통해 chrome browser 에서 `https://cjh5414.github.io` 으로 접속했을 때 title이 `jihun's Development blog •`과 같은지 확인해보는 테스트코드로 살짝 변경해보았다.  
+
+```python
+from selenium import webdriver
+
+def test_selenium():
+    driver = webdriver.Chrome('chromedriver')
+    driver.get("https://cjh5414.github.io")
+    assert driver.title == "jihun's Development blog •"
+    driver.quit()
+```   
+
+pytest 는 test로 시작하는 메소드를 찾아서 테스트를 실행시켜 준다. `pytest selenium-test.py`의 명령으로 결과를 확인해보면 아래와 같다.  
+
+![pytest result](/images/python-selenium/pytest result.png)  
