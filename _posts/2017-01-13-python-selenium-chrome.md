@@ -63,6 +63,7 @@ def test_selenium():
     driver.quit()
 ```   
 
-pytest 는 test로 시작하는 메소드를 찾아서 테스트를 실행시켜 준다. `pytest selenium-test.py`의 명령으로 결과를 확인해보면 아래와 같다.  
+pytest 는 test로 시작하는 메소드를 찾아서 테스트를 실행시켜 준다.  
+`pytest selenium-test.py`의 명령으로 결과를 확인해보면 아래와 같다.  
 
 ![pytest result](/images/python-selenium/pytest result.png)  
