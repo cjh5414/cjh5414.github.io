@@ -29,7 +29,7 @@ push를 했더니 CI가 빌드를 수행하다가 _MACHINE_ 단계에서 아래�
 
 ## Use Python 3.6.0 in CircleCI  
 
-_circle.yml_ 파일에 아래의 내용을 추가한다.  
+_circle.yml_ 파일을 아래와 같이 변경해서 .pyenv repositofy를 git pull 하도록 한다.  
 
 _circle.yml_  
 
