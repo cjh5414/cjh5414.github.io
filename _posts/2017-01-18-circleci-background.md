@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CircleCI Background"
+title:  "CircleCI Background Process"
 date:   2017-01-18
 categories: CI
 ---
