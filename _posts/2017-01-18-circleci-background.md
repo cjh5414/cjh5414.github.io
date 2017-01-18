@@ -48,8 +48,29 @@ test:
 
 <br/>  
 
-#### Builde Result  
+#### Build Result  
 
 ![Build Result](/images/circleci-background/Build Result.png)  
 
 <br/>  
+
+## 해결 방법  
+
+[CircleCI Background docs](https://circleci.com/docs/background-process/) 에 보면 _circle.yml_ 을 통해서 background process 설정이 가능하다고 나와있다. 하지만 command line 마지막에 `&` 를 붙여서 background를 사용할 수는 없다고 한다.  
+
+![Build Result](/images/circleci-background/background.png)  
+
+아래는 이 방법을 적용하여 _circle.yml_ 을 수정한 결과이다.  
+
+_circle.yml_  
+
+```
+[...]
+
+test:
+  pre:
+    - python -m http.server 8000:
+      background: true
+  override:
+    - pytest selenium-browser.py
+```  
