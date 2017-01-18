@@ -58,7 +58,7 @@ test:
 
 ## 해결 방법  
 
-[CircleCI Background docs](https://circleci.com/docs/background-process/) 에 보면 _circle.yml_ 을 통해서 background process 설정이 가능하다고 나와있다. 하지만 command line 마지막에 `&` 를 붙여서 background를 사용할 수는 없다고 한다.  
+[CircleCI Background docs](https://circleci.com/docs/background-process/) 에 보면 _circle.yml_ 을 통해서 background process 설정이 가능하다고 한다. 하지만 command line 마지막에 `&` 를 붙여서 background를 사용할 수는 없다고 나와있다.  
 
 ![Build Result](/images/circleci-background/background.png)  
 
@@ -77,5 +77,4 @@ test:
     - pytest selenium-browser.py
 ```  
 
-수정한 결과를 push 했더니 Build가 성공하였다.  
- 
+수정한 결과를 push 했더니 Build가 성공했다.  
