@@ -191,6 +191,65 @@ ok
 
 <br/>  
 
+## Run doctest by file  
+
+doctest의 내용을 별도의 파일로 분리해서 사용하는 방법도 있다.  
+
+_doctest_my_function.py_  
+
+```python
+def my_function(a, b):
+    return a * b
+```  
+
+_doctest_in_help.rst_  
+
+```
+>>> from doctest_my_function import my_function
+>>> my_function(2, 3)
+6
+>>> my_function('a', 3)
+'aaa'
+```  
+
+_doctest_testfile.py_  
+
+```python
+import doctest
+
+if __name__ == '__main__':
+    doctest.testfile('doctest_in_help.rst')
+```  
+
+<br/>  
+
+### Run script & Result  
+
+```
+$ python doctest_testfile.py -v
+Trying:
+    from doctest_my_function import my_function
+Expecting nothing
+ok
+Trying:
+    my_function(2, 3)
+Expecting:
+    6
+ok
+Trying:
+    my_function('a', 3)
+Expecting:
+    'aaa'
+ok
+1 items passed all tests:
+   3 tests in doctest_in_help.rst
+3 tests in 1 items.
+3 passed and 0 failed.
+Test passed.
+```
+
+<br/>  
+
 ## 참고자료  
 
 <https://pymotw.com/2/doctest/>  
