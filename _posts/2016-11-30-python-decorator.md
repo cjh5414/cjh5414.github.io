@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "python decorator 만들기 - decorator가 지정될 함수의 self 이용하기"
-date:   2016-11-30
-categories: python
+tags:   [Python]
 ---
 
 <br>  

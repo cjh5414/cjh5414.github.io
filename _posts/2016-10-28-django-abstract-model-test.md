@@ -1,8 +1,7 @@
 ---
 layout: post
-title:  "django abstract model test"
-date:   2016-10-28
-categories: test
+title:  "Django abstract model test"
+tags:   [Django, Test]
 ---
 
 <br>  

@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "Tomcat을 이용한 servlet 배포"
-date:   2017-1-3
-categories: java
+tags:   [Java]
 ---
 
 <br/>

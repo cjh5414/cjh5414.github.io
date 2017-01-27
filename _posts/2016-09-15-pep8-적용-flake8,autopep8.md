@@ -1,8 +1,7 @@
 ---
-title: PEP8 tools - pep8, flake8, autopep8
 layout: post
-categories: python
-comments: true
+title:  PEP8 tools - pep8, flake8, autopep8
+tags:   [Python]
 ---
 
 <br>  

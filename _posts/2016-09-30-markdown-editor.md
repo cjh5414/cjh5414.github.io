@@ -1,8 +1,7 @@
 ---
-title: Markdown Editor for Mac
 layout: post
-categories: editor
-comments: true
+title:  Markdown Editor for Mac
+tags:   [Markdown]
 ---
 
 <br>  

@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "CircleCI와 Heroku를 이용하여 배포 자동화 하기"
-date:   2017-1-7
-categories: CI
+tags:   [CI, CircleCI, Heroku]
 ---
 
 > 매일 오전 학식 메뉴를 Notification 해주는 간단한 프로그램을 만들었었다. 개발할 당시 코드는 github repository으로도 관리를 하고 heroku 배포를 위해 heroku repository에서도 관리를 했었다. 소스코드를 수정하면 github와 heroku repository 두 가지 모두에 push를 해줘야 했었다. 최근 CircleCI를 간단하게 사용해볼 경험이 있었는데 이 프로젝트에 CircleCI heroku 배포 자동화를 적용해보면 좋을 것 같다는 생각이 들었다. CircleCI을 사용하여 배포 자동화를 하면 github에 push를 할 때마다 알아서 빌드를 하고 배포까지 해주기 때문에 편리하다.  

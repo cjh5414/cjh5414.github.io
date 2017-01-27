@@ -1,13 +1,12 @@
 ---
 layout: post
-title:  "django Key Error request.POST.get() 사용 문제"
-date:   2016-10-27
-categories: django
+title:  "Django Key Error request.POST.get() 사용 문제"
+tags:   [Django, Test]
 ---
 
 <br>  
 
-> kboard 프로젝트에서 게시글 수정하는 기능을 구현하는 과정에서 발생한 문제이다. 결론부터 말하자면, 테스트 코드를 돌려보던 중에 Key Error 에러가 발생해서 views에 request.POST.get()을 이용하였더니 문제가 해결됐다. 하지만 Key Error가 발생한다고 해서 request.POST.get()을 이용하여 문제를 바로 해결하는 것은 좋지 않은 선택이다.  
+> kboard 프로젝트에서 게시글 수정하는 기능을 구현하는 과정에서 발생한 문제이다. 테스트 코드를 돌려보던 중에 Key Error 에러가 발생해서 views에 request.POST.get()을 이용하였더니 문제가 해결됐다. 하지만 Key Error가 발생한다고 해서 request.POST.get()을 이용하여 문제를 바로 해결하는 것은 좋지 않은 선택이다.  
 
 <br>  
 

@@ -1,9 +1,7 @@
 ---
-title: "Django pagination 모듈 선택 및 구현 과정"
 layout: post
-date:   2016-10-12
-categories: blog
-comments: true
+title: "Django pagination 모듈 선택 및 구현 과정"
+tags:  [Django]
 ---
 
 <br>  

@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "CircleCI 붙이기 - github, pytest"
-date:   2017-1-4
-categories: CI
+tags:   [CI, CircleCI, Test]
 ---
 
 <br/>  

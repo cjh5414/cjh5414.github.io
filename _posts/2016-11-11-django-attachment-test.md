@@ -1,8 +1,7 @@
 ---
 layout: post
-title:  "django test attachment using SimpleUploadedFile"
-date:   2016-11-11
-categories: django
+title:  "Django test attachment using SimpleUploadedFile"
+tags:   [Django, Test]
 ---
 
 <br>  

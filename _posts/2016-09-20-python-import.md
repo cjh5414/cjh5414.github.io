@@ -1,8 +1,7 @@
 ---
-title: Python import
 layout: post
-categories: python
-comments: true
+title:  Python import
+tags:   [Python]
 ---
 
 <br>  

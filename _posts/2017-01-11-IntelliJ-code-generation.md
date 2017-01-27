@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "IntelliJ constructor, getter, setter code generation"
-date:   2017-01-11
-categories: IntelliJ
+tags:   [IntelliJ]
 ---
 
 > 개발할 때 좋은 도구를 사용하는 것은 생산성을 증가시키기 때문에 중요한 요소라고 생각된다. 개발 도구의 유용한 기능들을 조사하고 익히는 노력들은 가치가 있고 능수능란하게 사용할 수 있게 되면 개발의 재미도 더해준다.  

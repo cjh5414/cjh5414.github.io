@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Selenium with python, chrome, pytest"
-categories: python
+tags:   [Python, Test]
 ---
 
 <br/>  

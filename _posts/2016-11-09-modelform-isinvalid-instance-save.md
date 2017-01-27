@@ -1,8 +1,7 @@
 ---
 layout: post
-title:  "django model form is_valid() saves instance automatically"
-date:   2016-11-09
-categories: django
+title:  "Django model form is_valid() saves instance automatically"
+tags:   [Django]
 ---
 
 <br>  

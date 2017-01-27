@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "python decorator에 @wraps를 사용해야 하는 이유"
-date:   2016-12-6
-categories: python
+tags:   [Python]
 ---
 
 <br>  

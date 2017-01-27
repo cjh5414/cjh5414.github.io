@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "django models fields update & test code 작성 문제"
-date:   2016-10-15
-categories: django
+tags:   [Django, Test]
 ---
 
 <br>  

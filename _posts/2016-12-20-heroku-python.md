@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "python 코드를 Heroku에 올리고 특정 시간에 실행하도록 하기"
-date:   2016-12-20
-categories: python
+tags:   [Python, Heroku]
 ---
 
 > python으로 학식 알림 봇을 만들었는데 서버가 필요했다. Heroku를 사용했고 특정 시간에 알림 프로세스를 규칙적으로 실행 시켜주는 방법을 적용해봤다.  

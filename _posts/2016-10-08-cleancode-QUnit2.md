@@ -1,9 +1,7 @@
 ---
 layout: post
 title:  "클린 코드를 위한 테스트 주도 개발 15 - QUnit 버전 문제 2 + 스파이킹 문제"
-date:   2016-10-08
-categories: test
-comments: true
+tags:   [Test, JavaScript, Django]
 ---
 
 <br>  

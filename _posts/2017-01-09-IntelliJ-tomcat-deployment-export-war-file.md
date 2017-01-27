@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "IntelliJ Tomcat Deployment - Export war file"
-date:   2017-01-09
-categories: web
+tags:   [IntelliJ]
 ---
 
 <br/>  

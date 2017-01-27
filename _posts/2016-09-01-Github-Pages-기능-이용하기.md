@@ -1,8 +1,7 @@
 ---
-title: Github Pages 기능 이용하기
+title:  Github Pages 기능 이용하기
 layout: post
-categories: blog
-comments: true
+tags:   [Git]
 ---
 
 <br>  

@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "Line Notification with python"
-date:   2016-12-17
-categories: python
+tags:   [Python]
 ---
 
 <br>  

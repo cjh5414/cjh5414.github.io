@@ -1,9 +1,7 @@
 ---
-title: "bash에서 alias(별명) 이용하기"
 layout: post
-date:   2016-10-13
-categories: blog
-comments: true
+title: "bash에서 alias(별명) 이용하기"
+tags:  [Git, Linux]
 ---
 
 <br>  
@@ -59,5 +57,3 @@ $ gs
  Your branch is up-to-date with 'origin/feature/pagination2'.
  nothing to commit, working directory clean
 ```  
-
-매우 편리하군 :)  

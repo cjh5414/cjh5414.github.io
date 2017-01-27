@@ -1,8 +1,7 @@
 ---
 layout: post
-title:  "django file upload 기능 구현하기 - Model Form 이용"
-date:   2016-11-05
-categories: django
+title:  "Django file upload 기능 구현하기 - Model Form 이용"
+tags:   [Django]
 ---
 
 <br>  

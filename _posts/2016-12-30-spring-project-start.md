@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "Spring project start"
-date:   2016-12-30
-categories: spring
+tags:   [Spring]
 ---
 
 > 이클립스를 통해서 기본적인 spring 프로젝트를 생성하는 방법에 대해서 알아본다.  

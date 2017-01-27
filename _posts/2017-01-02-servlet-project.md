@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "간단한 login 기능의 Servlet Project"
-date:   2017-1-2
-categories: java
+tags:   [Java]
 ---
 
 <br/>  

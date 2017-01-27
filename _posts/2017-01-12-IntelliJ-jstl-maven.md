@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "IntelliJ JSTL Maven"
-date:   2017-01-12
-categories: IntelliJ
+tags:   [IntelliJ]
 ---
 
 > IntelliJ 에서 JSTL을 사용하기 위해 Maven을 이용하여 설치를 했는데  

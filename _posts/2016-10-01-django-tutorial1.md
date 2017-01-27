@@ -1,9 +1,7 @@
 ---
-title: "Django tutorial 1"
 layout: post
-date:   2016-10-01 03:00:08
-categories: django
-comments: true
+title:  "Django tutorial 1"
+tags:   [Django]
 ---
 
 <br>  

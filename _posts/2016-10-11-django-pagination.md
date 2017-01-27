@@ -1,9 +1,7 @@
 ---
-title: "Django에서 pagination 적용하기"
 layout: post
-date:   2016-10-11
-categories: blog
-comments: true
+title: "Django에서 pagination 적용하기"
+tags:  [Django]
 ---
 
 <br>  

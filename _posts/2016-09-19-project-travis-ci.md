@@ -1,8 +1,7 @@
 ---
-title: 진행 중인 프로젝트에 travis-ci 붙이기
 layout: post
-categories: test
-comments: true
+title: 진행 중인 프로젝트에 travis-ci 붙이기
+tags:  [Test, TravisCI]
 ---
 
 <br>  
