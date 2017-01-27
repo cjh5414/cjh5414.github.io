@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Spring AOP advice Error in IntelliJ"
-date:   2017-01-23
 tags:   [Spring]
 ---
 

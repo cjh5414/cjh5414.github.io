@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Selenium with python, chrome, pytest"
-date:   2017-01-13
 categories: python
 ---
 

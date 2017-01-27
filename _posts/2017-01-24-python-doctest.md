@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  Python doctest
-date:   2017-01-24
 tags:   [Python, Test]
 ---
 
