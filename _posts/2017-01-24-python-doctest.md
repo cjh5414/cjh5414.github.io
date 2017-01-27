@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Python doctest"
+title:  Python doctest
 date:   2017-01-24
-categories: python
+tags:   [Python]
 ---
 
 <br/>  

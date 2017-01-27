@@ -1,0 +1,10 @@
+# Menu navigation links
+
+- title: Archive
+  url: /posts/
+
+- title: Tags
+  url: /tags/
+
+- title: Author
+  url: /about/

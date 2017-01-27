@@ -1,31 +1,89 @@
-# Site settings
-home_title: Home
-title: jihun's Development blog
-email: cjh5414@gmail.com
-# description: Um lindo tema feito para jekyll e com o <3
-baseurl: ""
+title:            Jihun's Development Blog
+description:      Describe your website here.
+disqus_shortname: "jihuns-development-blog"
+reading_time:     true
+words_per_minute: 200
+# Your site's domain goes here (eg: https://mmistakes.github.io, http://yourdomain.com, etc)
+# When testing locally leave blank or use http://localhost:4000
 url: "https://cjh5414.github.io"
 
-author:
-  name     : 'Choi Ji Hun'
-  email    : cjh5414@gmail.com
-  url      : https://cjh5414.github.io
-  facebook : https://www.facebook.com/profile.php?id=100003159672828
-  twitter  : http://twitter.com/
+# Owner/author information
+owner:
+  name:           Choi Ji Hun
+  avatar:         avatar.jpg
+  bio:            "Jihun's Development Blog"
+  email:          cjh5414@gmail.com
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:
+  facebook:
+  github:         cjh5414
+  stackexchange:
+  linkedin:
+  instagram:
+  flickr:
+  tumblr:
+  # google plus id, include the '+', eg +mmistakes
+  google_plus:
 
-github: https://github.com/cjh5414
-disqus_shortname: "jihuns-development-blog"
+# Background image to be tiled on all pages
+background:
 
+# Analytics and webmaster tools stuff goes here
 google_analytics: UA-84670277-1
+google_verify:
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
 
-paginate: 6 # 6
-comments: true
-paginate_path: "/page/:num"
-
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    Asia/Seoul
+future:      false  # publish future dated posts --  true, false (default)
+highlighter: rouge
+markdown:    kramdown
+gems:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-feed
 sass:
-  style: :compressed
   sass_dir: _sass
+  style: compressed
 
-# Build settings
-markdown : kramdown
-permalink : /:title/
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:title/
+
+# Amount of post to show on home page
+paginate: 5
+
+kramdown:
+  input: GFM
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+include:
+  - .htaccess
+exclude:
+  - "*.less"
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - CHANGELOG
+  - Capfile
+  - Gemfile
+  - Gruntfile.js
+  - LICENSE
+  - README
+  - Rakefile
+  - config
+  - gulpfile.js
+  - lib
+  - log
+  - node_modules
+  - package.json
+  - spec
+  - tmp
