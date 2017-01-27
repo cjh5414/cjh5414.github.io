@@ -2,7 +2,7 @@
 layout: post
 title:  "CircleCI 에서 python 3.6.0 이용하기"
 date:   2017-01-15
-categories: python
+tags: [Python, CI, CircleCI]
 ---
 
 > python 최신 버전인 3.6.0 을 사용하여 CircleCI를 붙여봤는데 오류가 발생했다. 3.6.0이 최신 버전이기 때문에 CircleCI에서 아직 지원을 안 하는듯하다. 해결방법은 CircleCI 원격 컴퓨터의 .pyenv repository를 최신버전으로 pull 받도록 circle.yml를 수정하면 된다.  

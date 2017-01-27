@@ -2,7 +2,7 @@
 layout: post
 title:  "Spring AOP advice Error in IntelliJ"
 date:   2017-01-23
-tags: spring
+tags:   [Spring]
 ---
 
 > IntelliJ에서 spring 프로젝트를 생성하고 xml로 AOP advice를 적용하여 실행하면 에러가 발생한다. aspects 라이브러리는 spring 프로젝트를 생성할 때 기본으로 추가 되지만 advice를 사용하기 위해서는 aspectjweaver 를 추가로 설치해줘야한다.
