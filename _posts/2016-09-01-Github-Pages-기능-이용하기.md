@@ -1,7 +1,7 @@
 ---
-title:  Github Pages 기능 이용하기
 layout: post
-tags:   [Git]
+title:  Github Pages 기능 이용하기
+tags:   [Git, Blog]
 ---
 
 <br>  
@@ -43,14 +43,10 @@ $ echo "Hello World" > index.html
 $ git add --all  
 $ git commit -m "Initialize Github Pages"  
 $ git push -u origin master  
-```
+```  
 
-https://_[username]_.github.io 주소로 확인한다.  
+https://_username_.github.io 주소로 확인한다.  
 ![New Repository](/images/githubpages/githubpages_result.png)  
 
 ### 5. 참고 자료  
 <https://pages.github.com>
-
-
-
------------------------

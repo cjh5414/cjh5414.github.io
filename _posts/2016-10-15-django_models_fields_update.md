@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "django models fields update & test code 작성 문제"
+title:  "Django models fields update & test code 작성 문제"
 tags:   [Django, Test]
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "python decorator에 @wraps를 사용해야 하는 이유"
+title:  "Python decorator에 @wraps를 사용해야 하는 이유"
 tags:   [Python]
 ---
 

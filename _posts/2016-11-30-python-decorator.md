@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "python decorator 만들기 - decorator가 지정될 함수의 self 이용하기"
+title:  "Python decorator 만들기 - decorator가 지정될 함수의 self 이용하기"
 tags:   [Python]
 ---
 

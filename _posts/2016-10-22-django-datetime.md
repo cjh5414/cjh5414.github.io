@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "django model created time test issue - datetime"
+title:  "Django model created time test issue - datetime"
 tags:   [Django, Test]
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "python 코드를 Heroku에 올리고 특정 시간에 실행하도록 하기"
+title:  "Python 코드를 Heroku에 올리고 특정 시간에 실행하도록 하기"
 tags:   [Python, Heroku]
 ---
 
