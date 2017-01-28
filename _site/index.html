@@ -72,7 +72,7 @@
 				<li>
 					<img src="http://localhost:4000/images/avatar.jpg" alt="Choi Ji Hun photo" class="author-photo">
 					<h4>Choi Ji Hun</h4>
-					<p>Your bio goes here. It shouldn't be super long but a good sentence or two should suffice.</p>
+					<p>Jihun's Development Blog</p>
 				</li>
 				<li><a href="http://localhost:4000/about/"><span class="btn btn-inverse">Learn More</span></a></li>
 				<li>
@@ -129,6 +129,117 @@
 
 <div id="main" role="main">
   
+<article class="hentry">
+  <header>
+    
+    <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2017-01-28T00:00:00+09:00"><a href="http://localhost:4000/spring-aop/">January 28, 2017</a></time></span><span class="author vcard"><span class="fn"><a href="http://localhost:4000/about/" title="About Choi Ji Hun">Choi Ji Hun</a></span></span>
+      
+      <span class="entry-reading-time">
+        <i class="fa fa-clock-o"></i>
+        
+Reading time ~1 minute
+      </span><!-- /.entry-reading-time -->
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="http://localhost:4000/spring-aop/" rel="bookmark" title="Spring AOP" itemprop="url">Spring AOP</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <blockquote>
+  <p>프로그래밍을 할 때 핵심 기능(Business Logic)을 작성하면서 디버깅을 위한 log, 보안, 원자성을 위한 Transaction 등의 코드를 작성할 일이 많이 있다. 이러한 코드들을 핵심 기능과 함께 작성하는 것은 의존성을 높이고 재사용성을 낮추기 때문에 바람직하지 않다. Spring에서는 이런한 코드들을 Aspect로 분리하여 작성할 수 있도록 AOP라는 개념을 제공한다. 이 포스트의 예제에서는 AspectJ를 사용한다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="aopaspect-oriented-programming">AOP(Aspect Oriented Programming)</h2>
+
+<p>Business logic에 함께 작성되는 Cross cutting concerns(Logging, Transaction, Security 등과 같이 공통적으로 들어가는 코드)를 별도의 Aspect로 분리하여 개발함으로써 의존성을 약하게 하고, 코드의 반복을 줄여서 재사용성을 높일 수 있다.</p>
+
+<h3 id="aop-weaving">AOP-Weaving</h3>
+
+<p>Aspect는 Spring Framework가 Run time 시에 Proxy의 객체를 하나 만들어서 동적으로 호출함으로써 동작한다.</p>
+
+<p><br /></p>
+
+<h2 id="aop-구성요소">AOP 구성요소</h2>
+
+<h3 id="joinpoint">JoinPoint</h3>
+
+<p>Cross cutting concerns이 삽입되어 동작할 수 있는 위치이다. 하지만 해당 위치에 Joinpoint라는 것을 알려주기 위한 코드를 작성하지 않기 때문에 의존성이 약하다.</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">implements</span> <span class="n">Animal</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+
+    <span class="o">[...]</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Cat "</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">" Meow~"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+<p>위의 코드에서 sound()에 해당한다.<br />
+<br /></p>
+<h3 id="advice">Advice</h3>
+
+<p>JoinPoint에 삽입되어 실행되는 Cross cutting concerns 이다.<br />
+실행되는 시점에 따라 몇 가지 종류가 있다.</p>
+
+<ul>
+  <li><strong>before</strong> : 메소드가 실행되기 전.</li>
+  <li><strong>after</strong> : 결과에 상관 없이 메소드가 실행된 후.</li>
+  <li><strong>after-returning</strong> : 메소드가 정상적으로 return한 경우.</li>
+  <li><strong>after-throwing</strong> : 메소드가 예외를 던지고 종료한 후.</li>
+  <li><strong>around</strong> : 메소드 호출 전, 후 예외 발생 등 모든 시점.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="nd">@Aspect</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">logger</span> <span class="o">{</span>
+
+    <span class="o">[...]</span>
+
+    <span class="nd">@Before</span><span class="o">(</span><span class="s">"selectSound()"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">aboutToSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Before : about to sound"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>메소드가 실행되기 전 <code class="highlighter-rouge">Before : about to sound</code>라는 로그를 출력하는 예시이다.<br />
+<br /></p>
+<h3 id="pointcut">Pointcut</h3>
+
+<p>어떤 클래스의 어떤 함수를 JoinPoint로 사용할 것인지를 지정하는 부분이다.</p>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="nd">@Aspect</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">logger</span> <span class="o">{</span>
+    <span class="nd">@Pointcut</span><span class="o">(</span><span class="s">"execution(void com.example.spring.aop.*.sound())"</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">selectSound</span><span class="o">()</span> <span class="o">{</span> <span class="o">}</span>
+
+    <span class="o">[...]</span>
+<span class="o">}</span>    
+</code></pre>
+</div>
+<p>모든 클래스의 sound()함수를 JoinPoint로 지정하는 예시이다. Pointcut의 이름은 <code class="highlighter-rouge">@Pointcut</code> 아래에 정의한 <code class="highlighter-rouge">selectSound</code> 함수와 같이 지정한다.<br />
+<br /></p>
+<h3 id="aspect">Aspect</h3>
+
+<p>Advice와 Pointcut을 포함하고 있는 Class이다.</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">org.aspectj.lang.annotation.Aspect</span><span class="o">;</span>
+
+<span class="nd">@Aspect</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">logger</span> <span class="o">{</span>
+    <span class="o">[...]</span>
+<span class="o">}</span>    
+</code></pre>
+</div>
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
 <article class="hentry">
   <header>
     
@@ -624,51 +735,6 @@ Reading time ~1 minute
 <h2 id="참고자료">참고자료</h2>
 
 <p><a href="http://stackoverflow.com/questions/41381930/use-python-3-6-0-in-circleci/">http://stackoverflow.com/questions/41381930/use-python-3-6-0-in-circleci/</a></p>
-
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-
-<article class="hentry">
-  <header>
-    
-    <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2017-01-14T00:00:00+09:00"><a href="http://localhost:4000/gitignore-update/">January 14, 2017</a></time></span><span class="author vcard"><span class="fn"><a href="http://localhost:4000/about/" title="About Choi Ji Hun">Choi Ji Hun</a></span></span>
-      
-      <span class="entry-reading-time">
-        <i class="fa fa-clock-o"></i>
-        
-Reading time ~1 minute
-      </span><!-- /.entry-reading-time -->
-      
-    </div><!-- /.entry-meta -->
-    
-      <h1 class="entry-title"><a href="http://localhost:4000/gitignore-update/" rel="bookmark" title="이미 push된 file .gitignore 적용하기" itemprop="url">이미 push된 file .gitignore 적용하기</a></h1>
-    
-  </header>
-  <div class="entry-content">
-    <blockquote>
-  <p>git으로 관리하고 싶지 않은 파일들은 .gitignore 에 명시함으로써 해당 파일을 무시할 수 있다. 하지만 종종 무시할 파일을 .gitignore 에 추가하기 전에 git push 해버리는 경우가 있다. 이 때 뒤늦게 .gitignore 을 수정하여 push를 하지만 원격 저장소에서 해당 파일은 사라지지 않는다.</p>
-</blockquote>
-
-<p><br /></p>
-
-<h2 id="apply-gitignore">Apply .gitignore</h2>
-
-<p>아래의 git 명령들을 실행해주면 .gitignore의 파일들이 적용되어 원격 저장소에서 사라진다.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git rm -r --cached .
-$ git add .
-$ git commit -m "Apply .gitignore"
-$ git push
-</code></pre>
-</div>
-
-<p><br /></p>
-
-<h2 id="같은-실수를-반복하지-않기-위한-git-사용-습관">같은 실수를 반복하지 않기 위한 git 사용 습관</h2>
-
-<p><a href="https://cjh5414.github.io/git-habit/">좋은 git 사용 습관</a><br />
-git commit 과정에 대한 이해와 좋은 commit 습관에 대한 포스트이다.</p>
 
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->

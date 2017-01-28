@@ -5,9 +5,110 @@
     <description>Describe your website here.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 27 Jan 2017 20:48:33 +0900</pubDate>
-    <lastBuildDate>Fri, 27 Jan 2017 20:48:33 +0900</lastBuildDate>
+    <pubDate>Sat, 28 Jan 2017 22:42:20 +0900</pubDate>
+    <lastBuildDate>Sat, 28 Jan 2017 22:42:20 +0900</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Spring AOP</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;프로그래밍을 할 때 핵심 기능(Business Logic)을 작성하면서 디버깅을 위한 log, 보안, 원자성을 위한 Transaction 등의 코드를 작성할 일이 많이 있다. 이러한 코드들을 핵심 기능과 함께 작성하는 것은 의존성을 높이고 재사용성을 낮추기 때문에 바람직하지 않다. Spring에서는 이런한 코드들을 Aspect로 분리하여 작성할 수 있도록 AOP라는 개념을 제공한다. 이 포스트의 예제에서는 AspectJ를 사용한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;aopaspect-oriented-programming&quot;&gt;AOP(Aspect Oriented Programming)&lt;/h2&gt;
+
+&lt;p&gt;Business logic에 함께 작성되는 Cross cutting concerns(Logging, Transaction, Security 등과 같이 공통적으로 들어가는 코드)를 별도의 Aspect로 분리하여 개발함으로써 의존성을 약하게 하고, 코드의 반복을 줄여서 재사용성을 높일 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;aop-weaving&quot;&gt;AOP-Weaving&lt;/h3&gt;
+
+&lt;p&gt;Aspect는 Spring Framework가 Run time 시에 Proxy의 객체를 하나 만들어서 동적으로 호출함으로써 동작한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;aop-구성요소&quot;&gt;AOP 구성요소&lt;/h2&gt;
+
+&lt;h3 id=&quot;joinpoint&quot;&gt;JoinPoint&lt;/h3&gt;
+
+&lt;p&gt;Cross cutting concerns이 삽입되어 동작할 수 있는 위치이다. 하지만 해당 위치에 Joinpoint라는 것을 알려주기 위한 코드를 작성하지 않기 때문에 의존성이 약하다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Cat&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Animal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;o&quot;&gt;[...]&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sound&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Cat &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; Meow~&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;위의 코드에서 sound()에 해당한다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;advice&quot;&gt;Advice&lt;/h3&gt;
+
+&lt;p&gt;JoinPoint에 삽입되어 실행되는 Cross cutting concerns 이다.&lt;br /&gt;
+실행되는 시점에 따라 몇 가지 종류가 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;before&lt;/strong&gt; : 메소드가 실행되기 전.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;after&lt;/strong&gt; : 결과에 상관 없이 메소드가 실행된 후.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;after-returning&lt;/strong&gt; : 메소드가 정상적으로 return한 경우.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;after-throwing&lt;/strong&gt; : 메소드가 예외를 던지고 종료한 후.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;around&lt;/strong&gt; : 메소드 호출 전, 후 예외 발생 등 모든 시점.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Aspect&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;logger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;o&quot;&gt;[...]&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Before&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;selectSound()&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;aboutToSound&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Before : about to sound&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;메소드가 실행되기 전 &lt;code class=&quot;highlighter-rouge&quot;&gt;Before : about to sound&lt;/code&gt;라는 로그를 출력하는 예시이다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;pointcut&quot;&gt;Pointcut&lt;/h3&gt;
+
+&lt;p&gt;어떤 클래스의 어떤 함수를 JoinPoint로 사용할 것인지를 지정하는 부분이다.&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Aspect&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;logger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Pointcut&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;execution(void com.example.spring.aop.*.sound())&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;selectSound&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;o&quot;&gt;[...]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;    
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;모든 클래스의 sound()함수를 JoinPoint로 지정하는 예시이다. Pointcut의 이름은 &lt;code class=&quot;highlighter-rouge&quot;&gt;@Pointcut&lt;/code&gt; 아래에 정의한 &lt;code class=&quot;highlighter-rouge&quot;&gt;selectSound&lt;/code&gt; 함수와 같이 지정한다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;aspect&quot;&gt;Aspect&lt;/h3&gt;
+
+&lt;p&gt;Advice와 Pointcut을 포함하고 있는 Class이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.aspectj.lang.annotation.Aspect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nd&quot;&gt;@Aspect&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;logger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;[...]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;    
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sat, 28 Jan 2017 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/spring-aop/</link>
+        <guid isPermaLink="true">http://localhost:4000/spring-aop/</guid>
+        
+        <category>Spring</category>
+        
+        
+      </item>
     
       <item>
         <title>Python doctest</title>
@@ -270,6 +371,8 @@ Test passed.
         
         <category>Python</category>
         
+        <category>Test</category>
+        
         
       </item>
     
@@ -317,7 +420,7 @@ Exception in thread &quot;main&quot; org.springframework.beans.factory.BeanCreat
         <link>http://localhost:4000/intellij-spring-aop-advice/</link>
         <guid isPermaLink="true">http://localhost:4000/intellij-spring-aop-advice/</guid>
         
-        <category>spring</category>
+        <category>Spring</category>
         
         
       </item>
@@ -404,8 +507,10 @@ test:
         <link>http://localhost:4000/circleci-background/</link>
         <guid isPermaLink="true">http://localhost:4000/circleci-background/</guid>
         
-        
         <category>CI</category>
+        
+        <category>CircleCI</category>
+        
         
       </item>
     
@@ -463,8 +568,12 @@ test:
         <link>http://localhost:4000/circleci-python3.6.0/</link>
         <guid isPermaLink="true">http://localhost:4000/circleci-python3.6.0/</guid>
         
+        <category>Python</category>
         
-        <category>python</category>
+        <category>CI</category>
+        
+        <category>CircleCI</category>
+        
         
       </item>
     
@@ -498,8 +607,8 @@ git commit 과정에 대한 이해와 좋은 commit 습관에 대한 포스트�
         <link>http://localhost:4000/gitignore-update/</link>
         <guid isPermaLink="true">http://localhost:4000/gitignore-update/</guid>
         
+        <category>Git</category>
         
-        <category>git</category>
         
       </item>
     
@@ -608,8 +717,8 @@ git 명령들을 사용하는 중에 다양한 색깔과 추가 메세지로 더
         <link>http://localhost:4000/git-habit/</link>
         <guid isPermaLink="true">http://localhost:4000/git-habit/</guid>
         
+        <category>Git</category>
         
-        <category>git</category>
         
       </item>
     
@@ -681,8 +790,10 @@ $ pip install pytest
         <link>http://localhost:4000/python-selenium-chrome/</link>
         <guid isPermaLink="true">http://localhost:4000/python-selenium-chrome/</guid>
         
+        <category>Python</category>
         
-        <category>python</category>
+        <category>Test</category>
+        
         
       </item>
     
@@ -768,8 +879,8 @@ $ mv /Users/jihun/Downloads/jstl-1.2.jar .
         <link>http://localhost:4000/IntelliJ-jstl-maven/</link>
         <guid isPermaLink="true">http://localhost:4000/IntelliJ-jstl-maven/</guid>
         
-        
         <category>IntelliJ</category>
+        
         
       </item>
     
@@ -872,8 +983,8 @@ Window 에서는 &lt;code class=&quot;highlighter-rouge&quot;&gt;Alt&lt;/code&gt
         <link>http://localhost:4000/IntelliJ-code-generation/</link>
         <guid isPermaLink="true">http://localhost:4000/IntelliJ-code-generation/</guid>
         
-        
         <category>IntelliJ</category>
+        
         
       </item>
     
@@ -936,8 +1047,8 @@ web application을 생성하고 run server을 하면 out이라는 폴더가 생�
         <link>http://localhost:4000/IntelliJ-tomcat-deployment-export-war-file/</link>
         <guid isPermaLink="true">http://localhost:4000/IntelliJ-tomcat-deployment-export-war-file/</guid>
         
+        <category>IntelliJ</category>
         
-        <category>web</category>
         
       </item>
     
@@ -1034,8 +1145,12 @@ $ git push
         <link>http://localhost:4000/circleci-heroku/</link>
         <guid isPermaLink="true">http://localhost:4000/circleci-heroku/</guid>
         
-        
         <category>CI</category>
+        
+        <category>CircleCI</category>
+        
+        <category>Heroku</category>
+        
         
       </item>
     
@@ -1094,8 +1209,8 @@ tomcat이 위치한 경로를 입력해주면 해당하는 tomcat의 version이 
         <link>http://localhost:4000/intellij-web-project/</link>
         <guid isPermaLink="true">http://localhost:4000/intellij-web-project/</guid>
         
+        <category>IntelliJ</category>
         
-        <category>java</category>
         
       </item>
     
@@ -1201,8 +1316,12 @@ dependencies:
         <link>http://localhost:4000/circleci-pytest/</link>
         <guid isPermaLink="true">http://localhost:4000/circleci-pytest/</guid>
         
-        
         <category>CI</category>
+        
+        <category>CircleCI</category>
+        
+        <category>Test</category>
+        
         
       </item>
     
@@ -1241,8 +1360,8 @@ Web -&amp;gt; WAR file을 선택한다.&lt;/p&gt;
         <link>http://localhost:4000/servlet-tomcat-deploy/</link>
         <guid isPermaLink="true">http://localhost:4000/servlet-tomcat-deploy/</guid>
         
+        <category>Java</category>
         
-        <category>java</category>
         
       </item>
     
@@ -1407,8 +1526,8 @@ Web -&amp;gt; WAR file을 선택한다.&lt;/p&gt;
         <link>http://localhost:4000/servlet-project/</link>
         <guid isPermaLink="true">http://localhost:4000/servlet-project/</guid>
         
+        <category>Java</category>
         
-        <category>java</category>
         
       </item>
     
@@ -1476,8 +1595,8 @@ Web -&amp;gt; WAR file을 선택한다.&lt;/p&gt;
         <link>http://localhost:4000/spring-project-start/</link>
         <guid isPermaLink="true">http://localhost:4000/spring-project-start/</guid>
         
+        <category>Spring</category>
         
-        <category>spring</category>
         
       </item>
     
@@ -1618,13 +1737,13 @@ server -&amp;gt; Runtime Environments 로 이동하여 Add 버튼을 누르고 A
         <link>http://localhost:4000/mac-spring-eclipse-tomcat-mysql/</link>
         <guid isPermaLink="true">http://localhost:4000/mac-spring-eclipse-tomcat-mysql/</guid>
         
+        <category>Spring</category>
         
-        <category>spring</category>
         
       </item>
     
       <item>
-        <title>python 코드를 Heroku에 올리고 특정 시간에 실행하도록 하기</title>
+        <title>Python 코드를 Heroku에 올리고 특정 시간에 실행하도록 하기</title>
         <description>&lt;blockquote&gt;
   &lt;p&gt;python으로 학식 알림 봇을 만들었는데 서버가 필요했다. Heroku를 사용했고 특정 시간에 알림 프로세스를 규칙적으로 실행 시켜주는 방법을 적용해봤다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1819,8 +1938,10 @@ today_index = datetime.now(SEOUL_TZ).weekday()
         <link>http://localhost:4000/heroku-python/</link>
         <guid isPermaLink="true">http://localhost:4000/heroku-python/</guid>
         
+        <category>Python</category>
         
-        <category>python</category>
+        <category>Heroku</category>
+        
         
       </item>
     
@@ -1938,13 +2059,13 @@ today_index = datetime.now(SEOUL_TZ).weekday()
         <link>http://localhost:4000/line-notification-with-python/</link>
         <guid isPermaLink="true">http://localhost:4000/line-notification-with-python/</guid>
         
+        <category>Python</category>
         
-        <category>python</category>
         
       </item>
     
       <item>
-        <title>python decorator에 @wraps를 사용해야 하는 이유</title>
+        <title>Python decorator에 @wraps를 사용해야 하는 이유</title>
         <description>&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -2028,13 +2149,13 @@ today_index = datetime.now(SEOUL_TZ).weekday()
         <link>http://localhost:4000/wraps-with-decorator/</link>
         <guid isPermaLink="true">http://localhost:4000/wraps-with-decorator/</guid>
         
+        <category>Python</category>
         
-        <category>python</category>
         
       </item>
     
       <item>
-        <title>python decorator 만들기 - decorator가 지정될 함수의 self 이용하기</title>
+        <title>Python decorator 만들기 - decorator가 지정될 함수의 self 이용하기</title>
         <description>&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -2162,8 +2283,8 @@ decorator가 지정된 함수의 self를 통해서 로그인을 수행한다.&lt
         <link>http://localhost:4000/python-decorator/</link>
         <guid isPermaLink="true">http://localhost:4000/python-decorator/</guid>
         
+        <category>Python</category>
         
-        <category>python</category>
         
       </item>
     
@@ -2293,17 +2414,17 @@ $ gunicorn 프로젝트명.wsgi:application
 
 &lt;p&gt;클린 코드를 위한 테스트 주도 개발 - 해리 J.W.퍼시벌 지음 / 김완섭 옮김&lt;/p&gt;
 </description>
-        <pubDate>Fri, 11 Nov 2016 00:00:00 +0900</pubDate>
+        <pubDate>Mon, 14 Nov 2016 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/nginx/</link>
         <guid isPermaLink="true">http://localhost:4000/nginx/</guid>
         
+        <category>Nginx</category>
         
-        <category>deploy</category>
         
       </item>
     
       <item>
-        <title>django test attachment using SimpleUploadedFile</title>
+        <title>Django test attachment using SimpleUploadedFile</title>
         <description>&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -2380,13 +2501,15 @@ $ gunicorn 프로젝트명.wsgi:application
         <link>http://localhost:4000/django-attachment-test/</link>
         <guid isPermaLink="true">http://localhost:4000/django-attachment-test/</guid>
         
+        <category>Django</category>
         
-        <category>django</category>
+        <category>Test</category>
+        
         
       </item>
     
       <item>
-        <title>django model form is_valid() saves instance automatically</title>
+        <title>Django model form is_valid() saves instance automatically</title>
         <description>&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -2455,13 +2578,13 @@ $ gunicorn 프로젝트명.wsgi:application
         <link>http://localhost:4000/modelform-isinvalid-instance-save/</link>
         <guid isPermaLink="true">http://localhost:4000/modelform-isinvalid-instance-save/</guid>
         
+        <category>Django</category>
         
-        <category>django</category>
         
       </item>
     
       <item>
-        <title>django file upload 기능 구현하기 - Model Form 이용</title>
+        <title>Django file upload 기능 구현하기 - Model Form 이용</title>
         <description>&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -2606,8 +2729,8 @@ POST로 form이 제출되면 upload 파일의 정보는 request.FILES을 통해 
         <link>http://localhost:4000/django-file-upload/</link>
         <guid isPermaLink="true">http://localhost:4000/django-file-upload/</guid>
         
+        <category>Django</category>
         
-        <category>django</category>
         
       </item>
     
@@ -2633,13 +2756,13 @@ POST로 form이 제출되면 upload 파일의 정보는 request.FILES을 통해 
         <link>http://localhost:4000/novalidate/</link>
         <guid isPermaLink="true">http://localhost:4000/novalidate/</guid>
         
+        <category>HTML</category>
         
-        <category>html</category>
         
       </item>
     
       <item>
-        <title>django abstract model test</title>
+        <title>Django abstract model test</title>
         <description>&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;여러가지 모델에 공통적으로 필요한 created_time 필드를 가지고 있는 TimeStampedModel 추상 모델을 상속 받아서 모델들을 구현하고 있다. (TimeStampedModel abstract model에 관한 내용은 &lt;a href=&quot;https://cjh5414.github.io/django-TimeStampedModel/&quot;&gt;여기&lt;/a&gt;를 참고하면 된다.)&lt;br /&gt;
@@ -2738,17 +2861,19 @@ POST로 form이 제출되면 upload 파일의 정보는 request.FILES을 통해 
         <link>http://localhost:4000/django-abstract-model-test/</link>
         <guid isPermaLink="true">http://localhost:4000/django-abstract-model-test/</guid>
         
+        <category>Django</category>
         
-        <category>test</category>
+        <category>Test</category>
+        
         
       </item>
     
       <item>
-        <title>django Key Error request.POST.get() 사용 문제</title>
+        <title>Django Key Error request.POST.get() 사용 문제</title>
         <description>&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;kboard 프로젝트에서 게시글 수정하는 기능을 구현하는 과정에서 발생한 문제이다. 결론부터 말하자면, 테스트 코드를 돌려보던 중에 Key Error 에러가 발생해서 views에 request.POST.get()을 이용하였더니 문제가 해결됐다. 하지만 Key Error가 발생한다고 해서 request.POST.get()을 이용하여 문제를 바로 해결하는 것은 좋지 않은 선택이다.&lt;/p&gt;
+  &lt;p&gt;kboard 프로젝트에서 게시글 수정하는 기능을 구현하는 과정에서 발생한 문제이다. 테스트 코드를 돌려보던 중에 Key Error 에러가 발생해서 views에 request.POST.get()을 이용하였더니 문제가 해결됐다. 하지만 Key Error가 발생한다고 해서 request.POST.get()을 이용하여 문제를 바로 해결하는 것은 좋지 않은 선택이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2832,16 +2957,20 @@ django.utils.datastructures.MultiValueDictKeyError: &quot;'title'&quot;
         <link>http://localhost:4000/django-keyerror/</link>
         <guid isPermaLink="true">http://localhost:4000/django-keyerror/</guid>
         
+        <category>Django</category>
         
-        <category>django</category>
+        <category>Test</category>
+        
         
       </item>
     
       <item>
-        <title>django TimeStampedModel 상속 이용하기</title>
+        <title>Django TimeStampedModel 상속 이용하기</title>
         <description>&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;django에서 models에 데이터 생성 시간, 업데이트 시간을 기록하기 위해 create_time, modified_time 필드를 설정해 주는 경우가 자주 있다. 이 필드들은 많은 모델들에서 사용되는 필드이므로 TimeStampedModel에 한 번만 필드를 지정해놓고 상속을 받아서 사용하는 것이 좋다. 일일이 두 가지 필드를 해당 모델들에 추가할 필요가 없고, 추가하지 않아서 발생하는 문제들을 방지할 수 있는 장점이 있다.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;django에서 models에 데이터 생성 시간, 업데이트 시간을 기록하기 위해 create_time, modified_time 필드를 설정해 주는 경우가 자주 있다. 이 필드들은 많은 모델들에서 사용되는 필드이므로 TimeStampedModel에 한 번만 필드를 지정해놓고 상속을 받아서 사용하는 것이 좋다. 일일이 두 가지 필드를 해당 모델들에 추가할 필요가 없고, 추가하지 않아서 발생하는 문제들을 방지할 수 있는 장점이 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -2890,85 +3019,8 @@ django.utils.datastructures.MultiValueDictKeyError: &quot;'title'&quot;
         <link>http://localhost:4000/django-TimeStampedModel/</link>
         <guid isPermaLink="true">http://localhost:4000/django-TimeStampedModel/</guid>
         
+        <category>Django</category>
         
-        <category>test</category>
-        
-      </item>
-    
-      <item>
-        <title>django model created time test issue - datetime</title>
-        <description>&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;django에서 특정 model에 생성될 때의 시간을 기록하기 위한 created time 필드를 추가하고 단위테스트를 하는 과정에서 발생하는 문제에 대해서 다룬다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;unittest&quot;&gt;Unittest&lt;/h3&gt;
-
-&lt;p&gt;데이터가 생성 될 때의 시간이 잘 저장되는지 테스트하기 위하여 Comment의 객체를 하나 생성하여 DB에 저장하고 직후의 시간 값을 저장해서 그 둘의 차이가 1초보다 작은지를 테스트한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;datetime&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timedelta&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test_saving_create_time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;comment_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Comment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;comment_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;time_after_create&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;assertGreater&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timedelta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minutes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time_after_create&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comment_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create_time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;modelspy&quot;&gt;models.py&lt;/h3&gt;
-
-&lt;p&gt;model에 시간을 저장하기 위한 필드를 추가한다. &lt;code class=&quot;highlighter-rouge&quot;&gt;auto_now_add=True&lt;/code&gt;를 추가하면 데이터가 생성되어 처음 저장 될 때 동작한다. (&lt;code class=&quot;highlighter-rouge&quot;&gt;auto_now=True&lt;/code&gt;는 데이터가 수정될 때마다 갱신된다.)&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Comment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;create_time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DateTimeField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;auto_now_add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;모델이 변경되었으니 &lt;code class=&quot;highlighter-rouge&quot;&gt;$ python manage.py makemigrations&lt;/code&gt;을 실행시켜 준다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;error&quot;&gt;Error&lt;/h3&gt;
-
-&lt;p&gt;테스트를 돌려보면 아래와 같은 에러 메세지가 뜬다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;TypeError: can't subtract offset-naive and offset-aware datetimes
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;create_time의 dafault 값은 &lt;code class=&quot;highlighter-rouge&quot;&gt;django.utils.timezone.now&lt;/code&gt; 으로 time zone이 &lt;code class=&quot;highlighter-rouge&quot;&gt;utc&lt;/code&gt;로 지정된 것이고, 테스트 코드에서 datetime.now()는 time zone이 지정되지 않은 것으로 두 값의 type이 달라서 발생하는 에러이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;resolve&quot;&gt;Resolve&lt;/h3&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test_saving_create_time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;comment_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Comment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;comment_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;time_after_create&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timezone&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;assertGreater&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timedelta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minutes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time_after_create&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comment_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create_time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;테스트 코드의 현재 시간을 가져오는 부분에 timezone을 utc로 설정해주면 문제를 해결할 수 있다.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 22 Oct 2016 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/django-datetime/</link>
-        <guid isPermaLink="true">http://localhost:4000/django-datetime/</guid>
-        
-        
-        <category>django</category>
         
       </item>
     
