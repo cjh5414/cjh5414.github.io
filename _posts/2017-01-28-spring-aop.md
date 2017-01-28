@@ -67,7 +67,7 @@ public class logger {
 
 ### Pointcut   
 
-어떤 클래스의 어떤 함수를 JoinPoint로 사용할 것인지를 지정하는 부분이다.  
+어떤 클래스의 어떤 함수를 JoinPoint로 사용할 것인지를 지정하는 부분이다.   
 
 ```java
 @Aspect
@@ -76,10 +76,10 @@ public class logger {
     private void selectSound() { }
 
     [...]
-}    
-```  
+}
+```   
 
-모든 클래스의 sound()함수를 JoinPoint로 지정하는 예시이다. Pointcut의 이름은 `@Pointcut` 아래에 정의한 `selectSound` 함수와 같이 지정한다.  
+모든 클래스의 sound()함수를 JoinPoint로 지정하는 예시이다. Pointcut의 이름은 `@Pointcut` 아래에 정의한 `selectSound()` 함수와 같이 지정한다.  
 
 
 ### Aspect  
