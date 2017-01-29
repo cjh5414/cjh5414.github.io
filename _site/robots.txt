@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://cjh5414.github.io/sitemap.xml
