@@ -79,7 +79,9 @@
 					<a href="mailto:cjh5414@gmail.com"><i class="fa fa-fw fa-envelope"></i> Email</a>
 				</li>
 				
-				
+				<li>
+					<a href="https://facebook.com/profile.php?id=100003159672828"><i class="fa fa-fw fa-facebook"></i> Facebook</a>
+				</li>
 				
 				
 				<li>
@@ -180,8 +182,8 @@ Reading time ~1 minute
 <span class="o">}</span>
 </code></pre>
 </div>
-<p>위의 코드에서 sound()에 해당한다.<br />
-<br /></p>
+<p>위의 코드에서 sound()에 해당한다.</p>
+
 <h3 id="advice">Advice</h3>
 
 <p>JoinPoint에 삽입되어 실행되는 Cross cutting concerns 이다.<br />
@@ -208,22 +210,24 @@ Reading time ~1 minute
 </code></pre>
 </div>
 
-<p>메소드가 실행되기 전 <code class="highlighter-rouge">Before : about to sound</code>라는 로그를 출력하는 예시이다.<br />
-<br /></p>
+<p>메소드가 실행되기 전 <code class="highlighter-rouge">Before : about to sound</code>라는 로그를 출력하는 예시이다.</p>
+
 <h3 id="pointcut">Pointcut</h3>
 
 <p>어떤 클래스의 어떤 함수를 JoinPoint로 사용할 것인지를 지정하는 부분이다.</p>
+
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="nd">@Aspect</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">logger</span> <span class="o">{</span>
     <span class="nd">@Pointcut</span><span class="o">(</span><span class="s">"execution(void com.example.spring.aop.*.sound())"</span><span class="o">)</span>
     <span class="kd">private</span> <span class="kt">void</span> <span class="nf">selectSound</span><span class="o">()</span> <span class="o">{</span> <span class="o">}</span>
 
     <span class="o">[...]</span>
-<span class="o">}</span>    
+<span class="o">}</span>
 </code></pre>
 </div>
-<p>모든 클래스의 sound()함수를 JoinPoint로 지정하는 예시이다. Pointcut의 이름은 <code class="highlighter-rouge">@Pointcut</code> 아래에 정의한 <code class="highlighter-rouge">selectSound</code> 함수와 같이 지정한다.<br />
-<br /></p>
+
+<p>모든 클래스의 sound()함수를 JoinPoint로 지정하는 예시이다. Pointcut의 이름은 <code class="highlighter-rouge">@Pointcut</code> 아래에 정의한 <code class="highlighter-rouge">selectSound()</code> 함수와 같이 지정한다.</p>
+
 <h3 id="aspect">Aspect</h3>
 
 <p>Advice와 Pointcut을 포함하고 있는 Class이다.</p>
