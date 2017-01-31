@@ -4,7 +4,7 @@ title: "Django pagination 모듈 선택 및 구현 과정"
 tags:  [Django]
 ---
 
-<br>  
+<br/>  
 
 django를 사용하여 진행 중인 프로젝트에 pagination 기능이 필요해졌다. django pagination 을 검색해보니 [Django Documentation Pagination](https://docs.djangoproject.com/en/1.10/topics/pagination/) 에 내부 모듈로 Paginator을 이용하여서 구현하는 방법이 나와있었다.
 
@@ -63,7 +63,7 @@ django를 사용하여 진행 중인 프로젝트에 pagination 기능이 필요
 
 - License 문제도 생각해봐야 한다.  
 
-<br>   
+<br/>   
 
 ## 결론  
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CircleCI 붙이기 - github, pytest"
+title:  "CircleCI 연동하기 - github, pytest"
 tags:   [CI, CircleCI, Test]
 ---
 
