@@ -42,7 +42,7 @@ To work at the position of software engineer and contribute to the organization 
 - Programming Language like C, C++, JAVA and Python  
 - Database like MySQL  
 - Configuration Management tools like GIT  
-- Networking like TCP/IP, UDP  
+- Socket programming with TCP/IP, UDP  
 - Test-driven development  
 
 <br>  
@@ -57,6 +57,7 @@ Bachelor’s degree Computer Systems Engineering
 
 ## Awards Career   
 
-- 2016 Hansung University Capstone design 1st prize – Sound catcher, 2016.06.13  
+- 2016 Hansung University Capstone design 1st prize – SoundCatcher, 2016.06.03  
 - 2015 Hansung University Engineering contest 2nd prize – FingerKeyboard, 2015.09.23  
-- 2016 Hansung University Engineering contest 4nd prize – Sound catcher, 2016.09.28  
+- 2016 Hansung University Engineering contest 4nd prize – SoundCatcher, 2016.09.23  
+- Embedded Software Contest 2nd Prize - SoundCatcher, 2016.12.08
