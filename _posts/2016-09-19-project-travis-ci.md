@@ -4,11 +4,9 @@ title: 진행 중인 프로젝트에 travis-ci 붙이기
 tags:  [Test, TravisCI]
 ---
 
-<br>  
-
-현재 '클린 코드를 위한 테스트 주도 개발'이라는 책을 보면서 To-Do list 프로젝트를 따라해보고 있다.
+> 현재 '클린 코드를 위한 테스트 주도 개발'이라는 책을 보면서 To-Do list 프로젝트를 따라해보고 있다.
 git으로 관리하는 이 프로젝트에 travis-ci를 붙여보고자 한다.  
-<https://docs.travis-ci.com/user/getting-started/> 여기에 가면 사용법이 나와있다.
+[Travis CI getting started](https://docs.travis-ci.com/user/getting-started/) 에 가면 사용법이 나와있다.
 
 
 ## .travis.yml 추가  
