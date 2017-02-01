@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 진행 중인 프로젝트에 travis-ci 붙이기
-tags:  [Test, TravisCI]
+tags:  [Test, TravisCI, CI]
 ---
 
 > 현재 '클린 코드를 위한 테스트 주도 개발'이라는 책을 보면서 To-Do list 프로젝트를 따라해보고 있다.
