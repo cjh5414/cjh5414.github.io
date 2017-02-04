@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  왜 pytest를 사용해야 하는가? - 작성중
+title:  왜 pytest를 사용해야 하는가? [작성중]
 tags:   [Python, Test]
 ---
 
@@ -32,4 +32,4 @@ tags:   [Python, Test]
 
 <br/>  
 
-## 왜 단위 테스트를 하는가?
+## 왜 단위 테스트를 하는가?  
