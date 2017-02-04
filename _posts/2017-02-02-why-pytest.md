@@ -4,8 +4,7 @@ title:  왜 pytest를 사용해야 하는가? [작성중]
 tags:   [Test, Python]
 ---
 
-> Python Django를 이용하고 TDD를 적용하는 프로젝트를 시작하기에 앞서 pytest에 대해 공부를 해보려고 한다.  
-그 전에 [Why I use py.test and you probably should too](http://halfcooked.com/presentations/pyconau2013/why_I_use_pytest.html) 라는 글이 있어서 읽어보고 요약, 번역해보았다.  
+> Python Django를 이용하고 TDD를 적용하는 프로젝트를 시작하기에 앞서 pytest에 대해 공부를 해보려고 한다. 그 전에 [Why I use py.test and you probably should too](http://halfcooked.com/presentations/pyconau2013/why_I_use_pytest.html) 라는 글이 있어서 읽어보고 요약, 번역해보았다.  
 
 <br/>  
 
