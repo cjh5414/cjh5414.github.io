@@ -16,7 +16,9 @@ tags:   [Python, Test, pytest]
 
 - [pytest Documentation repository](https://github.com/cjh5414/pytest-Documentation)   
 
-pyenv, virtualenv를 이용하여 python 개발환경을 구축하였다. python 버전은 3.6.0을 설치했다.  
+<br/>  
+
+pyenv, virtualenv, autoenv를 이용하여 python 개발환경을 구축하였다. python 버전은 3.6.0을 설치했다.  
 
 ![pyenv](/images/pytest-installation/pyenv.png)  
 
@@ -43,7 +45,7 @@ This is pytest version 3.0.6, imported from /Users/jihun/.pyenv/versions/3.6.0/e
 
 _test_sample.py_  
 
-```
+```python
 def func(x):
     return x + 1
 
@@ -60,13 +62,15 @@ def test_answer():
 
 > pytest 명령을 실행하면 현재 디렉토리와 하위 디렉토리에서 test로 시작하거나 끝나는 파일(test_*.py, *_test.py)을 모두 찾아서 실행한다. 실행된 파일 안에 있는 함수 중에서 test로 시작하는 함수만 찾아서 테스트를 수행한다.   
 
-## Asserting that a certain exception is raised   
+<br/>  
 
-_test_sysexit.py_  
+## Asserting that a certain exception is raised   
 
 exception을 제대로 발생시키는지 확인하기 위한 테스트는 아래와 같이 pytest의 _raises_ helper함수를 이용한다.  
 
-```
+_test_sysexit.py_  
+
+```python
 import pytest
 def f():
     raise SystemExit(1)
@@ -84,6 +88,32 @@ $ pytest -q test_sysexit.py
 1 passed in 0.00 seconds
 ```  
 
+<br/>  
+
+## Grouping multiple tests in a class  
+
+테스트가 많아지기 시작하면 테스트들을 논리적으로 클래스와 모듈로 그룹화 하는 것이 좋다. 한 클래스안에 두 가지 테스트를 작성한 예제를 보자.  
+
+_test_class.py_  
+
+```python
+class TestClass:
+    def test_one(self):
+        x = "this"
+        assert 'h' in x
+
+    def test_two(self):
+        x = "hello"
+        assert hasattr(x, 'check')
+```  
+
+> hasattr(object, name) 함수는 python 내장 함수로 Object 내에 name에 해당하는 attribute가 있으면 True, 없으면 False를 반환한다.  
+
+위에서도 언급했듯이 _test_class.py_ 파일만 실행시켜주면 TestClass의 두 테스트 함수를 찾아서 테스트해준다.  
+
+![test_class result](/images/pytest-installation/test_class result.png)  
+
+첫 번째 테스트는 통과하고 두 번째 테스트는 실패했다. 실패한 위치와 assertion에 사용된 값들을 비교하여 보여주기 때문에 실패의 원인을 쉽게 파악할 수 있다.  
 
 
 <br/>  
