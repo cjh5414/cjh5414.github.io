@@ -142,7 +142,8 @@ python 개발환경 구축에 대한 자료는 아래의 링크를 참고하면 
 
 - [Python 개발 환경 구축하기 - pyenv, virtualenv, autoenv](https://cjh5414.github.io/python-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/)  
 
+<br/>  
 
 ## 참고자료  
 
-<https://media.readthedocs.org/pdf/pytest/latest/pytest.pdf>  
+<http://doc.pytest.org/en/latest/getting-started.html#going-functional-requesting-a-unique-temporary-directory>  
