@@ -118,6 +118,12 @@ test함수에 `tmpdir`이라는 인자를 입력하면 pytest가 테스트 함�
 
 explicit, modular, scalabel 등의 pytest에 내장된 fixtures 의 종류는 아래의 명령으로 찾아볼 수 있다.  
 
+아래 링크에는 pytest fixtures 와 임시 폴더, 파일에 대한 자세한 내용이 나와있다.  
+
+- [Builtin fixtures/function arguments](http://doc.pytest.org/en/latest/builtin.html#builtinfixtures)  
+
+- [Temporary directories and files](http://doc.pytest.org/en/latest/tmpdir.html#tmpdir-handling)  
+
 ```
 pytest --fixtures
 ```
