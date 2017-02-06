@@ -4,8 +4,8 @@ title:  pytest - Installation and Getting Started
 tags:   [Python, Test, pytest]
 ---
 
-> Python Django를 이용하고 TDD를 적용하는 프로젝트를 시작하기에 앞서 pytest에 대해 공부해보려고 한다. [pytest Documentation](https://media.readthedocs.org/pdf/pytest/latest/pytest.pdf)을 읽어보면서 하나씩 따라 해보고 공부한 내용들을 블로그에 남길 예정이다. (버전은 Python은 3.6.0 pytest는 3.0.6을 사용한다.)  
-이번 포스트는 pytest 설치와 기본 설정에 대한 내용이다.
+> Python Django를 이용하고 TDD를 적용하는 프로젝트를 시작하기에 앞서 pytest에 대해 공부해보려고 한다. [pytest Documentation](http://doc.pytest.org/en/latest/contents.html)을 읽어보면서 하나씩 따라 해보고 번역하고 공부한 내용들을 블로그에 남길 예정이다. (버전은 Python은 3.6.0 pytest는 3.0.6을 사용한다.)  
+이번 포스트는 `Installation and Getting Started`라는 제목의 문서 내용이고 기본적인 pytest 사용법과 설치, 기타 설정에 대한 내용이다.
 
 
 <br/>  
@@ -28,7 +28,7 @@ python 개발환경 구축에 대한 자료는 아래의 링크를 참고하면 
 
 <br/>  
 
-## Installation   
+## 설치     
 
 ```
 $ pip install -U pytest
@@ -41,7 +41,7 @@ This is pytest version 3.0.6, imported from /Users/jihun/.pyenv/versions/3.6.0/e
 
 <br/>  
 
-## Our first test run  
+## 첫 번째 테스트 실행    
 
 _test_sample.py_  
 
@@ -64,7 +64,7 @@ def test_answer():
 
 <br/>  
 
-## Asserting that a certain exception is raised   
+## 예외 처리를 테스트하는 assert     
 
 exception을 제대로 발생시키는지 확인하기 위한 테스트는 아래와 같이 pytest의 _raises_ helper함수를 이용한다.  
 
@@ -90,7 +90,7 @@ $ pytest -q test_sysexit.py
 
 <br/>  
 
-## Grouping multiple tests in a class  
+## 한 클래스에 여러 테스트를 그룹화    
 
 테스트가 많아지기 시작하면 테스트들을 논리적으로 클래스와 모듈로 그룹화 하는 것이 좋다. 한 클래스안에 두 가지 테스트를 작성한 예제를 보자.  
 
@@ -117,7 +117,7 @@ class TestClass:
 
 <br/>  
 
-## Going functional: requesting a unique temporary directory  
+## Going functional: requesting a unique temporary directory   
 
 기능 테스트에서 종종 어떤 파일을 생성하고 어플리케이션 객체로 전달해야할 필요가 있다. pytest는 내장된 fixtures/function 인자를 통해 임시의 파일과 같은 자원을 요청하여 사용할 수 있도록 해준다.
 
@@ -129,13 +129,13 @@ def test_needsfiles(tmpdir):
     assert 0
 ```  
 
-test함수에 `tmpdir`이라는 인자를 입력하면 pytest가 테스트 함수를 실행하기 전에 fixture factory를 호출해서 자원을 생성한다.  
+test함수에 `tmpdir`이라는 인자를 입력하면 pytest가 테스트 함수를 실행하기 전에 fixture factory를 호출해서 리소스를 생성한다.  
 
 ![test_tmpdir result](/images/pytest-installation/test_tmpdir result.png)  
 
-테스트를 실행하기 전에, 테스트를 위한 임시 폴더가 생성된다.   
+결과를 보면 테스트를 실행하기 전에 테스트를 위한 임시 폴더가 생성된 것을 확인할 수 있다.       
 
-pytest의 내장된 fixtures 의 종류는 아래의 명령으로 찾아볼 수 있다.  
+explicit, modular, scalabel 등의 pytest에 내장된 fixtures 의 종류는 아래의 명령으로 찾아볼 수 있다.  
 
 ```
 pytest --fixtures
