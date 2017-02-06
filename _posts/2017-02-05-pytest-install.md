@@ -115,6 +115,31 @@ class TestClass:
 
 첫 번째 테스트는 통과하고 두 번째 테스트는 실패했다. 실패한 위치와 assertion에 사용된 값들을 비교하여 보여주기 때문에 실패의 원인을 쉽게 파악할 수 있다.  
 
+<br/>  
+
+## Going functional: requesting a unique temporary directory  
+
+기능 테스트에서 종종 어떤 파일을 생성하고 어플리케이션 객체로 전달해야할 필요가 있다. pytest는 내장된 fixtures/function 인자를 통해 임시의 파일과 같은 자원을 요청하여 사용할 수 있도록 해준다.
+
+_test_tmpdir.py_  
+
+```python
+def test_needsfiles(tmpdir):
+    print (tmpdir)
+    assert 0
+```  
+
+test함수에 `tmpdir`이라는 인자를 입력하면 pytest가 테스트 함수를 실행하기 전에 fixture factory를 호출해서 자원을 생성한다.  
+
+![test_tmpdir result](/images/pytest-installation/test_tmpdir result.png)  
+
+테스트를 실행하기 전에, 테스트를 위한 임시 폴더가 생성된다.   
+
+pytest의 내장된 fixtures 의 종류는 아래의 명령으로 찾아볼 수 있다.  
+
+```
+pytest --fixtures
+```
 
 <br/>  
 
