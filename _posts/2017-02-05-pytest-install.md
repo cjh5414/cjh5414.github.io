@@ -146,4 +146,4 @@ python 개발환경 구축에 대한 자료는 아래의 링크를 참고하면 
 
 ## 참고자료  
 
-<http://doc.pytest.org/en/latest/getting-started.html#going-functional-requesting-a-unique-temporary-directory>  
+<http://doc.pytest.org/en/latest/getting-started.html>  
