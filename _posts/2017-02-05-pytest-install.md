@@ -4,27 +4,8 @@ title:  pytest - Installation and Getting Started
 tags:   [Python, Test, pytest]
 ---
 
-> Python Django를 이용하고 TDD를 적용하는 프로젝트를 시작하기에 앞서 pytest에 대해 공부해보려고 한다. [pytest Documentation](http://doc.pytest.org/en/latest/contents.html)을 읽어보면서 하나씩 따라 해보고 번역하고 공부한 내용들을 블로그에 남길 예정이다. (버전은 Python은 3.6.0 pytest는 3.0.6을 사용한다.)  
-이번 포스트는 `Installation and Getting Started`라는 제목의 문서 내용이고 기본적인 pytest 사용법과 설치, 기타 설정에 대한 내용이다.
-
-
-<br/>  
-
-## Settings  
-
-예제로 사용되는 코드는 Git으로 관리하고 Github에 올릴 예정이다.  
-
-- [pytest Documentation repository](https://github.com/cjh5414/pytest-Documentation)   
-
-<br/>  
-
-pyenv, virtualenv, autoenv를 이용하여 python 개발환경을 구축하였다. python 버전은 3.6.0을 설치했다.  
-
-![pyenv](/images/pytest-installation/pyenv.png)  
-
-python 개발환경 구축에 대한 자료는 아래의 링크를 참고하면 된다.  
-
-- [Python 개발 환경 구축하기 - pyenv, virtualenv, autoenv](https://cjh5414.github.io/python-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/)  
+> Python Django를 이용하고 TDD를 적용하는 프로젝트를 시작하기에 앞서 pytest에 대해 공부해보려고 한다. [pytest Documentation](http://doc.pytest.org/en/latest/contents.html)을 읽어보면서 하나씩 따라 해보고 번역하고 공부한 내용들을 블로그에 남길 예정이다. (버전은 Python은 3.6.0 pytest는 3.0.6을 사용한다.)
+이번 포스트는 `Installation and Getting Started`라는 제목의 문서 내용이고 기본적인 pytest 사용법과 설치에 대한 내용이다.
 
 <br/>  
 
@@ -142,6 +123,26 @@ pytest --fixtures
 ```
 
 <br/>  
+
+
+<br/>  
+
+## 기타 설정  
+
+예제로 사용되는 코드는 Git으로 관리하고 Github에 올릴 예정이다.  
+
+- [pytest Documentation repository](https://github.com/cjh5414/pytest-Documentation)   
+
+<br/>  
+
+pyenv, virtualenv, autoenv를 이용하여 python 개발환경을 구축하였다. python 버전은 3.6.0을 설치했다.  
+
+![pyenv](/images/pytest-installation/pyenv.png)  
+
+python 개발환경 구축에 대한 자료는 아래의 링크를 참고하면 된다.  
+
+- [Python 개발 환경 구축하기 - pyenv, virtualenv, autoenv](https://cjh5414.github.io/python-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/)  
+
 
 ## 참고자료  
 
