@@ -4,7 +4,7 @@ title:  왜 pytest를 사용해야 하는가? [작성중]
 tags:   [Python, Test]
 ---
 
-> Python Django를 이용하고 TDD를 적용하는 프로젝트를 시작하기에 앞서 pytest에 대해 공부를 해보려고 한다. 그 전에 [Why I use py.test and you probably should too](http://halfcooked.com/presentations/pyconau2013/why_I_use_pytest.html) 라는 글이 있어서 읽어보고 요약, 번역해보았다.  
+> Python Django를 이용하고 TDD를 적용하는 프로젝트를 시작하기에 앞서 pytest에 대해 공부를 해보려고 한다. 그 전에 [Why I use py.test and you probably should too](http://halfcooked.com/presentations/pyconau2013/why_I_use_pytest.html) 라는 글이 있어서 읽어보고 번역해보았다.  
 
 <br/>  
 
@@ -47,3 +47,59 @@ tags:   [Python, Test]
 단위 테스트의 다른 장점으로는 문제를 빨리 발견하고 변화를 쉽게하며 통합을 간단하게 하고 설계를 개선할 수 있다는 것입니다. 자세한 내용은 [Wikipedia Unit testing](https://en.wikipedia.org/wiki/Unit_testing)를 참고하십시오.  
 
 <br/>  
+
+## 단위 테스트 라이브러리  
+
+파이썬 표준 라이브러리 중에 [_unittest_](https://docs.python.org/3/library/unittest.html) 모듈이 있다. 이것은 Java의 [_junit_](http://junit.org/junit4/)을 기반으로 하고있다. 자바 프로그래머에게는 unittest가 시작점이 될 것입니다.  
+
+그렇지 않은 다른 사람에게는 [_pytest_](http://docs.pytest.org/en/latest/)가 좋은 선택일 것입니다. 테스트에 필요한 boiler plate code(getter, setter와 같이 반복되지만 자주 쓰이는 코드)가 매우 적기 때문에 pytest로 프로젝트 테스트를 시작하는 것은 매우 쉽습니다. pytest를 이용하여 테스트를 시작하는 것은 기본 라이브러리와는 거리가 있지만 빠릅니다. 또한 필요한 도구 및 테스트 기능을 모두 가지고 있습니다. traceback reporting은 환상적이고, 효과적인 test collection과 execution, test skipping과 매개 변수화 된 테스트 작성 기능을 가지고 있습니다. 자세한 내용은 [pytest docs](http://docs.pytest.org/en/latest/)를 참고하십시오.  
+
+내가 pytest를 선택하고 계속 사용하는 이유는 간단한 test collection, 적은 boilerplate와 테스트, 크래스, 모듈 레벨에서의 setup, teardown 함수 정의 기능이다.  
+
+예를 들어 이런 함수가 있을 때,  
+
+```python
+def parse_connection(connection_string):
+    """Work out the user name and password in connection_string
+
+    Connection string should be of the form 'database://username@password'
+    """
+    if '@' in connection_string:
+        # Username is characters between '://' and '@'
+        slash_position = connection_string.find('://')
+        at_position = connection_string.find('@')
+        user_name = connection_string[slash_position+3:at_position]
+        password = connection_string[at_position+1:]
+        return user_name, password
+```  
+
+[unittest](https://docs.python.org/3/library/unittest.html)로 작성할 수 있는 가장 간단한 테스트코드:  
+
+```python
+from parse_conn import parse_connection
+import unittest
+
+class InvalidInputs(unittest.TestCase):
+    def testNoAt(self):
+        """parse_connection should raise an exception for an invalid connection string"""
+        self.assertRaises(ValueError, parse_connection, 'invalid uri')
+
+if __name__ == "__main__":
+    unittest.main()
+```   
+
+[pytest](http://docs.pytest.org/en/latest/)에서 더 간단히 작성할 수 있는 테스트코드:  
+
+```python
+from parse_conn import parse_connection
+import py.test
+
+def test_not_at():
+    py.test.raises(ValueError, parse_connection, 'invalid uri')
+```  
+
+_unittest.TestCase_ 가 무엇인지 또는 테스트를 실행시키기 위해 _unittest.main()_ 을 호출해야 하는지를 알 필요가 없습니다.  command line에서 pytest를 아무런 옵션 없이 실행시키면 현재 디렉토리에서 이름이 test로 시작하는 파일을 찾을 것이고 그 파일에서 test로 시작하는 함수를 실행할 것입니다. 물론, 어떤 모듈을 실행할지, 심지어 어떤 테스트를 실행할지에 대해 더 명확히 할 수 있으며 이 특별한 기능은 pytest가 unittest를 앞서는 부분입니다.  
+
+본질적으로 pytest를 unittest보다 선호하는 이유는 테스트 코드를 작성하기 시작할 때 더 적은 작업을 요구하기 때문입니다.
+
+pytest를 좋아하는 또 다른 이유는 테스트 함수, 클래스, 모듈 레벨에서 set up, tear down 메소드(일관된 테스트 상태를 만들기 위해 사용한다.)를 정의 할 수 있다는 것입니다. 이것은 실제로 하나 이상의 테스트는 같은 set up을 공유할 수 있고 잠재적으로 다른 것에 영향을 줄 수 있기 때문에 단위 테스트의 격리 원칙에 위배됩니다. 그러나 적절하게 사용한다면 Zen of the Python 측면에서 실용적인 좋은 예가 될 것입니다. 전체 데이터베이스나 큰 랜덤 테스트 데이터 셋을 생성하는 것과 같이 크고 복잡하고 값 비싼 설정이 필요한 테스트 함수들이 있다면 테스트 각각의 set up을 반복하는 것은 많은 시간을 소비할 것입니다. 오래도는 테스트는 자주 돌지 않습니다. 테스트 간에 다른 함수들의 상속 없이 상태를 공유할 수 있다면 복잡한 set up 과 tear down 을 공유하는 것은 전체 테스트를 실행하는 데 걸리는 시간을 크게 줄일 수 있습니다.  
