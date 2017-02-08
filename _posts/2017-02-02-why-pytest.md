@@ -10,7 +10,7 @@ tags:   [Python, Test]
 
 ## 서론  
 
-단위 테스트를 시도해본 적이 있습니까? 매번 여러분의 프로젝트에 테스트를 넣으려고 하지만 어디서부터 시작해야 할지 모르진 않았습니까? 이 글은 여러분의 모듈, 패키지, 전체 프로젝트를 단위 테스트 하는 것에 대하여 친절하게 소개해줄 것입니다.  
+단위 테스트를 시도해본 적이 있습니까? 매번 여러분의 프로젝트에 테스트를 넣으려고 하지만 어디서부터 시작해야 할지 모르진 않았습니까? 이 글은 여러분의 모듈, 패키지, 전체 프로젝트를 단위 테스트 하는 것에 대하여 친절하게 소개합니다.    
 
 단위 테스트의 장점을 설명하기 위한 기사, 책, 블로그 포스트, 튜토리얼 비디오 등의 매우 많은 자료가 존재합니다. 그러므로 여기에서는 그런 설명을 상세히 하지 않을 것입니다. 단위 테스팅에 대한 입문 튜토리얼이 잘 되어있는 링크를 이 페이지 하단에 넣어두었습니다.  
 
@@ -160,5 +160,31 @@ pytest를 사용할 때 테스트 코드를 어디에 작성해야 할까요? �
 
 사람들이 단위 테스트에 대해 생각하는 또 다른 문제는 애플리케이션을 바꾸고자 할 때 애플리케이션 코드와 테스트 코드를 모두 바꿔야한다는 것입니다. 이것은 사실이고, 깨지기 쉬운 테스트들은 인생의 진리입니다. 애플리케이션 기능이 바뀔 때 테스트들도 변화가 필요합니다. 여기에 가장 좋은 접근법은 위에서 설명한 방법입니다. 만약 애플리케이션의 수정하려는 부분에 테스트가 있으면 그 테스트를 먼저 수정하는 것입니다. 그 후에 다시 테스트를 통과할 때까지 코드를 수정하십시오.  
 
-마지막으로, 잠수함 [USS Thresher](https://en.wikipedia.org/wiki/USS_Thresher_(SSN-593)) 의 잔해에 대한 내용 포함된 [The Pod Delusion Episode 182](http://poddelusion.co.uk/blog/2013/04/11/episode-182-12th-april-2013/)을 들었는데 여러분에게 남기고 싶은 훌륭한 인용구가 있었습니다.  
-_결과에 대해 듣고 싶지 않다면 테스트하는 것을 지루해하지 말아라._  
+마지막으로, 잠수함 [USS Thresher](https://en.wikipedia.org/wiki/USS_Thresher_(SSN-593)) 의 잔해에 대한 내용 포함된 [The Pod Delusion Episode 182](http://poddelusion.co.uk/blog/2013/04/11/episode-182-12th-april-2013/)을 들었는데 여러분에게 남기고 싶은 훌륭한 인용구가 있었습니다.    
+
+> _결과에 대해 듣고 싶지 않다면 테스트하는 것을 지루해하지 말아라._  
+
+<br/>  
+
+## 더 읽을거리   
+
+단위 테스트에 대한 입문 자료입니다.   
+
+- <http://pythontesting.net/framework/pytest-introduction/>  
+- <http://www.onlamp.com/pub/a/python/2004/12/02/tdd_pyunit.html>  
+
+테스팅 도구와 라이브러리에 관한 내용입니다.  
+
+- py.test - <http://pytest.org>  
+- nose - <https://nose.readthedocs.org/en/latest>  
+- testfixtures - <http://www.simplistix.co.uk/software/python/testfixtures> - by Chris Withers from Simplistix  
+- testtools - by Robert Collins - <https://pypi.python.org/pypi/testtools>  
+- subunit - by Robert Collins - <https://launchpad.net/subunit>  
+- Zope has it's own test runner - <https://pypi.python.org/pypi/zope.testrunner>  
+- Twisted 'trial' - <https://twistedmatrix.com/trac/wiki/TwistedTrial>  
+- PyFIT - <http://pyfit.sourceforge.net/>  
+- Coverage.py - <http://nedbatchelder.com/code/coverage/>  
+- testtools - <https://github.com/testing-cabal/testtools>  
+- ATOMac - GUI testing of Mac applications - <http://github.com/pyatom/pyatom>  
+- tox - <http://testrun.org/tox/latest/> - Virtualenv package manager for testing installation, use of multiple Python versions and Continuous Integration. Aimed at enabling you to test you code against multiple interpreter and dependency configs  
+- behave - <https://pypi.python.org/pypi/behave>  
