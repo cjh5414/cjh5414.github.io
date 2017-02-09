@@ -41,6 +41,7 @@ assertion introspection은 전혀 나타나지 않으며 메세지만 traceback�
 예외처리에 대한 assertions을 작성하기 위해 `pytest.raises`를 context manager로 사용할 수 있다.  
 
 _test_exception1.py_  
+
 ```python
 import pytest
 
@@ -53,6 +54,7 @@ def test_zero_division():
 그리고 실제 예외 정보에 접근해야 할 필요가 있다면 아래와 같이 사용할 수 있다.
 
 _test_exception2.py_  
+
 ```python
 import pytest
 
@@ -73,6 +75,7 @@ _version 3.0_ 부터
 context manager 형태에서는 `message` 인자를 사용하면 원하는 실패 메세지를 명시할 수 있다.  
 
 _test_exception3.py_  
+
 ```python
 import pytest
 
@@ -112,6 +115,7 @@ def test_f():
 `unittest`의 `TestCase.assertRaisesRegexp`함수와 같이 예외의 문자열 표현에서 정규표현식으로 테스트 하기를 원한다면 `ExceptionInfo.match` 함수를 사용하면 된다.   
 
 _test_exception4.py_  
+
 ```python
 import pytest
 
@@ -141,7 +145,8 @@ _version 2.8_ 에 추가됨.
 _version 2.0_ 에 추가됨.  
 `pytest`는 비교 구문을 접하면 상황에 맞는 여러가지 정보들을 제공한다. 예를들면,  
 
-_test_assert2.py_  
+_test_assert2.py_   
+
 ```python
 def test_set_comparison():
     set1 = set("1308")
@@ -200,7 +205,8 @@ E         Use -v to get the full diff
 
 아래의 _conftest.py_ 예시로 훅을 추가하는 것을 생각해보자. `Foo` 객체의 설명에 대한 대안을 제공한다.  
 
-_conftest.py_  
+_conftest.py_   
+
 ```python
 from test_foocompare import Foo
 
@@ -213,7 +219,8 @@ def pytest_assertrepr_compare(op, left, right):
 
 아래와 같은 테스트 모듈이 주어졌다.  
 
-_test_foocompare.py_  
+_test_foocompare.py_   
+
 ```python
 class Foo:
     def __init__(self, val):
