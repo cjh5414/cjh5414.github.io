@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  왜 pytest를 사용해야 하는가?
-tags:   [Python, Test]
+tags:   [Python, Test, pytest]
 ---
 
 > Python Django를 이용하고 TDD를 적용하는 프로젝트를 시작하기에 앞서 pytest에 대해 공부를 해보려고 한다. 그 전에 [Why I use py.test and you probably should too](http://halfcooked.com/presentations/pyconau2013/why_I_use_pytest.html) 라는 글이 있어서 읽어보고 번역해보았다.  
@@ -161,7 +161,7 @@ pytest를 사용할 때 테스트 코드를 어디에 작성해야 할까요? �
 사람들이 단위 테스트에 대해 생각하는 또 다른 문제는 애플리케이션을 바꾸고자 할 때 애플리케이션 코드와 테스트 코드를 모두 바꿔야한다는 것입니다. 이것은 사실이고, '깨지기 쉬운 테스트'는 인생의 진리입니다. 애플리케이션 기능이 바뀔 때 테스트들도 변화가 필요합니다. 여기에 가장 좋은 접근법은 위에서 설명한 방법입니다. 만약 애플리케이션의 수정하려는 부분에 테스트가 있으면 그 테스트를 먼저 수정하는 것입니다. 그 후에 다시 테스트를 통과할 때까지 코드를 수정하십시오.  
 
 마지막으로, 잠수함 [USS Thresher](https://en.wikipedia.org/wiki/USS_Thresher_(SSN-593)) 의 잔해에 대한 내용 포함된 [The Pod Delusion Episode 182](http://poddelusion.co.uk/blog/2013/04/11/episode-182-12th-april-2013/)을 들었는데 여러분에게 남기고 싶은 훌륭한 인용구가 있었습니다.    
- 
+
 > _결과에 대해 듣고 싶지 않다면 테스트하는 것을 신경쓰지 마라._  
 
 <br/>  

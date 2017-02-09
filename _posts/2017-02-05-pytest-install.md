@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  pytest - Installation and Getting Started
+title:  pytest doc 번역 - Installation and Getting Started
 tags:   [Python, Test, pytest]
 ---
 

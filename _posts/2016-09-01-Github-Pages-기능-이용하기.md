@@ -49,4 +49,4 @@ https://_username_.github.io 주소로 확인한다.
 ![New Repository](/images/githubpages/githubpages_result.png)  
 
 ### 5. 참고 자료  
-<https://pages.github.com>
+<https://pages.github.com>  
