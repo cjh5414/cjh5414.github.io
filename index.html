@@ -35,6 +35,7 @@ image:
   </header>
   <div class="entry-content">
     <!-- {{ post.content }} -->
+    {{ post.content | strip_html | strip_newlines | truncate: 140 }}&hellip;<a href="{{ site.url }}{{ post.url }}">Continue reading</a>
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
 {% endfor %}
