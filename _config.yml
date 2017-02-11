@@ -2,7 +2,7 @@ title:            Jihun's Development Blog
 description:      Jihun's Development Blog
 disqus_shortname: "jihuns-development-blog"
 reading_time:     true
-words_per_minute: 200
+words_per_minute: 100
 # Your site's domain goes here (eg: https://mmistakes.github.io, http://yourdomain.com, etc)
 # When testing locally leave blank or use http://localhost:4000
 url: "https://cjh5414.github.io"
@@ -52,7 +52,7 @@ sass:
 permalink:   /:title/
 
 # Amount of post to show on home page
-paginate: 5
+paginate: 6
 
 kramdown:
   input: GFM

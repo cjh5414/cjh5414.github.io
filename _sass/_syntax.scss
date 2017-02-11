@@ -11,7 +11,7 @@ figure.highlight {
   line-height: 1.5;
   border: 1px solid darken($body-color, 5);
   border-radius: 3px;
-  background-color: #272822;
+  background-color: #404040;
 
   .highlight {
     margin: 0;
@@ -46,7 +46,7 @@ figure.highlight {
 
 .highlight pre { width: 100%; }
 
-.highlight {	
+.highlight {
 
 	.lineno { padding-right: 24px; color: #8f908a;}
 	.hll { background-color: #49483e }
