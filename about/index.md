@@ -39,13 +39,14 @@ To work at the position of software engineer and contribute to the organization 
 
 ## Technical Skills  
 
-- Programming Language like C, C++, JAVA and Python  
-- Database like MySQL  
-- Configuration Management tools like GIT  
+- Programming Language like Java, Python, C and C++  
+- Version control system - GIT   
+- Continuous integration tool like Travis-CI, CircleCI  
 - Socket programming with TCP/IP, UDP  
-- Test-driven development  
+- Database - MySQL  
+- Testing tool like pytest, unittest(Python)  
 
-<br>  
+<br/>  
 
 ## Education  
 
@@ -53,11 +54,11 @@ Hansung University
 Bachelor’s degree Computer Systems Engineering  
 4.23/4.5 GPA  
 
-<br>   
+<br/>   
 
 ## Awards Career   
 
-- 2016 Hansung University Capstone design 1st prize – SoundCatcher, 2016.06.03  
-- 2015 Hansung University Engineering contest 2nd prize – FingerKeyboard, 2015.09.23  
-- 2016 Hansung University Engineering contest 4nd prize – SoundCatcher, 2016.09.23  
-- Embedded Software Contest 2nd Prize - SoundCatcher, 2016.12.08
+- 2016.12.08 :: Embedded Software Contest 2nd Prize - SoundCatcher  
+- 2016.06.03 :: Hansung University Capstone design 1st prize – SoundCatcher  
+- 2015.09.23 :: Hansung University Engineering contest 2nd prize – FingerKeyboard  
+- 2016.09.23 :: Hansung University Engineering contest 4nd prize – SoundCatcher  
