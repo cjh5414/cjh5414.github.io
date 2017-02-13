@@ -159,7 +159,9 @@ def test_set_comparison():
 ![test_assert2 result](/images/pytest-assertion/assert2.png)  
 
 다음과 같은 경우에 대해 특별한 비교가 수행 된다.  
+
 - 긴 문자열 비교 : 다른 글자들이 표시된다.  
+
 ```
 >       assert 'foo 1 bar' == 'foo 2 bar'
 E       assert 'foo 1 bar' == 'foo 2 bar'
@@ -170,6 +172,7 @@ E         ?     ^
 ```  
 
 - 긴 시퀀스 비교 : 첫 번째로 다른 값의 index가 표시된다.    
+
 ```
 >       assert [0, 1, 9, 2] == [0, 1, 3, 7]
 E       assert [0, 1, 9, 2] == [0, 1, 3, 7]
@@ -178,6 +181,7 @@ E         Use -v to get the full diff
 ```  
 
 - 딕셔너리 비교 : 다른 항목들이 표시된다.  
+
 ```
 >       assert {'a': 0, 'b': 1, 'c': 0} == {'a': 0, 'b': 2, 'd': 0}
 E       assert {'a': 0, 'b': 1, 'c': 0} == {'a': 0, 'b': 2, 'd': 0}
