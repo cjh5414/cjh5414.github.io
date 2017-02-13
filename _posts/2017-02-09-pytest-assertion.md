@@ -85,7 +85,7 @@ def test_zero_division():
         pass
 ```  
 
-_test_exception1.py_ 의 예제를 약간 변경하였고 실패 메세지를 확인해봤다.  
+_test_exception1.py_ 의 예제를 위와 같이 약간 변경한 후에 테스트를 실행해보면 message로 지정한 실패 메세지를 확인할 수 있다.  
 
 ![test_assert3 result](/images/pytest-assertion/exception assert2.png)  
 
