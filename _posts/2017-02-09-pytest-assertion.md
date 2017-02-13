@@ -4,7 +4,7 @@ title:  pytest doc 번역 - The writing and reporting of assertions in tests
 tags:   [Python, Test, pytest]
 ---
 
-> [지난 포스트(pytest doc 번역 - Installation and Getting Started)](https://cjh5414.github.io/pytest-install/)에 이어서 [pytest Documentation](http://doc.pytest.org/en/latest/contents.html)의 `The writing and reporting of assertions in tests` 라는 주제의 내용을 번역했다. 이해가 부족한 부분은 예제와 설명을 추가했다. pytest에서 assertions을 사용하는 방법과 실패 시 출력되는 결과에 대한 내용이다.  
+> [지난 포스트(pytest doc 번역 - Installation and Getting Started)](https://cjh5414.github.io/pytest-install/)에 이어서 [pytest Documentation](http://doc.pytest.org/en/latest/contents.html)의 [`The writing and reporting of assertions in tests`](http://doc.pytest.org/en/latest/assert.html) 라는 주제의 내용을 번역했다. 이해가 부족한 부분은 예제와 설명을 추가했다. pytest에서 assertions을 사용하는 방법과 실패 시 출력되는 결과에 대한 내용이다.  
 
 <br/>  
 
