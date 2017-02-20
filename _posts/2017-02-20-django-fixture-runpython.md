@@ -160,4 +160,4 @@ $ ./manage.py runserver
 ```   
 
 migrate 명령을 수행할 때 fixture을 사용한 것과 마찬가지로 (maker="test maker", name="test meeting name") 이라는 데이터가 DB에 추가된다.  
-_fixtures/meeting-data.json_ 을 사용하지 않으므로 load할 필요도 없다.   
+_fixtures/meeting-data.json_ 을 사용하지 않으므로 제거하면 되고, load할 필요도 없다.   
