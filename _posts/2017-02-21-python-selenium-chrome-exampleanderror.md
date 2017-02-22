@@ -39,7 +39,7 @@ browser = webdriver.Chrome(chrome_path)
 browser.get('http://www.google.com')
 ```  
 
-위의 코드를 실행시켜보면 오류 메세지가 아래와 같이 나온다.   
+위의 코드를 실행시켜보면 에러 메세지가 아래와 같이 나온다.   
 
 ```
 $ python3 test.py
@@ -51,7 +51,7 @@ Traceback (most recent call last):
 ImportError: sys.meta_path is None, Python is likely shutting down
 ```   
 
-browser을 close 하지 않아서 그런듯하여 `browser.close()` 코드를 추가해봤지만 동일한 오류가 발생했다. 구글링을 해보니 해결 방법을 쉽게 찾을 수 있었다.  
+browser을 close 하지 않아서 그런듯하여 `browser.close()` 코드를 추가해봤지만 동일한 에러가 발생했다. 구글링을 해보니 해결 방법을 쉽게 찾을 수 있었다.  
 
 <br/>  
 
