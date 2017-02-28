@@ -32,6 +32,8 @@ superlists/
    └── wsgi.py
 ```
 
+<br/>  
+
 ## 서론  
 
 `pytest`와 `pytest-django`는 표준 장고 테스트 및 Nose 테스트와 호환된다. 이들은 간단하거나 거의 없는 환경설정으로 존재하는 테스트를 찾아서 실행할 수 있다. 빠르게 시작하는 방법에 대해 이 글에서 설명한다.  
@@ -116,7 +118,7 @@ $ pytest
 
 <br/>  
 
-`pytest` 뒤에 _lists/tests.py_ 테스트 파일을 지정하지 않아도 `$ pytest` 명령 하나로 lists앱의 테스트파일을 찾아서 실행시켜준다.  
+`$ pytest lists/tests.py`으로도 테스트 실행이 가능하지만, `pytest` 뒤에 _lists/tests.py_ 테스트 파일을 지정하지 않아도 `$ pytest` 명령 하나로 lists앱의 테스트파일을 알아서 찾아서 실행시켜준다.  
 
 <br/>  
 
