@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Django 에서 pytest 사용하는 방법 - 'pytest와 pytest-django 시작하기' 번역
+title:  Django 에서 pytest 사용하기 - 'pytest와 pytest-django 시작하기' 번역
 tags:   [Python, Test, pytest, Django]
 ---
 
@@ -26,7 +26,8 @@ $ pip install pytest-django
 
 설치한 후에 `pytest test.py` 명령으로 특정 app의 unittest을 실행시켜보면 에러가 발생한다.  
 ```
-E           django.core.exceptions.ImproperlyConfigured: Requested settings, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.
+E django.core.exceptions.ImproperlyConfigured: Requested settings, but settings are not configured.
+You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.
 ```   
 
 이후에 나오는 설정을 적용해야 정상적으로 동작한다.  
@@ -65,6 +66,6 @@ pytest
 
 <br/>  
 
-## 참고자료  
+## 추가자료  
 
 - [왜 pytest를 사용해야 하는가?](https://cjh5414.github.io/why-pytest/)  
