@@ -116,9 +116,11 @@ python_files = tests.py test_*.py *_tests.py
 $ pytest
 ```   
 
+`pytest`가 파일을 찾이 못하는 문제가 발생하면 [I see an error saying “could not import myproject.settings”](http://pytest-django.readthedocs.io/en/latest/faq.html#faq-import-error)을 참고하자.
+
 <br/>  
 
-`$ pytest lists/tests.py`으로도 테스트 실행이 가능하지만, `pytest` 뒤에 _lists/tests.py_ 테스트 파일을 지정하지 않아도 `$ pytest` 명령 하나로 lists앱의 테스트파일을 알아서 찾아서 실행시켜준다.  
+`$ pytest lists/tests.py`으로도 테스트 실행이 가능하지만, `pytest` 뒤에 _lists/tests.py_ 테스트 파일을 지정하지 않아도 `$ pytest` 명령 하나로 lists앱의 테스트파일을 알아서 찾아서 실행시켜준다ㅔ.  
 
 <br/>  
 
