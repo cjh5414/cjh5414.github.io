@@ -150,8 +150,8 @@ pytest==3.0.5
 
 <br/>  
 
-## 참고자료   
+## 참고자료    
 
-- Two Scoops of Django :: 대니얼 로이 그린펠드/오드리 로이 그랜펠드 지음 | 김승진 옮김  
+- Two Scoops of Django - 대니얼/오드리 로이 그랜펠드 지음 | 김승진 옮김   
 
 - <https://docs.djangoproject.com/en/1.10/topics/settings/>  
