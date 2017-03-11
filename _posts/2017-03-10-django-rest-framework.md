@@ -69,7 +69,7 @@ django-rest-tutorial/
 ## Settings  
 
 `Django REST framework`을 사용하기 위해서는 `'rest_framework'`를 INSTALL_APPS에 추가해줘야 한다.  
-pagination의 크기를 지정할 수 있고, API의 접근 권한을 지정할 수도 있다. 아래와 같이 하면 admin 사용자일 때만 접근이 가능하다.  
+pagination의 크기를 지정할 수 있고, API의 접근 권한을 지정할 수도 있다. 아래의 주석 처리된 부분을 사용하면 admin 사용자일 때만 접근이 가능하다.  
 
 _tutorial/settings.py_  
 
@@ -109,8 +109,7 @@ class Person(models.Model):
 
 ## Serializers  
 
-serializer란 models 객체와 querysets 같은 복잡한 데이터를 JSON, XML과 같은 바꿔주는 역할을 한다. 아래에서는
-`HyperlinkedModelSerializer`라는 serializer를 사용한다.  
+serializer란 models 객체와 querysets 같은 복잡한 데이터를 JSON, XML과 같은 native 데이터로 바꿔주는 역할을 한다. 아래에서는 `HyperlinkedModelSerializer`라는 serializer를 사용한다.  
 
 _myapp/serializers.py_  
 
