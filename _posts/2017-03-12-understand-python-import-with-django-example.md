@@ -35,7 +35,7 @@ django-rest-tutorial/
 
 _tutorial/tutorial/urls.py_   
 
-```
+```python
 [...]
 
 from myapp import views
@@ -55,7 +55,7 @@ python에서 모듈을 절대 import 하면 그 모듈을 찾기 위해 아래�
 
 - Python이 설치된 경로 및 라이브러리의 경로  
 
-위의 예제에서는 직접 구현한 모듈을 import 하는 것이고, manage.py 모듈을 통해 실행하므로 manage.py가 위치한 경로에서 탐색한다.  
+위의 예제에서는 직접 구현한 모듈을 import 하는 것이고, manage.py 모듈을 통해 실행하므로 manage.py가 위치한 경로에서 탐색을 한다.  
 
 <br/>
 
@@ -65,7 +65,7 @@ python에서 모듈을 절대 import 하면 그 모듈을 찾기 위해 아래�
 
 _tutorial/tutorial/urls.py_ 에 아래의 코드를 추가하여  
 
-```
+```python
 import sys
 print(sys.path)
 ```  
