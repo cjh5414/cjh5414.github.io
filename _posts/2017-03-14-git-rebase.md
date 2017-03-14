@@ -4,7 +4,7 @@ title:  git rebase로 commit 합치기
 tags:   [Git]
 ---
 
-> Git을 사용하다보면 commit을 한 후에 누락된 작업이 생각이 나거나 이미 커밋한 내용 중에 수정이 필요한 경우가 종종 생기는데, 추가로 작업한 후에 다시 commit을 하면 동일한 이름의 commit 혹은 의미없는 새로운 commit이 생기게 된다. 이때, `git rebase` 명령을 이용하면 변경사항은 적용하면서 이전과 현재의 커밋을 합칠 수 있다. `git rebase` 명령 중에서도 `squash(s)`를 자주 이용했었는데 단순히 현재 commit's log message를 지우고 과거의 commit으로 합치는 것이라면 `fixup(f)`을 이용하는 것이 더 편리하다.  
+> Git을 사용하다보면 commit을 한 후에 누락된 작업이 생각이 나거나 이미 커밋한 내용 중에 수정이 필요한 경우가 종종 생기는데, 추가로 작업한 후에 다시 commit을 하면 동일한 이름의 commit 혹은 의미없는 새로운 commit이 생기게 된다. 이때, `git rebase` 명령을 이용하면 변경사항은 적용하면서 이전과 현재의 커밋을 합칠 수 있다. `git rebase` 명령 중에서도 `squash(s)`를 자주 이용했었는데 단순히 현재 commit의 log message를 지우고 과거의 commit으로 합치는 것이라면 `fixup(f)`을 이용하는 것이 더 편리하다.  
 
 <br/>  
 
@@ -106,7 +106,7 @@ $ git log --oneline
 
 ### fixup을 이용한 rebase   
 
-하지만 단순히 현재 commit(`first commit`)을 이전 commit(`second commit`)으로 합치고 싶은 것이라면 `fixup(f)`을 이용하는 것이 편리하다.  
+하지만 단순히 현재 commit(`second commit`)을 이전 commit(`first commit`)으로 합치고 싶은 것이라면 `fixup(f)`을 이용하는 것이 편리하다.  
 조금 전과 동일하게 `$ git rebase -i HEAD~2` 명령을 실행 한 후에  
 
 ```
@@ -114,7 +114,7 @@ pick 004644d first commit
 f ae53bdf second commit
 ```    
 
-와 같이 입력하면 이후에 특별한 작업 없이 바로 commit이 합쳐진다.  
+와 같이 입력하면 이후에 특별한 작업 없이 바로 commit이 합쳐진다. 변경 사항들은 적용되면서 `second commit`은 사라지고 `first commit` 만 남는다.  
 
 <br/>  
 
