@@ -107,7 +107,13 @@ $ git log --oneline
 ### fixup을 이용한 rebase   
 
 하지만 단순히 현재 commit(`second commit`)을 이전 commit(`first commit`)으로 합치고 싶은 것이라면 `fixup(f)`을 이용하는 것이 편리하다.  
-조금 전과 동일하게 `$ git rebase -i HEAD~2` 명령을 실행 한 후에  
+`squash`와 동일하게  
+
+```
+$ git rebase -i HEAD~2
+```  
+
+명령을 실행 한 후에   
 
 ```
 pick 004644d first commit
