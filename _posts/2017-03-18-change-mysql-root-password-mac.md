@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  mysql root password 변경
+title:  MySQL root password 변경
 tags:   [MySQL]
 ---
 
