@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  [Mac] mysql root password 변경
+title:  mysql root password 변경
 tags:   [MySQL]
 ---
 
