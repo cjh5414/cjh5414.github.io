@@ -16,7 +16,7 @@ tags:   [Git]
 $ git remote update
 ```  
 
-> `fatal: Cannot update paths and switch to branch 'feature/rename' at the same time.` 라는 오류 메세지를 해결해준다.  
+> 원격의 브랜치를 찾지 못해서 발생하는 `fatal: Cannot update paths and switch to branch 'feature/rename' at the same time.` 라는 오류 메세지를 해결해준다.  
 
 <br/>    
 
