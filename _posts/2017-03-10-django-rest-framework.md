@@ -118,7 +118,7 @@ from myapp.models import Person
 from rest_framework import serializers
 
 
-class PersonSerialier(serializers.HyperlinkedModelSerializer):
+class PersonSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Person
         fields = ('first_name', 'last_name')
@@ -134,13 +134,13 @@ _myapp/views.py_
 
 ```python
 from rest_framework import viewsets
-from serializers import PersonSerialier
+from serializers import PersonSerializer
 from myapp.models import Person
 
 
 class PersonViewSet(viewsets.ModelViewSet):
     queryset = Person.objects.all()
-    serializer_class = PersonSerialier
+    serializer_class = PersonSerializer
 ```  
 
 <br/>  
