@@ -53,7 +53,7 @@ class PersonSerializer(serializers.HyperlinkedModelSerializer):
 
 image 파일들을 관리하기 위해 _tutorial/_ 위치에 _media_ 폴더를 생성하고, django에 `MEDIA_ROOT`, `MEDIA_URL`, _urls.py_ 를 설정해준다. _media_ 폴더에 `default` 이미지로 지정했던 `default_image.jpeg` 이미지를 넣어준다.    
 
-_/tutorial/settings.py_  
+_tutorial/settings.py_  
 
 ```python
 
@@ -88,7 +88,7 @@ browser를 키고 `localhost:8000` 에 접속하면 아래와 같은 화면이 �
 
 ![home result](/images/DRF-imagefield/home-result.png)  
 
-양식에 맞게 이름 데이터를 입력하고 테스트 image 파일을 선택한다. (여기서는 `test_image.png`라는 이름의 이미지 파일을 사용한다.)  
+`http://localhost:8000/persons/` 링크를 클릭한 후에, 양식에 맞게 이름 데이터를 입력하고 테스트 image 파일을 선택한다. (여기서는 `test_image.png`라는 이름의 이미지 파일을 사용한다.)  
 
 ![input form](/images/DRF-imagefield/input-form.png)  
 
