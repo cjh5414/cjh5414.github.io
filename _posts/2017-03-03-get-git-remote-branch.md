@@ -4,9 +4,20 @@ title:  Git remote branch 가져오기
 tags:   [Git]
 ---
 
-> Git을 사용하다보면 원격 저장소에 있는 branch를 로컬 저장소로 가져와야하는 경우가 있다. 협업하고 있는 다른 팀원의 branch를 가져와서 작업을 해야하는 경우 혹은 혼자서 2대의 PC를 사용하고 작업파일을 Git으로 관리하는데 branch를 따서 작업하는 경우 등이 여기에 해당한다. 저장소를 그대로 clone을 하던지, pull을 하면 원격 저장소의 branch도 같이 받아질 것이라 생각했지만 그렇지 않았다. `$ git checkout -t [원격 저장소의 branch 이름]` 명령을 이용하면 원격 저장소의 branch를 가져오는 것과 동일한 기능을 한다.  
+> Git을 사용하다보면 원격 저장소에 있는 branch를 로컬 저장소로 가져와야하는 경우가 있다. 협업하고 있는 다른 팀원의 branch를 가져와서 작업을 해야하는 경우 혹은 혼자서 2대의 PC를 사용하고 작업파일을 Git으로 관리하는데 branch를 따서 작업하는 경우 등이 여기에 해당한다. 저장소를 그대로 clone을 하던지, pull을 하면 원격 저장소의 branch도 같이 받아질 것이라 생각했지만 그렇지 않았다. `$ git checkout -t [원격 저장소의 branch 이름]` 명령을 이용하면 원격 저장소의 branch를 가져오는 것과 동일한 기능을 한다.    
 
 <br/>  
+
+### git remote update  
+
+먼저 원격의 브랜치에 접근하기 위해 git remote를 갱신해줄 필요가 있다.  
+
+> `fatal: Cannot update paths and switch to branch 'feature/rename' at the same time.` 라는 오류 메세지를 해결해준다.  
+```
+$ git remote update
+```  
+
+<br/>    
 
 현재 원격 저장소에는 여러 개의 branch가 있다. 하지만 원격의 저장소의 모든 내용을 pull 받은 후에 `$ git branch`로 확인해보면 원격 저장소의 branch는 받아지지 않고 기존에 있던 `master` 브랜치 하나만 존재한다.  
 
