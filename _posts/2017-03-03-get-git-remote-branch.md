@@ -12,10 +12,11 @@ tags:   [Git]
 
 먼저 원격의 브랜치에 접근하기 위해 git remote를 갱신해줄 필요가 있다.  
 
-> `fatal: Cannot update paths and switch to branch 'feature/rename' at the same time.` 라는 오류 메세지를 해결해준다.  
 ```
 $ git remote update
 ```  
+
+> `fatal: Cannot update paths and switch to branch 'feature/rename' at the same time.` 라는 오류 메세지를 해결해준다.  
 
 <br/>    
 
