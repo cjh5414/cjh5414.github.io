@@ -8,6 +8,8 @@ tags:   [Java, JPA]
 
 `Meeting` 이라는 테이블과 `User` 라는 테이블이 있다. 두 테이블 간의 `Participation` 관계 테이블을 넣어서 이용하려고 한다.  
 
+![diagram](/images/jap-manytomany/diagram.png)  
+
 <br/>  
 
 ### `Meeting`, `User` table
