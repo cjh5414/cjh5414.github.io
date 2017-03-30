@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  JPA 다대다 관계 @OneToMany로 구현하여 Column 추가하기(복합키 사용)
+title:  JPA 다대다 관계 모델 @OneToMany로 구현하여 Column 추가하기(@IdClass 사용)
 tags:   [Java, JPA]
 ---
 
@@ -35,7 +35,6 @@ public class Meeting {
 _model/User.java_  
 
 ```java
-
 @Entity
 public class User {
     @Id
