@@ -4,7 +4,7 @@ title:  JPA Composite key(복합키)를 foreign key(외래키)로 사용하기
 tags:   [JPA, Java]
 ---
 
-> 이전 포스트 [JPA 다대다 관계 모델 @OneToMany로 구현하여 Column 추가하기(@IdClass 사용)](https://cjh5414.github.io/jpa-manytomany-relationship-with-@onetomany-and-compositekey/) 에서 두 테이블의 관계테이블을 구현하는데 `@IdClass`를 이용해서 복합키를 primary key로 지정했었다. 이어서 JPA에서 Composite key(복합키)를 primary key로 사용하고 있는 테이블을 foreign key(외래키)로 OneToMany 관계를 맺는 테이블을 추가하는 방법에 대해서 다룬다.  
+> 이전 포스트 [JPA 다대다 관계 모델 @OneToMany로 구현하여 Column 추가하기(@IdClass 사용)](https://cjh5414.github.io/jpa-manytomany-relationship-with-@onetomany-and-compositekey/) 에서 두 테이블의 관계테이블을 구현하는데 `@IdClass`를 이용해서 두 테이블의 id를 Composite Key(복합키)로 지정했었다. 이번 포스트에서는 JPA에서 Composite key(복합키)를 사용하고 있는 테이블에 foreign key(외래키)로, OneToMany 관계를 맺는 테이블을 구현하는 방법에 대해서 다룬다.  
 
 <br/>  
 
@@ -18,7 +18,7 @@ tags:   [JPA, Java]
 
 ### JPA Models  
 
-우선 관계테이블 `participation`의 model 구현 코드이다.  
+관계테이블 `participation`의 model 구현 코드이다.  
 
 _model/ParticiPationId.java_   
 
@@ -57,10 +57,6 @@ public class Participation {
 
 `Participation` model에서는 복합키로 사용되는 두 테이블의 id를 ManyToOne 관계로 지정하기 위한 코드가 작성돼 있고, `Payment` model을 OneToMany로 설정한 내용이다.  
 
-<br/>  
-
-`payment` 테이블은 id를 따로 가지고 있고 `participation` 테이블을 외래키로 참조하고 있다. 하지만 그 외래키가 복합키(`participation`의 primary key인 `user`, `meeting`의 id)를 참조하고 있다. 이를 구현하기 위해 `Payment` model에서는 participation에 ManyToOne 관계를 맺고, JoinColumns으로 복합키의 id들을 설정해줘야한다.  
-
 _model/Payment.java_  
 
 ```java
@@ -76,11 +72,17 @@ public class Payment {
             @JoinColumn(name="user_id")
     })
     private Participation participation;
-    private String name;
-    private int amount;
 
+    // ...
+    
     public Payment() {}
 }
 ```  
+
+`payment` 테이블은 id를 따로 가지고 있고 `participation` 테이블을 외래키로 참조하고 있다. 하지만 그 외래키가 복합키(`participation`의 primary key인 `user`, `meeting`의 id)를 참조하고 있다. 이를 구현하기 위해 `Payment` model에서는 participation에 ManyToOne 관계를 맺고, JoinColumns으로 복합키의 id들을 설정해줘야한다.  
+
+<br/>  
+
+### 추가로 더 알고싶다면  
 
 `user`, `meeting` 과의 관계테이블을 구성하는 방법은 [JPA 다대다 관계 모델 @OneToMany로 구현하여 Column 추가하기(@IdClass 사용)](https://cjh5414.github.io/jpa-manytomany-relationship-with-@onetomany-and-compositekey/) 에 나와있다.  
