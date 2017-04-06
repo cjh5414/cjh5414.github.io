@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Django REST Framework OneToMany 관계 Serializer에 추가하기
-tags:   [JPA, Java]
+tags:   [Python, Django, DRF]
 ---
 
 > Django REST Framework에서 model을 정의하고 Serializer, ViewSet, Router 만 간단히 구현하면 REST API를 편리하게 이용할 수 있다. `Meeting`에 대한 REST API가 구현돼 있고 `SubImage` 라는 model과 OneToMany 관계를 가지고 있다. 이 때, `Meeting`에 대한 API를 호출하면 연관된 `SubImage` 정보까지 같이 반환되도록 하는 Serializer를 추가하는 방법에 대해서 다룬다.  
