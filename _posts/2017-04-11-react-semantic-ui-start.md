@@ -33,7 +33,7 @@ $ npm install --save semantic-ui-react semantic-ui-css
 
 <br/>   
 
-## Usage  
+### Usage  
 
 우선, src/index.js 파일에서 Semantic-UI의 CSS 파일을 불러와야한다.  
 
@@ -43,9 +43,7 @@ import 'semantic-ui-css/semantic.min.css';
 
 그 다음, [Semantic UI React](http://react.semantic-ui.com/introduction) 문서를 참고하여 원하는 스타일을 지정하여 사용하면 된다.  
 
-```javascript
-import { Container } from 'semantic-ui-react'
-
+```
 import React from 'react'
 import { Container, Header, Button } from 'semantic-ui-react'
 
@@ -57,5 +55,5 @@ const Example = () => (
   </Container>
 )
 
-export default ContainerExampleText
+export default Example
 ```  
