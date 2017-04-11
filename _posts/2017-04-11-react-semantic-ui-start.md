@@ -4,7 +4,7 @@ title:  Semantic UI React 시작하기
 tags:   [JavaScript, React, Semantic UI]
 ---
 
-[Semantic UI React](http://react.semantic-ui.com/introduction)를 이용하면  
+React에서 Semantic UI를 적용할 때 [Semantic UI React](http://react.semantic-ui.com/introduction)를 이용하면  
 
 ```html
 <div
@@ -14,14 +14,14 @@ tags:   [JavaScript, React, Semantic UI]
 ></div>
 ```  
 
-와 같이 Semantic-UI를 사용하지 않고  
+와 같이 사용하지 않고  
 
 ```html
 <Rating rating={1} maxRating={5} />
 ```  
 
 처럼 React Component로 사용할 수 있다.  
-또한 jQuery 를 사용하지 않는다.  
+또한 `Semantic UI React`는 jQuery 를 사용하지 않는다.  
 
 <br/>  
 
