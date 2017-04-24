@@ -1,17 +1,23 @@
 ---
 layout: post
-title:  Django User Model hashed password로 instance 생성하기
+title:  hashed password로 Django User Model instance 생성하기
 tags:   ['Django', 'Python']
 ---
 
-> Django에서 제공하는 User를 상속 받아서 사용하고 있다. 테스트할 때 매번 User 객체를 생성하는 것이 번거로워서 `RunPython`을 이용하여 migrate 할 때 테스트를 위한 User instance 를 생성했는데 password가 해싱되지 않고 생성되는 문제가 발생했다. `User.objects.create()` 할 때 password를 hashing하여 생성하는 방법에 대해서 알아본다.  
+> Django에서 제공하는 User를 상속 받아서 사용하고 있다. 테스트할 때 매번 User 객체를 생성하는 것이 번거로워서 `RunPython`을 이용하여 migrate 할 때 테스트를 위한 User model instance 를 생성했는데 password가 해싱되지 않고 저장되는 문제가 발생했다. `User.objects.create()` 할 때 password를 hashing하여 생성하는 방법에 대해서 알아본다.  
 
 <br/>  
 
 ## User model  
 
 ```python
+from django.contrib.auth.models import AbstractUser
+from django.core.validators import RegexValidator
+
+
 class User(AbstractUser):
+    phone_regex = RegexValidator(regex='^\d{11}$', message='Phone length has to be 11 & Only number')
+
     username = models.EmailField(unique=True, null=False, max_length=254)
     phone_number = models.CharField(max_length=11, validators=[phone_regex])
     # ...
@@ -25,7 +31,7 @@ User model은 `AbstractUser` 를 상속 받고 email을 username으로 사용하
 
 ```python
 User.objects.create(
-    username="testman@email.com",
+    username="test@email.com",
     password="pwd1234",
     phone_number="01012341234")
 ```  
@@ -34,7 +40,7 @@ User.objects.create(
 
 ```python
 user = User(
-    username="testman@email.com",
+    username="test@email.com",
     phone_number="01012341234")
 user.set_password("pwd1234")
 user.save()
@@ -46,7 +52,7 @@ user.save()
 AttributeError: 'User' object has no attribute 'set_password'
 ```   
 
-[Django Docs | Password management in Django ](https://docs.djangoproject.com/en/1.11/topics/auth/passwords/#module-django.contrib.auth.hashers) 을 참고해보면 `make_password()` 을 이용하면 hashed password를 생성할 수 있다고 나와있다.  
+[Django Docs's Password management in Django ](https://docs.djangoproject.com/en/1.11/topics/auth/passwords/#module-django.contrib.auth.hashers) 을 참고해보면 `make_password()` 을 이용하면 hashed password를 생성할 수 있다고 한다.    
 
 ```python
 from django.contrib.auth.hashers import make_password
@@ -54,7 +60,7 @@ from django.contrib.auth.hashers import make_password
 hashed_password = make_password("pwd1234")
 
 User.objects.create(
-    username="testman@email.com",
+    username="test@email.com",
     password=hashed_password,
     phone_number="01012341234")
 ```  
@@ -85,7 +91,7 @@ def reverse_func(apps, schema_editor):
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('meeting', '0001_initial'),
+        ('myapp', '0001_initial'),
     ]
 
     operations = [
