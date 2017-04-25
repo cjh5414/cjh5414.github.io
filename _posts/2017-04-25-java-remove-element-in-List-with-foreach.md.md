@@ -6,7 +6,9 @@ tags:   ['Java']
 
 > Java 에서 List에서 특정 값을 제거하고 싶을 때 foreach를 사용하면 `java.util.ConcurrentModificationException: null` 라는 에러가 발생할 수 있다.  
 
-### Example  
+<br/>  
+
+## Example  
 
 `List<Integer>` 객체를 생성하여 몇가지 값들을 추가한 후에 `foreach`를 사용해서 Integer 의 값이 0이면 제거하도록 하는 간단한 예제 코드가 있다.  
 
