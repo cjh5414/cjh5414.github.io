@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  React google Analytics
+title:  React Google Analytics
 tags:   ['React']
 ---
 
