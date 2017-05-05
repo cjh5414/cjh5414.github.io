@@ -121,4 +121,4 @@ $ sudo service nginx reload;
 
 ![test deliver](/images/github-webhook/test deliver.png)  
 
-다음 포스트에서는 특정 이벤트에 따라서 원하는 처리를 지정하는 방법에 대해 알아본다.  
+다음 포스트에서는 `pull_request` 이밴트를 등록하여 Pull Request이 생성될 때마다 알림을 받는 방법에 대해서 알아본다.  
