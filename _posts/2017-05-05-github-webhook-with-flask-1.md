@@ -114,7 +114,7 @@ $ sudo service nginx reload;
 
 - Payload URL  : `[server_url]/postreceive` 입력  
 - Content type : Application/json 선택  
-- Secret       : 일단 비워 둠
+- Secret       : 일단 비워 둠  
 
 위의 내용을 입력한 후에 `Add webhook` 버튼을 눌러서 생성하면 자동으로 테스트 Request을 보낸다.  
 결과는 `Recent Deliveries` 에서 확인할 수 있다. 정상적으로 동작 했다면 Response에 200 status code로 `Hello World!`라는 메세지가 출력될 것이다.   
