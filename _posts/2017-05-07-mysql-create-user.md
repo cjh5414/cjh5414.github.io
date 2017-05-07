@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Mysql 사용자 추가 및 권한 부여
+title:  Mysql 사용자 추가, 제거 및 권한 부여
 tags:   ['Mysql']
 ---
 
@@ -31,6 +31,14 @@ $ grant all privileges on DB이름.* to '사용자'@'localhost';
 ```
 
 모든 DB에 접근 가능하도록 하려면 `*.*`, 특정 DB에만 접근 가능하도록 하려면 `DB이름`으로 지정해주면 된다.  
+
+<br/>  
+
+### 사용자 계정 삭제  
+
+```
+$ drop user '사용자'@'localhost';
+```  
 
 <br/>  
 
