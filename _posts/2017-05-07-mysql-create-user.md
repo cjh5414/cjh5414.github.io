@@ -21,7 +21,7 @@ Enter password:
 $ create user '사용자'@'localhost' identified by '비밀번호';
 ```
 
-> `mysql ERROR 1819 (HY000): Your password does not satisfy the current policy requirements` 라는 에러가 발생하면 [Mysql password policy requirements 에러 | validation 제거하여 해결하기](https://cjh5414.github.io/mysql-create-user/) 을 참고하자.  
+> `mysql ERROR 1819 (HY000): Your password does not satisfy the current policy requirements` 라는 에러가 발생하면 [Mysql password policy requirements 에러 validation 제거하여 해결하기](https://cjh5414.github.io/mysql-create-user/) 을 참고하자.  
 
 <br/>  
 

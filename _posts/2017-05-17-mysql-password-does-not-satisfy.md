@@ -13,6 +13,8 @@ mysql> ....
 mysql ERROR 1819 (HY000): Your password does not satisfy the current policy requirements
 ```   
 
+<br/>  
+
 ### 해결방법  
 
 ```
@@ -21,3 +23,9 @@ Enter password:
 mysql> uninstall plugin validate_password;
 Query OK, 0 rows affected (0.08 sec)
 ```  
+
+<br/>  
+
+### 참고자료  
+
+[Mysql 사용자 추가, 제거 및 권한 부여](https://cjh5414.github.io/mysql-create-user/)  
