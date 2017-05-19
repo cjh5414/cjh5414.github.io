@@ -10,13 +10,13 @@ tags:   ['Python']
 
 <br/>  
 
-<https://newrelic.com/> 에 접속하여 로그인 후에 `add more`을 클릭하면 언어별로 New Relic 을 사용하는 방법에 대해 나와있다. 설치하는 과정에 대한 오른쪽에 동영상을 오른쪽에 제공하고 있는데 따라해보면 쉽게 적용할 수 있다.  
+<https://newrelic.com/> 에 접속하여 로그인 후에 `add more`을 클릭하면 언어별로 New Relic 을 사용하는 방법에 대해 나와있다. 설치하는 과정에 대한 동영상을 오른쪽에 제공하고 있는데 따라해보면 쉽게 적용할 수 있다.  
 
 ![Getting start](/images/newrelic/getting start.png)  
 
 <br/>  
 
-pip를 통해 newrelic을 설치한다.  
+먼저 pip를 통해 newrelic을 설치한다.  
 
 ```
 $ pip install newrelic
@@ -27,7 +27,9 @@ Installing collected packages: newrelic
 Successfully installed newrelic-2.86.1.66
 ```   
 
-`newrelic-admin` 명령으로 _newrelic.ini_ 파일을 생성한다. `<your-key-goes-here>`에는 1번의 license key를 인자로 입력한다.  
+<br/>  
+
+아래와 같이 `newrelic-admin` 명령에 `<your-key-goes-here>` 자리에 위의 그림에서 1번의 license key를 인자로 입력하여 실행하면 _newrelic.ini_ 파일이 생성된다.  
 
 ```
 $ newrelic-admin generate-config <your-key-goes-here> newrelic.ini
@@ -35,6 +37,8 @@ $ ls
 ...
 newrelic.ini
 ```  
+
+<br/>  
 
 _newrelic.ini_ 파일에서 36번째 줄의 `app_name`을 수정한다. 설정한 이름으로 웹에서 확인할 수 있다. 앱이 여러개인 경우 `app_name`으로 구분된다.   
 
@@ -44,10 +48,14 @@ $ vim newrelic.ini
 app_name = LinkU
 ```    
 
+<br/>  
+
 실행하는 방법은 앱을 구동시키는 명령 앞에 아래와 같이 설정 값을 추가하여 `newrelic-admin run-program`으로 실행해주면 된다.  
 
 ```
 $ NEW_RELIC_CONFIG_FILE=newrelic.ini newrelic-admin run-program YOUR_ORIGINAL_COMMAND_OPTIONS
 ```      
 
-[New Relic Python Agent Docs](https://docs.newrelic.com/docs/agents/python-agent?toc=true) 에서 더 자세한 내용을 확인할 수 있다.  
+<br/>  
+
+더 자세한 내용은 [New Relic Python Agent Docs](https://docs.newrelic.com/docs/agents/python-agent?toc=true) 에서 확인할 수 있다.  
