@@ -10,7 +10,7 @@ tags:   ['Linux', 'CI', 'Jenkins']
 
 ## Jenkins 설치    
 
-`apt-get`을 이용하여 Jenkins를 설치 하기 위해 저장소 key를 다운받고 패키지 주소를 `sources.list`에 더해준다. (정상적으로 저장소 key를 다운받으면 `OK`를 반환한다.)  
+`apt-get`을 이용하여 Jenkins를 설치 하기 위해 저장소 key를 다운받고 (정상적으로 저장소 key를 다운받으면 `OK`를 반환한다.) 패키지 주소를 `sources.list`에 더해준다.   
 
 ```
 $ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
@@ -44,7 +44,7 @@ $ sudo systemctl status jenkins
 
 <br/>  
 
-## Firewall 열기  
+## Firewall 허용하기   
 
 `Jenkins`가 잘 동작하면 웹 브라우저를 통해 접근할 수 있도록 방화벽 설정이 필요하다. `Jenkins`는 기본적으로 `8080`포트에서 실행되도록 설정 돼 있다. `ufw`으로 `8080` 포트를 허가해줘서 접근할 수 있도록 하고 결과를 확인해본다.  
 
@@ -93,7 +93,7 @@ $ sudo systemctl restart jenkins
 
 아래와 같은 화면이 보일텐데 `Jenkins`를 설치할 때 생성된  `/var/lib/jenkins/secrets/initialAdminPassword` 파일의 내용을 입력해야한다.
 
-![unlock](/images/ubunt-jenkins/unlock.png)  
+![unlock](/images/ubuntu-jenkins/unlock.png)  
 
 cat 명령으로 출력한 후 복사해서 붙여넣자.   
 
@@ -101,17 +101,17 @@ cat 명령으로 출력한 후 복사해서 붙여넣자.
 $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```  
 
-완료되면 두 가지 선택사항이 나오는데 `Install suggested plugins`를 클릭하자. `Select plugins to install`을 클릭하면 설치하고 싶은 plugins를 선택할 수 있다.  
+완료되면 두 가지 선택사항이 나오는데 `Select plugins to install`을 클릭하면 설치하고 싶은 plugins를 선택할 수 있다. 권장하는 설치항목들을 설치하고 싶다면 `Install suggested plugins`를 선택하자.  
 
-![customize](/images/ubunt-jenkins/customize.png)  
+![customize](/images/ubuntu-jenkins/customize.png)   
 
 설치가 완료되면 admin 계정을 생성하고,  
 
-![ready](/images/ubunt-jenkins/ready.png)  
+![ready](/images/ubuntu-jenkins/ready.png)  
 
 `Start usgin Jenkins` 을 클릭하면 완료된다.      
 
-![result](/images/ubunt-jenkins/result.png)  
+![result](/images/ubuntu-jenkins/result.png)  
 
 <br/>  
 
