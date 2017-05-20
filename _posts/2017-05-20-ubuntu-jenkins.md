@@ -103,7 +103,7 @@ $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 완료되면 두 가지 선택사항이 나오는데 `Select plugins to install`을 클릭하면 설치하고 싶은 plugins를 선택할 수 있다. 권장하는 설치항목들을 설치하고 싶다면 `Install suggested plugins`를 선택하자.  
 
-![customize](/images/ubuntu-jenkins/customize.png)   
+![customize](/images/ubuntu-jenkins/customize.png)    
 
 설치가 완료되면 admin 계정을 생성하고,  
 
