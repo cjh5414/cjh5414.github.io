@@ -91,17 +91,17 @@ $ sudo systemctl restart jenkins
 `http://ip_address_or_domain_name:8081`  
 으로 입력한다.  
 
-아래와 같은 화면이 보일텐데 `Jenkins`를 설치할 때 생성된  `/var/lib/jenkins/secrets/initialAdminPassword` 파일의 내용을 입력해야한다.
+처음 접속했다면 아래와 같은 화면이 보일텐데 `Jenkins`를 설치할 때 생성된  `/var/lib/jenkins/secrets/initialAdminPassword` 파일의 내용을 빈칸에 입력해야한다.  
 
 ![unlock](/images/ubuntu-jenkins/unlock.png)  
 
-cat 명령으로 출력한 후 복사해서 붙여넣자.   
+cat 명령으로 파일의 내용을 출력한 후 복사해서 붙여넣자.   
 
 ```
 $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```  
 
-완료되면 두 가지 선택사항이 나오는데 `Select plugins to install`을 클릭하면 설치하고 싶은 plugins를 선택할 수 있다. 권장하는 설치항목들을 설치하고 싶다면 `Install suggested plugins`를 선택하자.  
+완료되면 두 가지 선택사항이 나오는데 `Select plugins to install`을 클릭하면 설치하고 싶은 plugins를 선택할 수 있다. 권장하는 설치 항목들을 설치하고 싶다면 `Install suggested plugins`를 선택하자.  
 
 ![customize](/images/ubuntu-jenkins/customize.png)    
 
@@ -109,7 +109,7 @@ $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ![ready](/images/ubuntu-jenkins/ready.png)  
 
-`Start usgin Jenkins` 을 클릭하면 완료된다.      
+`Start using Jenkins` 을 클릭하면 완료된다.      
 
 ![result](/images/ubuntu-jenkins/result.png)  
 
