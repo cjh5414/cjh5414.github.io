@@ -36,13 +36,23 @@ Nginx의 Asynchronous, Event-driven 방식을 Apache의 Thread 기반 방식과 
 
 ### package를 통한 nginx 설치  
 
-Nginx를 설치하는 방법에는
-
+package를 이용하여 nginx를 설치한다.  
 
 ```
 $ sudo apt-get install nginx
-```  
+```   
+
+설치가 완료되면 아래와 같이 버전과 상태를 확인해 볼 수 있다. nginx는 설치가 완료되면 알아서 실행시키기 때문에 동작하고 있는 상태로 표시된다.    
 
 ```
-$ nginx -t
-```
+$ nginx -v
+nginx version: nginx/1.4.6 (Ubuntu)
+$ sudo service nginx status
+ * nginx is running
+```  
+
+웹 브라우저를 통해 서버에 접속해보면 아래와 같은 화면이 뜬다.  
+
+![nginx default](/images/ubuntu-deploy-django/nginx default.png)   
+
+<br/>  
