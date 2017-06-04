@@ -8,19 +8,11 @@ tags:   ['Django', 'Nginx', 'Linux']
 
 <br/>  
 
-## pyenv & pyenv-virtualenv  
+## pyenv & pyenv-virtualenv & autoenv  
 
 Python을 사용하면 대부분 가상환경을 이용하는데 서버에서도 마찬가지로 설정을 해줘야한다.  
 
-먼저 Ubuntu에서 Build 할 때 공통적으로 발생하는 문제를 방지하기 위해 [pyenv - Common build problems](https://github.com/pyenv/pyenv/wiki/Common-build-problems)을 참고하여 패키지들을 설치해준다.  
-
-```
-$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
-libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
-xz-utils tk-dev
-```  
-
-설치 및 설정 방법은 [Python 개발 환경 구축하기 - pyenv, virtualenv, autoenv](https://cjh5414.github.io/python-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/) 를 참고하면 된다.  
+설치 및 설정 방법은 [Ubuntu에서 pyenv, virtualenv, autoenv 이용하기](https://cjh5414.github.io/ubuntu-pyenv-virtualenv/) 를 참고하면 된다.  
 
 <br/>
 
