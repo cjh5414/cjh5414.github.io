@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Spring @RequestParam 이용하여 form 데이터 controller에서 받기
+title:  Spring @RequestParam 이용하여 form 데이터 controller로 받기
 tags:   ['Spring']
 ---
 
@@ -10,7 +10,7 @@ tags:   ['Spring']
 
 ## Example  
 
-input 태그의 `name` 속성을 `payment_participant_list`으로 지정하고 Controller에서 값을 넘겨 받을 파라미터에 `@RequestParam` 어노테이션을 지정해주면 사용할 수 있다.  
+input 태그의 `name` 속성을 `payment_participant_list`으로 지정하고 Controller에서 값을 넘겨 받을 파라미터에 `@RequestParam` 어노테이션을 지정해줘서 사용하는 예시이다.  
 
 ```
 <form class="modal-content" th:action="@{'/meetings/' + ${meeting.id} + '/payment'}" method="post">
