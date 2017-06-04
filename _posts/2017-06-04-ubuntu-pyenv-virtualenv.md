@@ -22,7 +22,7 @@ xz-utils tk-dev
 
 <br/>  
 
-### pyenv  
+## pyenv  
 
 git clone 을 이용하여 소스를 다운받고 몇 가지 설정을 해준다.      
 
@@ -66,7 +66,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 <br/>  
 
-### pyenv-virtualenv  
+## pyenv-virtualenv  
 
 `pyenv`와 마찬가지로 clone 받고 설정들을 해준다.  
 
@@ -106,7 +106,7 @@ $ pyenv deactivate
 
 <br/>  
 
-### autoenv  
+## autoenv  
 
 autoenv를 설정하면 특정 디렉토리로 이동했을 때 자동으로 특정 가상환경으로 activate 되도록 할 수 있다.  
 
