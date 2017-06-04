@@ -34,7 +34,8 @@ if __name__ == "__main__":
     application.run(host='0.0.0.0')
 ```   
 
-코드에 이상이 없는지 확인해보기 위해 `test.py`를 실행하고 간단하게 새로운 bash 창을 열어서 `curl` 명령을 이용해서 확인해보자.  
+코드에 이상이 없는지 확인해보기 위해 `test.py`를 실행한다.  
+새로운 bash 창을 열고 `curl` 명령으로 http 요청을 날려보는 것으로 간단히 확인한다.  
 
 ```
 $ python test.py
@@ -70,7 +71,7 @@ $ uwsgi --socket 0.0.0.0:5000 --protocol=http -w wsgi
 ...
 ```
 
-> 혹시 앱 이름이 `application`이 아니라 다른 이름으로 했을 경우, `--callable` 옵션을 추가해줘야 된다. ex) $ uwsgi --socket 0.0.0.0:5000 --protocol=http -w wsgi --callable app
+> 혹시 앱 이름이 `application`이 아니라 다른 이름으로 했을 경우, `--callable` 옵션을 추가해줘야 된다. ex) 앱 이름을 app으로 했을 경우, $ uwsgi --socket 0.0.0.0:5000 --protocol=http -w wsgi --callable app
 
 결과를 확인해보기 위해 방금 전과 동일한 방식으로 http 요청을 날려본다.  
 
@@ -101,17 +102,26 @@ daemonize = /home/user/myproject/uwsgi.log
 die-on-term = true
 ```  
 
+ini파일로 uwsgi를 실행해본다.  
+
+```
+$ uwsgi --ini myproject.ini
+```   
+
+위에 설정에 의하면 _myproject.sock_ 파일이 없으면 생성하고 uwsgi를 종료할 때 제거한다. _myproject.sock_ 파일의 권한은 `chmod-socket` 으로 지정한다.  
+
 ini 파일에 들어가는 속성들에 대한 설명은 [여기](https://twpower.github.io/linux/2017/04/18/43(ini%ED%8C%8C%EC%9D%BC%EC%9D%84-%ED%86%B5%ED%95%B4-uWSGI-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0).html)에 잘 나와있다.  
+
 
 <br/>
 
 ## socket을 이용한 uWSGI와 Nginx 연결  
 
-> Nginx 를 설치하는 방법은 [여기](https://cjh5414.github.io/ubuntu-deploy-with-django-uwsgi-nginx/)의 초반부를 참고하면된다.  
+> Nginx 를 설치하는 방법은 [여기](https://cjh5414.github.io/ubuntu-deploy-with-django-uwsgi-nginx/)의 초반부를 참고하면 된다.  
 
-위에 ini 설정에서 이미 적용했지만 uWSGI와 Nginx를 연결하기 위해 Unix socket을 이용한다. socket을 이용하는 것이 더 안전하고 빠르다. 연결하는 방법은 `.sock` 파일을 통해서 하는데, ini파일에서 설정한 _myproject/myproject.sock_ 이용한다. Nginx에서도 이 파일을 통한 연결을 하도록 설정이 필요하다.
+위의 ini 설정에서 이미 적용했지만 uWSGI와 Nginx를 연결하기 위해 Unix socket을 이용한다. socket을 이용하는 것이 더 안전하고 빠르다. 연결하는 방법은 `.sock` 파일을 통해서 하는데, ini파일에서 설정한 _myproject/myproject.sock_ 이용한다. Nginx에서도 이 파일을 통한 연결을 하도록 하는 설정이 필요하다.
 
-ini 파일에서 지정한 _myproject/myproject.sock_ 파일의 위치를 `uwsgi_pass`에 지정한 것과 같이 입력해주면 된다.  
+ini 파일에서 지정한 _myproject/myproject.sock_ 파일의 위치를 아래와 같이 `uwsgi_pass`에 입력해주면 된다.  
 
 ```
 ...
@@ -129,7 +139,7 @@ server {
 }
 ```  
 
-변경한 내용이 이상이 없는지 확인을 한번 해주고,
+변경한 내용이 문법적으로 이상이 없는지 확인을 해주고,
 
 ```
 $ sudo nginx -t
@@ -137,7 +147,7 @@ nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
 ```  
 
-이상이 없으면 nginx를 재시작 해주자.  
+이상이 없으면 nginx를 재시작 하자.  
 
 ```
 $ sudo service nginx restart
