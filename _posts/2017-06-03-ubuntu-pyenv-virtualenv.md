@@ -112,8 +112,8 @@ autoenv를 설정하면 특정 디렉토리로 이동했을 때 자동으로 특
 
 ```
 $ git clone git://github.com/kennethreitz/autoenv.git ~/.autoenv
-$ echo 'source ~/.autoenv/activate.sh' >> ~/.bashrc
-$ source ~/.bashrc
+$ echo 'source ~/.autoenv/activate.sh' >> ~/.bash_profile
+$ source ~/.bash_profile
 ```  
 
 ```
