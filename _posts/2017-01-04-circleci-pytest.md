@@ -92,6 +92,18 @@ dependencies:
 
 <br/>  
 
+## Forked Pull Requests  
+
+fork한 Repository에서 pull request를 발생시켰을 때도 build를 하고싶다면 Circle-CI에서 해당 프로젝트의  
+
+> Settings > BUILD SETTINGS > Advanced Settings > Build forked pull requests   
+
+로 가서 on으로 체크하면 된다.  
+
+![Circleci signup](/images/circleci-pytest/pull request.png)   
+
+<br/>  
+
 ## 참고자료  
 
 <https://circleci.com/docs/getting-started/>  
