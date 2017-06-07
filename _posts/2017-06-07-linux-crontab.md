@@ -83,25 +83,25 @@ $ crontab -r
 
 ## 예시  
 
-> ```* * * * * /home/user/test.sh```  
+> ### ```* * * * * /home/user/test.sh```  
 
 - 1분 마다 `/home/user/test.sh` 를 수행.  
 
 <br/>  
 
-> ```30 10,22 * * * /home/user/test.sh```  
+> ### ```30 10,22 * * * /home/user/test.sh```  
 
 - 매일 오전 10시 30분, 오후 10시 30분에 `/home/user/test.sh` 를 수행.  
 
 <br/>  
 
-> ```*/10 * * * * /home/user/test.sh```  
+> ### ```*/10 * * * * /home/user/test.sh```  
 
 - 10분 마다 `/home/user/test.sh` 를 수행.   
 
 <br/>  
 
-> ```0 8 * * 1-5 /home/user/test.sh```  
+> ### ```0 8 * * 1-5 /home/user/test.sh```  
 
 - 평일(월~금요일) 8:00 시에 `/home/user/test.sh` 를 수행.  
 
