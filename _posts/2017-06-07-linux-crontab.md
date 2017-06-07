@@ -4,9 +4,8 @@ title:  Linux crontab 이용하여 작업 명령 예약하기
 tags:   ['Linux']
 ---
 
-> Linux의 crontab은 스케줄링을 관리하는 프로그램으로 `매일 0시 0분에 DB를 백업한다.`, `1시간 마다 00작업을 수행한다.` 등의 특정 시간에 특정 작업을 수행 하도록 명령을 예약할 수 있다.
+> Linux의 crontab은 스케줄링을 관리하는 프로그램으로 `매일 0시 0분에 DB를 백업한다.`, `1시간 마다 00작업을 수행한다.` 등의 특정 시간에 특정 작업을 수행 하도록 명령을 예약할 수 있다.  
 
-<br/>  
 
 ## crontab 명령어  
 
@@ -17,6 +16,8 @@ tags:   ['Linux']
 ```
 $ crontab -l
 ```  
+
+<br/>  
 
 ### 예약된 작업 수정
 
@@ -51,6 +52,8 @@ $ crontab -e
 # m h  dom mon dow   command
 ```
 
+<br/>  
+
 ### 작업 리스트 삭제  
 
 `-e` 옵션으로 추가한 작업 명령이 삭제된다.  
@@ -75,19 +78,27 @@ $ crontab -r
 └───────── 분 (0 - 59)
 ```   
 
-### 예시  
+<br/>  
+
+## 예시  
 
 > ```* * * * * /home/user/test.sh```  
 
 - 1분 마다 `/home/user/test.sh` 를 수행.  
 
+<br/>  
+
 > ```30 10,22 * * * /home/user/test.sh```  
 
 - 매일 오전 10시 30분, 오후 10시 30분에 `/home/user/test.sh` 를 수행.  
 
+<br/>  
+
 > ```*/10 * * * * /home/user/test.sh```  
 
 - 10분 마다 `/home/user/test.sh` 를 수행.   
+
+<br/>  
 
 > ```0 8 * * 1-5 /home/user/test.sh```  
 
