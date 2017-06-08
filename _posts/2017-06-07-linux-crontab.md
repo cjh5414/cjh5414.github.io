@@ -101,7 +101,7 @@ $ crontab -r
 
 <br/>  
 
-> ### ```0 8 * * 1-5 /home/user/test.sh```  
+> ##```0 8 * * 1-5 /home/user/test.sh```  
 
 - 평일(월~금요일) 8:00 시에 `/home/user/test.sh` 를 수행.  
 
@@ -119,7 +119,7 @@ Wed Jun  7 23:41:57 KST 2017
 
 timezone을 변경하는 방법은 아래의 링크를 참고하면 된다.  
 
-- [Timezone 변경하기](https://cjh5414.github.io/)
+- [Timezone 변경하기](https://cjh5414.github.io/ubuntu-timezone/)
 
 timeznoe 을 변경한 후에는 crontab을 재시작 해야 적용된다.  
 
