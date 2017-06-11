@@ -4,15 +4,8 @@ title:  Ubuntu에서 Nginx, uWSGI를 이용하여 Django 배포하기
 tags:   ['Django', 'Nginx', 'Linux']
 ---
 
-> Ubuntu에서 Nginx, uWSGI를 이용하여 Django 프로젝트를 배포하는 방법에 대해서 알아본다. 로컬에서 개발할 때는 Django에서 제공하는 간단한 웹서버인 runserver를 이용하여 테스트를 했었다. 하지만 실제로 배포할 때는 사용하면 안되고 Nginx, Apache 등의 웹 서버를 이용하고 그 웹 서버와 Django Application 을 이어주는 Gunicorn, uWSGI 등을 이용하여 배포해야한다.  
+> Ubuntu에서 Nginx, uWSGI를 이용하여 Django 프로젝트를 배포하는 방법에 대해서 알아본다. 로컬에서 개발할 때는 Django에서 제공하는 간단한 웹서버인 runserver를 이용하여 테스트를 했었다. 하지만 실제로 배포할 때는 그렇게 사용하면 안되고 Nginx, Apache 등의 웹 서버를 이용하고 그 웹 서버와 Django Application 을 이어주는 Gunicorn, uWSGI 등을 이용하여 배포해야한다.  
 
-<br/>  
-
-## pyenv & pyenv-virtualenv & autoenv  
-
-Python을 사용하면 대부분 가상환경을 이용하는데 서버에서도 마찬가지로 설정을 해줘야한다.  
-
-설치 및 설정 방법은 [Ubuntu에서 pyenv, virtualenv, autoenv 이용하기](https://cjh5414.github.io/ubuntu-pyenv-virtualenv/) 를 참고하면 된다.  
 
 <br/>
 
@@ -48,3 +41,42 @@ $ sudo service nginx status
 ![nginx default](/images/ubuntu-deploy-django/nginx default.png)   
 
 <br/>  
+
+## pyenv & pyenv-virtualenv & autoenv  
+
+Python을 사용하면 대부분 가상환경을 이용하는데 서버에서도 마찬가지로 설정을 해줘야한다.  
+
+설치 및 설정 방법은 [Ubuntu에서 pyenv, virtualenv, autoenv 이용하기](https://cjh5414.github.io/ubuntu-pyenv-virtualenv/) 를 참고하면 된다.  
+
+<br/>  
+
+## uWSGI
+
+__myproject_uwsgi.ini__  
+
+```
+[uwsgi]
+
+module = myapp.wsgi
+
+socket = myapp.sock
+chmod-socket = 666
+vacuum = true
+
+daemonize = /home/user/myproject/myproject_uwsgi.log
+
+die-on-term = true
+```  
+
+```
+$ uwsgi --ini myproject_uwsgi.ini
+```  
+
+```
+$ ls myproject
+...
+myproject_uwsgi.ini
+myproject_uwsgi.log
+myapp.socket
+...
+```  
