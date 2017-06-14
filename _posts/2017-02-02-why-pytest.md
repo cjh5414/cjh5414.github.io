@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  왜 pytest를 사용해야 하는가?
+title:  단위 테스트란 무엇인가? 왜 단위 테스트를 해야하는가? 왜 pytest를 사용해야 하는가?
 tags:   [Python, Test, pytest]
 ---
 
