@@ -8,7 +8,7 @@ tags:   ['Django']
 
 ### 해결 방법   
 
-```Python
+```python
 from django.contrib.auth.models import AbstractUser
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
