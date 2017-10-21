@@ -4,9 +4,10 @@ title:  Django migrate, runserver 쉘 스크립트 작성하기
 tags:   ['Django', 'Script']
 ---
 
-> 자주 사용하는 명령어들을 쉘 스크립트를 만들어서 사용하면 편리하다. Django를 이용하면서 `python manage.py migrate`, `python manage.py runserver` 등의 반복적으로 사용하는 명령어들을 하나의 스크립트로 작성해서 사용하고 있다.  
+> 자주 사용하는 명령어들을 쉘 스크립트를로 만들어서 사용하면 편리하다. Django를 이용하면서 `python manage.py migrate`, `python manage.py runserver` 등의 반복적으로 사용하는 명령어들을 하나의 스크립트로 작성해서 사용하고 있다.  
 
 _myrunserver.sh_  
+
 ```bash
 #!/bin/sh
 
@@ -21,6 +22,8 @@ cd $PROJECT_DIR
 python3 manage.py migrate
 python3 manage.py runserver
 ```  
+
+database 파일이 존재하면 제거하고 migrate 후에 서버를 실행시키는 스크립트이다.   
 
 <br/>  
 
@@ -53,6 +56,11 @@ $ sh /jihun/test.sh
 
 ### 실행된 스크립트 경로 구하기   
 
-`PROJECT_DIR=$(cd "$(dirname "$0")" && pwd)` 와 같이 이용하면 어떤 경로에서 스크립트를 실행 하는지에 상관없이 실행된 스크립트 파일의 절대 경로를 알아낼 수 있다.  
+```bash
+PROJECT_DIR=$(cd "$(dirname "$0")" && pwd)
+echo $PROJECT_DIR
+```  
+
+와 같이 이용하면 어떤 경로에서 스크립트를 실행 하는지에 상관없이 실행된 스크립트 파일의 절대 경로를 알아낼 수 있다.  
 
 `dirname "$0"` 명령으로 알아낸 쉘 스크립트 파일 위치로 이동한 후 `pwd` 명령으로 경로를 얻고, 변수에 저장하여 사용한다.  
