@@ -4,7 +4,7 @@ title:  HTML 태그에 커스텀 속성 추가하여 JQuery에서 사용하기
 tags:   ['HTML', 'JQuery', 'JavaScript']
 ---
 
-> JQuery에서 ID를 이용하여 HTML 태그의 click 기능을 구현할 때 HTML에 있는 특정 값을 가져와서 사용해야 할 경우가 있다. Django 템플릿을 이용하는 예를 들면, 모델 객체의 값들( `\{\{ person.id \}\}` 와 같은)을 태그의 text 으로 보여주는 것이 아니라 JavaScript 에서만 필요한 경우 JQuery 에서 해당 값을 가져오기 위해서는 HTML 태그에 Custom 속성을 지정하는 방법이 있다.  
+> JQuery에서 ID를 이용하여 HTML 태그의 click 기능을 구현할 때 HTML에 있는 특정 값을 가져와서 사용해야 할 경우가 있다. Django 템플릿을 이용하는 예를 들면, 모델 객체의 값들( `{{ person.id }}` 와 같은)을 태그의 text 으로 보여주는 것이 아니라 JavaScript 에서만 필요한 경우 JQuery 에서 해당 값을 가져오기 위해서는 HTML 태그에 Custom 속성을 지정하는 방법이 있다.  
 
 <br/>  
 
