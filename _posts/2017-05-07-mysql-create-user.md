@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Mysql 사용자 추가, 제거 및 권한 부여
-tags:   ['Mysql']
+tags:   ['MYSQL']
 ---
 
 ### Mysql 서버 로그인  
