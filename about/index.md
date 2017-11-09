@@ -34,6 +34,7 @@ To work at the position of software engineer and contribute to the organization 
 - Chatting and game Socket Programming using java  
 - C, C++, Java, Algorithm and computer architecture theory tutoring to younger friend from school  
 - Take a Software Maestro 7th course  
+- NAVER SUMMER INTERNSHIP 2017  
 
 <br>  
 
@@ -43,8 +44,9 @@ To work at the position of software engineer and contribute to the organization 
 - Version control system - GIT   
 - Continuous integration tool like Travis-CI, CircleCI  
 - Socket programming with TCP/IP, UDP  
-- Database - MySQL  
+- Database - MySQL, sqlite
 - Testing tool like pytest, unittest(Python)  
+- Django, DRF  
 
 <br/>  
 
