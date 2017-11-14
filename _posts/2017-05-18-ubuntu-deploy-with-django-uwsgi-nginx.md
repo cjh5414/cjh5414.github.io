@@ -4,6 +4,9 @@ title:  Ubuntu에서 Nginx, uWSGI를 이용하여 Django 배포하기
 tags:   ['Django', 'Nginx', 'Linux']
 ---
 
+## 아래 포스트에 더 자세히 재작성하였습니다.   
+### [Ubuntu에서 Nginx, uWSGI를 이용하여 Django 배포하기](https://cjh5414.github.io/how-to-deploy-django-uwsgi-nginx-in-ubuntu/)
+
 > Ubuntu에서 Nginx, uWSGI를 이용하여 Django 프로젝트를 배포하는 방법에 대해서 알아본다. 로컬에서 개발할 때는 Django에서 제공하는 간단한 웹서버인 runserver를 이용하여 테스트를 했었다. 하지만 실제로 배포할 때는 그렇게 사용하면 안되고 Nginx, Apache 등의 웹 서버를 이용하고 그 웹 서버와 Django Application 을 이어주는 Gunicorn, uWSGI 등을 이용하여 배포해야한다.  
 
 
