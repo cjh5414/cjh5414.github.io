@@ -51,11 +51,11 @@ Python을 사용하면 대부분 가상환경을 이용하는데 서버에서도
 
 ## Nginx Server Block 설정  
 
-Nginx 설정을 쉽게 정리해놓은 링크가 있다. 참고하여 nginx server 및 도메인 설정 후에 계속 진행하는 것이 좋다.   
+Nginx 설정을 쉽게 정리해놓은 링크가 있다. 참고하여 nginx server 설정 및 도메인 설정 후에 계속 진행하는 것이 좋다.   
 
-[Nginx Server Blocks 설정](https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-14-04-lts)    
+- [Nginx Server Blocks 설정](https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-14-04-lts)    
 
-[Django 배포하기 with Gunicorn, Nginx](https://cjh5414.github.io/nginx/)     
+- [Django 배포하기 with Gunicorn, Nginx](https://cjh5414.github.io/nginx/)     
 
 <br/>  
 
@@ -80,7 +80,7 @@ $ python manage.py collectstatic
 
 참고로 Memorist는 django settings 파일의 설정에 따라 정적 파일들이 `/home/jihun/Memorist/memorist/staticfiles` 에 위치하도록 되어있다. 아래의 포스트에 Django Managing static files 에 관한 더 자세한 내용이 나와있다.  
 
-- [Django | Managing static files](https://docs.djangoproject.com/en/1.11/howto/static-files/)  
+- [Django Managing static files](https://docs.djangoproject.com/en/1.11/howto/static-files/)  
 
 <br/>
 
