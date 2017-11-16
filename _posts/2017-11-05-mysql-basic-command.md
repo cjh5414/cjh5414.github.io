@@ -20,10 +20,44 @@ $ mysql -u root -p
 
 <br/>  
 
-### Database 생성  
+### Database  
+
+- 생성    
 
 ```
 mysql> create database DB_NAME;
 ```  
 
-<br/>  
+- 조회  
+
+```
+mysql> show databases;
+```   
+
+- 삭제  
+
+```
+mysql> drop database [database_name];
+```   
+
+- 사용
+
+```
+mysql> use [database_name];
+```  
+
+- 현재 사용중인 DB 확인   
+
+```
+mysql> select database();
+```
+
+<br/>
+
+### Table  
+
+- 조회  
+
+```
+mysql> show tables;
+```
