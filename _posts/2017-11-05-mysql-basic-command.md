@@ -61,3 +61,15 @@ mysql> select database();
 ```
 mysql> show tables;
 ```
+
+- 특정 테이블 정보 조회  
+
+```
+mysql> desc [table_name];
+```  
+
+- 컬럼 추가
+
+```
+mysql> alter table [table_name] add [column_name] varchar(100) not null default '0';
+```  
