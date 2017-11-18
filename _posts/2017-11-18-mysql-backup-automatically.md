@@ -41,6 +41,8 @@ mysqldump -u abc -pabc123  > $BACKUP_DIR"backup_"$DATE.sql
 find $BACKUP_DIR -ctime +3 -exec rm -f {} \;
 ```   
 
+<br/>  
+
 ### DATE 변수에 현재 날짜를 저장한다.  
 아래와 같이 사용하여 현재 날짜를 알아낼 수 있다.  
 date 뒤에 띄어쓰기가 있는 것에 주의하자.   
