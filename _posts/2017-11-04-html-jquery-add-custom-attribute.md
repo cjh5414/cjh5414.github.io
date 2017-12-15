@@ -27,3 +27,15 @@ $( "div" ).data( "options" ).name === "John";
 
 JQuery를 이용하여 위와 같이 `.data()` 함수를 이용하여 편하게 사용할 수 있다.   
 `.data(name)` 와 같이 호출하면 HTML에서 속성 값으로 지정한 `value`를 반환한다.  
+
+<br/>
+
+커스텀 속성 값을 변경하거나 제거하고 싶으면 아래와 같이 할 수 있다.  
+
+```javascript
+$( "div" ).data( "change", 86 );
+$( "div" ).removeData( "blah" );
+```  
+
+
+
