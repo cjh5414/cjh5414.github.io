@@ -73,3 +73,20 @@ mysql> desc [table_name];
 ```
 mysql> alter table [table_name] add [column_name] varchar(100) not null default '0';
 ```  
+
+- 테이블 삭제  
+
+```
+mysql> drop table [table_name];
+```     
+
+- 테이블 삭제 (외래키 검사 설정)  
+
+```
+mysql> SET foreign_key_checks = 0;
+Query OK, 0 rows affected (0.00 sec)
+mysql> drop table [table_name];
+Query OK, 0 rows affected (0.00 sec)
+mysql> SET foreign_key_checks = 1;
+Query OK, 0 rows affected (0.00 sec)
+```   
