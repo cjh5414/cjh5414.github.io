@@ -1,35 +1,98 @@
 ---
 layout: post
-title:  StringBuffer, StringBuilder 가 String 보다 빠른 이유와 원리
+title:  StringBuffer, StringBuilder 가 String 보다 성능이 좋은 이유와 원리
 tags:   ['Java', 'Algorithm']
 ---
 
-> Java의 String, StringBuffer, StringBuilder 에 대해 검색을 해보면 어떤 것이 빠른지, 장단점은 무엇인지에 대해 정리해놓은 글들을 많이 찾아볼 수 있습니다. 하지만 "왜?", "어떻게?"를 구체적으로 설명하는 글은 없어서 MyStringBuilder를 직접 구현해보면서 알고리즘적으로 어떻게 다르게 구현되어있는지 정리했습니다.  
+> Java의 String, StringBuffer, StringBuilder 에 대해 검색을 해보면 어떤 것이 성능이 좋은지, 장단점은 무엇인지에 대해 정리해놓은 글들을 많이 찾아볼 수 있습니다. 하지만 "왜?", "어떻게?"를 구체적으로 설명하는 글은 없어서 MyStringBuilder를 직접 구현해보면서 알고리즘적으로 어떻게 다르게 구현되어있는지 정리했습니다.  
 
 <br/>  
 
-## String, StringBuffer, StringBuilder  
+## String, StringBuffer, StringBuilder 특징 및 차이점   
 
-우선 Java에서 각각의 클래스의 특징과 차이가 무엇인지 요약하자면,
+우선 Java에서 세 가지 클래스의 특징과 차이가 무엇인지 요약하자면,  
+세 가지 모두 문자열을 처리하기 위한 클래스입니다. 문자열을 더하는 연산을 할 때 성능의 차이가 발생하는데 String 클래스가 StringBuffer, StringBuilder 보다 매우 느리고 메모리 관리 측면에서도 큰 차이를 보입니다. 따라서 문자열의 더하기 연산을 이용할 때는 StringBuffer 혹은 StringBuilder 의 사용을 고려해봐야 합니다.   
+
+StringBuffer와 StringBuilder 는 기능이 동일하지만 한 가지 차이점이 존재합니다. 바로 동기화 처리 문제입니다.  
+StringBuffer 는 동기화(synchronization)를 지원하여 멀티 스레드 환경에서 안전하게 동작하지만 StringBuilder 는 동기화를 지원하지 않습니다. 따라서 단일 스레드 환경에서는 StringBuilder 를, 멀티 스레드 환경에서는 StringBuilder를 사용하는 것이 권장됩니다. 굳이 두 클래스의 성능을 비교하자면 단일 스레드 환경에서 StringBuilder 가 StringBuffer 보다 빠르게 동작합니다.  
 
 <br/>  
 
 ## 문자열을 추가하는 연산에서 String가 느린 이유   
 
-문자열을 추가하는 연산에서 String 클래스가 느린 이유는 String 클래스의 `immutable` 특징 때문입니다. `immutable` 이란 변경할 수 없는, 불변의 라는 뜻으로 String 의 value 값이 한 번 생성되면 변경될 수 없습니다.
+그렇다면 String 클래스가 StringBuffer 혹은 StringBuilder 클래스보다 성능이 떨어지는 이유는 무엇일까요?  
+String 클래스의 `immutable` 특성 때문입니다. `immutable` 이란 변경할 수 없는, 불변의 라는 뜻으로 String 의 value 값은 한 번 생성되면 변경될 수 없습니다.   
+
+아래는 Java 8 API 문서의 String Class 설명의 일부분입니다.  
 
 > The String class represents character strings. All string literals in Java programs, such as "abc", are implemented as instances of this class.
-Strings are constant; their values cannot be changed after they are created. String buffers support mutable strings. Because String objects are immutable they can be shared. For example:
+Strings are constant; their values cannot be changed after they are created. String buffers support mutable strings. Because String objects are immutable they can be shared.
+
+요약해보면, String 클래스는 문자열을 나타냅니다. 자바에서 "abc" 와 같은 모든 리터럴 문자열은 String의 인스턴스로 생성됩니다. 이는 상수이고 이 값은 한 번 생성되면 변경될 수 없습니다. thread safe 하기 때문에 여러 스레들이 공유하여 사용할 수 있습니다.  
+
+아래 코드를 살펴봅시다.
+
+```java
+String a = "aa";
+String b = new String("bb");
+
+a = a + b;
+```  
+
+> 참고로 a와 b의 초기화 방식을 다르게한 이유는 두 코드가 똑같이 동작한다는 것을 보여주기 위함입니다. 앞에서 모든 리터럴 문자열은 String 인스턴스로 생성된다고 했으니 `String a = "aa";` 는 `String a = new String("aa");` 와 같은 동작을 하는 코드가 됩니다.  
+
+위의 두 줄의 코드가 실행되면 "aa", "bb"에 대해 메모리가 할당되고 그 주소 값을 각각 참조하게 됩니다.  
+`a = a + b;` 이 실행된 후에는 어떻게 될까요?  
+앞서 살펴본 바에 의하면 String 클래스는 immutable 하다. 값이 불변한다고 했습니다. a가 참조하고 있는 공간에 "aa" 대신에 "aabb" 라는 값으로 바꿔주는 것이 아니라 "aabb"에 대해 새로운 String 인스턴스를 생성하여 a가 참조하도록 합니다. 이전에 참조하던 "aa"는 쓰레기가 되고 나중에 가비지 컬렉션에 의해 처리됩니다. 바로 이런 이유 때문에 더 많은 시간과 메모리가 소요되는 것입니다. 연산을 많이 하면 할수록 이런 성능 차이는 더욱 심해집니다.   
+
+정말로 그렇게 동작하는지 코드로 살펴봅시다.  
+
+```java
+String a = "aa";
+String b = new String("bb");
+
+System.out.printf("a | value: %-4s, address: %s\n", a, a.hashCode());
+System.out.printf("b | value: %-4s, address: %s\n", b, b.hashCode());
+
+a = a + b;
+
+System.out.printf("a | value: %-4s, address: %s\n", a, a.hashCode());
+System.out.printf("b | value: %-4s, address: %s\n", b, b.hashCode());
+```   
+
+```
+$ java Example
+a | value: aa  , address: 3104
+b | value: bb  , address: 3136
+a | value: aabb, address: 2986080
+b | value: bb  , address: 3136
+```  
+
+실행 결과를 살펴보면 처음에는 a에 `3104`라는 주소가 할당 됐는데 덧셈 연산 이후 `2986080`으로 바뀐 것을 확인할 수 있습니다.   
 
 <br/>  
 
-## StringBuffer, StringBuilder 는 이 문제점을 어떻게 개선하였는가?  
+## StringBuffer, StringBuilder 와 비교한 String 클래스의 장점  
+
+StringBuffer와 StringBuilder은 어떻게 문자열 연산에서 좋은 성능을 보일지를 알아보기에 앞서 StringBuffer와 StringBuilder이 String 보다 성능이 그렇게 좋다면 StringBuffer와 StringBuilder만 사용하지 왜 String를 사용하는지 의문이 듭니다. 당연히 String의 장점이 있을 것입니다.   
+
+toString()
+
+작성중..
+
+<br/>  
+
+## StringBuffer, StringBuilder가 String 보다 문자열 연산에서 좋은 성능을 보이는 이유  
+
+작성중..
 
 <br/>  
 
 ## Big-O 시간 복잡도
 
 (ArrayList) 에도 동일한 개념 사용
+
+작성중..
 
 <br/>  
 
@@ -101,7 +164,7 @@ class MyStringBuilder {
 
 ### 실행 결과  
 
-```java
+```
 $ java MyStringBuilder
 String 실행 시간          : 744113349
 StringBuilder 실행 시간   : 438078
@@ -113,4 +176,6 @@ MyStringBuilder 실행 시간 : 976512
 ## 참고자료  
 
 - 코딩 인터뷰 완전 분석 - 게일 라크만 맥도웰 지음, 이창현 옮김    
-- [Java8 StringBuilder Source code](http://grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/6-b14/java/lang/StringBuilder.java)  
+- [Java 8 String Class Document](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)   
+- [Java 8 StringBuilder Source code](http://grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/6-b14/java/lang/StringBuilder.java)   
+- http://xxxelppa.tistory.com/57
