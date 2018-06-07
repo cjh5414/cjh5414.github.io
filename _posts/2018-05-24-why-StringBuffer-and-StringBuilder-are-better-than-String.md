@@ -20,7 +20,7 @@ StringBuffer 는 동기화(synchronization)를 지원하여 멀티 스레드 환
 
 ## 문자열을 추가하는 연산에서 String가 느린 이유   
 
-그렇다면 String 클래스가 StringBuffer 혹은 StringBuilder 클래스보다 성능이 떨어지는 이유는 무엇일까요?  
+String 클래스가 StringBuffer 혹은 StringBuilder 클래스보다 성능이 떨어지는 이유는 무엇일까요?  
 String 클래스의 `immutable` 특성 때문입니다. `immutable` 이란 변경할 수 없는, 불변의 라는 뜻으로 String 의 value 값은 한 번 생성되면 변경될 수 없습니다.   
 
 아래는 Java 8 API 문서의 String Class 설명의 일부분입니다.  
@@ -74,57 +74,81 @@ b | value: bb  , address: 3136
 
 ## StringBuffer, StringBuilder 와 비교한 String 클래스의 장점  
 
-StringBuffer와 StringBuilder은 어떻게 문자열 연산에서 좋은 성능을 보일지를 알아보기에 앞서 StringBuffer와 StringBuilder이 String 보다 성능이 그렇게 좋다면 StringBuffer와 StringBuilder만 사용하지 왜 String를 사용하는지 의문이 듭니다. 당연히 String의 장점이 있을 것입니다.   
+StringBuffer와 StringBuilder은 어떻게 문자열 연산에서 좋은 성능을 보이는지를 알아 보기에 앞서 StringBuffer와 StringBuilder이 String 보다 성능이 그렇게 좋다면 StringBuffer와 StringBuilder만 사용하지 왜 String를 사용하는지 의문이 듭니다. 당연히 String 만의 장점이 있고 Java에서 세 가지의 클래스를 따로 제공하는 이유가 있을 것입니다.  
 
-toString()
-
-작성중..
+String 클래스는 immutable 속성을 가짐으로써 안전하다고 했습니다. 값이 변경되지 않기 때문에 여러 스레드가 데이터를 공유하더라도 동기화를 신경쓸 필요가 없이 안정성이 유지되는 장점이 있습니다. 그리고 StringBuffer, StringBuilder 클래스에서도 String 클래스를 이용합니다. `toString()` 메소드의 경우 StringBuffer, StringBuilder의 `toString()`가 호출되면 해당 문자열에 대한 String 객체를 생성해서 반환합니다. 따라서 연산이 적게 사용되고, 문자열 값의 수정 없이 읽기가 많은 등의 경우에는 String 클래스의 사용이 더 적절합니다.  
 
 <br/>  
 
-## StringBuffer, StringBuilder가 String 보다 문자열 연산에서 좋은 성능을 보이는 이유  
+## StringBuffer, StringBuilder가 String 보다 문자열 연산에서 좋은 성능을 보이는 방법    
 
-작성중..
+그렇다면 StringBuffer와 StringBuilder는 어떻게 구현되어 있길래 그렇게 많은 성능 차이를 보일까요?  
+String 클래스가 덧셈 연산에서 좋지 않은 성능을 보이는 이유는 연산이 수행될 때마다 두 문자열을 모두 읽어 들이고 새로운 메모리에 복사하기 때문이었습니다. StringBuffer, StringBuilder 에서도 마찬가지로 문자열 복사를 하긴 하지만 가변 크기 배열을 이용해서 필요한 경우에만 문자열을 복사합니다.  
+> 배열의 크기를 무한정으로 지정할 수 없기 때문에 문자열의 복사는 불가피합니다.   
 
-<br/>  
+어떻게 구현되어있는지 간략히 알아봅시다.  
 
-## Big-O 시간 복잡도
+### 맴버 변수  
+- 문자열 값을 저장하는 char형 배열 `value`
+- 현재 문자열 크기의 값을 가지는 int형의 `count`  
 
-(ArrayList) 에도 동일한 개념 사용
+### append()   
+StringBuffer, StringBuilder에서는 + 연산 대신 `append()` 라는 함수를 이용합니다.  
+value에 사용되지 않고 남아있는 공간이 새로운 문자열이 들어갈 정도의 크기가 된다면 그대로 삽입합니다.  
+그렇지 않다면 value 배열의 크기를 두배로 증가시키면서 기존의 문자열을 복사하고 새로운 문자열을 추가합니다.  
 
-작성중..
+### 예시  
+
+예를들어 살펴봅시다.  
+
+1. `StringBuilder sb = new StringBuilder();`  
+    - StringBuilder 를 생성할 때 capacity를 지정하지 않으면 기본 16으로 설정됩니다.    
+    - 따라서 value 의 크기는 16, 값은 비어있게 되고,  
+    - count는 0으로 초기화 됩니다.  
+
+2. `sb.append("first string");`    
+    - "first string" 이라는 문자열의 크기는 12이고 value 의 남아있는 값 16보다 작으므로 아무런 문자열의 복사 없이 바로 추가됩니다.  
+    - value 의 값은 "first string" 이 되고,
+    - count는 12로 갱신됩니다.  
+
+3. `sb.append("+second string");`  
+    - "second string" 의 크기는 14. value 에 남아 있는 공간이 3 밖에 되지 않으므로 배열의 크기를 늘려줘야 합니다.
+    - value 의 크기를 두배(32)로 늘리고 기존의 문자열을 복사하고 새로운 문자열을 더하면 "first string+second string".
+    - count는 26으로 갱신됩니다.  
+
+실제로는 위의 설명보다 조금 더 복잡하게 구현되어있지만 핵심적인 부분은 동일합니다.  
 
 <br/>  
 
 ## MyStringBuilder  
 
-위에서 설명한 방법을 이용하여 StringBuilder 의 핵심적인 부분만 간단히 구현해보면 String 과 비교했을 때 성능이 매우 개선된 것을 확인해볼 수 있습니다.   
+위에서 설명한 방법을 이용하여 StringBuilder 의 핵심적인 부분만 간단히 구현해봤습니다. 매우 간단한 코드이지만 이것만으로도 String 과 비교했을 때의 성능 차이를 확인해 볼 수 있습니다.  
 
 ```java
 import java.util.ArrayList;
 import java.util.Arrays;
 
 class MyStringBuilder {
-    int size = 0;
+    int count = 0;
     char[] value;
 
     public MyStringBuilder(String string) {
         value = new char[string.length() + 16];
         string.getChars(0, string.length(), value, 0);
-        size = string.length();
+        count = string.length();
     }
 
     @Override
     public String toString() {
-        return String.valueOf(value);
+        return new String(value, 0, count);
     }
 
     public void append(String string) {
-        int oldSize = size;
-        size = oldSize + string.length();
-        if(size > value.length)
+        int oldCount = count;
+        count = oldCount + string.length();
+        if(count > value.length)
             value = Arrays.copyOf(value, value.length * 2);
-        string.getChars(0, string.length(), value, oldSize);
+        string.getChars(0, string.length(), value, oldCount);
     }
 
     public static void main(String[] args) {
@@ -175,7 +199,6 @@ MyStringBuilder 실행 시간 : 976512
 
 ## 참고자료  
 
-- 코딩 인터뷰 완전 분석 - 게일 라크만 맥도웰 지음, 이창현 옮김    
 - [Java 8 String Class Document](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)   
 - [Java 8 StringBuilder Source code](http://grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/6-b14/java/lang/StringBuilder.java)   
 - http://xxxelppa.tistory.com/57
