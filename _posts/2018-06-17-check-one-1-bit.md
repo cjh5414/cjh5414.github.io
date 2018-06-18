@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  1로 세팅된 비트 값이 한 개 인지 확인하기
+title:  1로 세팅된 비트 값이 한 개인 지 확인하기
 tags:   ['Algorithm']
 ---
 
