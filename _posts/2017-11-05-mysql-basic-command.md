@@ -90,3 +90,13 @@ Query OK, 0 rows affected (0.00 sec)
 mysql> SET foreign_key_checks = 1;
 Query OK, 0 rows affected (0.00 sec)
 ```   
+
+<br/>  
+
+### Select   
+
+- 그룹핑
+
+```
+mysql> SELECT [column_names] FROM [table_name] GROUP BY [column_name];
+```
