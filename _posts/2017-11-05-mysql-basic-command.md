@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Mysql 기본적인 명령어 정리
+title:  Mysql 명령어 정리
 tags:   ['MYSQL']
 ---
 
@@ -95,8 +95,68 @@ Query OK, 0 rows affected (0.00 sec)
 
 ### Select   
 
+- 중복된 레코드 제거   
+
+```
+mysql> SELECT DISTINCT [column_names] FROM [table_name];
+```  
+
 - 그룹핑
 
 ```
 mysql> SELECT [column_names] FROM [table_name] GROUP BY [column_name];
+```  
+
+- 레코드 순서 지정 (Default : ASC, 내림차순 : DESC)
+
 ```
+mysql> SELECT [column_names] FROM [table_name] ORDER BY [column_name];
+mysql> SELECT [column_names] FROM [table_name] ORDER BY [column_name] DESC;
+```    
+
+- LIKE 연산자   
+    - _ : 임의의 한 개 문자를 의미한다.   
+    - % : 임의의 여러 개 문자를 의미한다.  
+
+```
+mysql> SELECT [column_names] FROM [table_name] WHERE [column_name] LIKE '김%';
+```    
+
+#### 집합 연산  
+두 SELECT 문의 필드의 개수와 데이터 타입이 서로 같아야 한다.  
+
+- 합집합 UNION (Default: distinct, 중복 포함하고 싶다면 UNION ALL)
+
+```
+mysql> SELECT [column_names] FROM [table_name1]
+mysql> UNION ALL
+mysql> SELECT [column_names] FROM [table_name2];
+
+ex)
+mysql> SELECT id from student UNION ALL SELECT id from professor;
+```  
+
+- 교집합 INTERSECT  
+
+```
+mysql> SELECT [column_names] FROM [table_name1]
+mysql> INTERSECT
+mysql> SELECT [column_names] FROM [table_name2];
+
+ex) 컴퓨터공학부 학생들 중에서 A+ 를 받은 교과목이 있는 학생  
+mysql> SELECT id from student
+mysql> FROM student s, department d
+mysql> WHERE s.id = d.id and dept_name='컴퓨터공학부'
+mysql> INTERSECT
+mysql> SELECT id
+mysql> takes
+mysql> grade = 'A+';
+```  
+
+- 차집합 MINUS  
+
+```
+mysql> SELECT [column_names] FROM [table_name1]
+mysql> MINUS
+mysql> SELECT [column_names] FROM [table_name2];
+```  
