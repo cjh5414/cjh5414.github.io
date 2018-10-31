@@ -60,13 +60,12 @@ $ mv mysite/* django_tutorial/
 $ cd django_tutorial
 $ tree .
 .
+├── manage.py
 └── mysite
-    ├── manage.py
-    └── mysite
-        ├── __init__.py
-        ├── settings.py
-        ├── urls.py
-        └── wsgi.py
+    ├── __init__.py
+    ├── settings.py
+    ├── urls.py
+    └── wsgi.py
 ```  
 
 <br>  
