@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  [Java] 우선순위 큐(Priority Queue) 와 Comparable, Comparator
+title:  Java 우선순위 큐(Priority Queue) 와 Comparable, Comparator
 tags:   ['Algorithm', 'Java']
 ---
 
@@ -14,7 +14,7 @@ tags:   ['Algorithm', 'Java']
 Java에서 우선순위 큐를 이용하는 방법을 예제와 함께 알아보자.  
 Student 라는 클래스가 있다. `name`과 `age` 속성을 가지고 있다. 나이를 기준으로 나이가 많은 순, 적은 순 으로 우선순위 큐를 구성해서 사용해 보려고 한다. 
 
-우선순위가 한 가지의 속성으로만 결정될 필요는 없다. 새로운 속성 값을 추가하고 `Comparable`, `Comparator` 를 잘 구현해주면 여러가지의 조건으로 우선 순위를 결정할 수 있다.  
+> 우선순위가 한 가지의 속성으로만 결정될 필요는 없다. 새로운 속성 값을 추가하고 `Comparable`, `Comparator` 를 잘 구현해주면 여러가지의 조건으로 우선 순위를 결정할 수 있다.  
 
 
 ### Student 클래스  
@@ -99,6 +99,8 @@ public static void main(String[] args) {
 이름 : 김철수, 나이 : 20
 이름 : 이나영, 나이 : 7
 ```  
+
+<br/>  
 
 ### 나이가 적은 순  
 
