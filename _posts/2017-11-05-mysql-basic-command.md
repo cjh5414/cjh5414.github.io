@@ -160,3 +160,15 @@ mysql> SELECT [column_names] FROM [table_name1]
 mysql> MINUS
 mysql> SELECT [column_names] FROM [table_name2];
 ```  
+
+</br>
+
+### Delete
+
+```
+mysql> DELETE FROM [table_name] WHERE [condition];
+
+ex)
+mysql> DELETE FROM offers WHERE id > 7;
+```  
+
