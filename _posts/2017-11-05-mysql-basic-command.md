@@ -105,7 +105,12 @@ mysql> SELECT DISTINCT [column_names] FROM [table_name];
 
 ```
 mysql> SELECT [column_names] FROM [table_name] GROUP BY [column_name];
+mysql> SELECT [column_names] SUM(column_name) FROM [table_name] GROUP BY [column_name];
 ```  
+
+```
+mysql> SELECT year, semester, sum(credit) credit FROM courses GROUP BY year, semester;
+```
 
 - 레코드 순서 지정 (Default : ASC, 내림차순 : DESC)
 
@@ -161,7 +166,7 @@ mysql> MINUS
 mysql> SELECT [column_names] FROM [table_name2];
 ```  
 
-</br>
+<br/>
 
 ### Delete
 
