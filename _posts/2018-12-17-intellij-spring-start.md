@@ -24,7 +24,7 @@ Spring MVC 를 선택하고 프로젝트명을 입력한후 프로젝트를 생�
 
 ![create project2](/images/intellij-spring-start/create_project2.png)  
 
-실행 된 IDEA의 좌측 project tree의 root directory를 우클릭 하여 Maven Framework를 추가한다.  
+좌측 project tree의 root directory를 우클릭 하여 Maven Framework를 추가한다.  
 
 ![create project3](/images/intellij-spring-start/create_project3.png)
 ![create project4](/images/intellij-spring-start/create_project4.png)  
