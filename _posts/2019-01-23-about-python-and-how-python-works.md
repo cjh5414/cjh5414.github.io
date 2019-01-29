@@ -25,7 +25,7 @@ Python은 1991년 프로그래머인 귀도 반 로섬(Guido van Rossum)이 발�
 
 Python은 읽고 쓰기 쉽고 배우기 편한 언어로 잘 알려져 있다. 아래의 링크에 파이썬의 장점에 대해 잘 설명되어 있다.  
 
-[파이썬의 특징](https://wikidocs.net/6)  
+> [파이썬의 특징](https://wikidocs.net/6)  
 
 <br/>  
 
@@ -49,7 +49,9 @@ CPython은 인터프리터 이면서 컴파일러 이다. 우리가 작성하는
 2           0 LOAD_GLOBAL              0 (print)
             2 LOAD_CONST               1 ('Hellog')
             4 CALL_FUNCTION            1
-```  
+```   
+
+<br/>  
 
 > CPython 인터프리터 실행 중에 단점이 있는데 GIL(global interpreter lock)을 사용한다는 것이다. bytecode를 실행할 때에 여러 thread를 사용할 경우, 전체에 lock 을 걸어서 한번에 단 하나의 thread 만이 python object에 접근하도록 제한한 것이다. 하지만 single thread일 때는 문제가 없고 GIL의 단점을 보안하기 위한 방법들이 존재하고 있어서 GIL로 인한 불편함을 느낄 가능성은 거의 없다고 한다.  
 
@@ -73,9 +75,8 @@ python 자체로 구현. JIT 컴파일 도입하여 CPython 보다 빠르다.
 - 배우기 쉬워서 학습용으로 좋다.  
 - 공동 작업과 유지 보수가 아주 쉽고 편해서 생산성이 높고 실사용률도 높다.  
 - 읽고 쓰기 쉽다.
-> 문법이 엄격한 것이 한 몫을 한다. python 에서는 중괄호를 들여쓰기를 강제하는 것으로 대체한다. 이 때문에 보기에도 편하고 중괄호를 닫지 않아서 발생하는 귀찮은 에러를 겪을 필요가 없다.  
-
-> 들여쓰기에 탭(Tab)을 사용하면 안된다. 이유는 python interpreter가 tab을 공백 하나로 처리하기 때문이다. PEP-8에는 스페이스바 공백 4문자를 권장한다. 하지만 대부분의 에디터에서는 Tab을 공백 4개로 자동 변환해주는 기능을 제공하기 때문에 불편함 없이 사용할 수 있다.  
+> 문법이 엄격한 것이 한 몫을 한다. python 에서는 중괄호를 들여쓰기를 강제하는 것으로 대체한다. 이 때문에 보기에도 편하고 중괄호를 닫지 않아서 발생하는 귀찮은 에러를 겪을 필요가 없다.        
+들여쓰기에 탭(Tab)을 사용하면 안된다. 이유는 python interpreter가 tab을 공백 하나로 처리하기 때문이다. PEP-8에는 스페이스바 공백 4문자를 권장한다. 하지만 대부분의 에디터에서는 Tab을 공백 4개로 자동 변환해주는 기능을 제공하기 때문에 불편함 없이 사용할 수 있다.  
 
 - 동적 타입으로 인해 유연하다.  
 - C라이브러리 함수 call이 굉장이 쉽다.
@@ -121,10 +122,10 @@ str = "string"
 - 이런 오류가 프로그래밍 실수 구문에서 오랜 시간 후에 발생할 수 있다
 - 데이터의 잘못된 자료형의 장소로 전달되는 구문은 작성하지 않아야 한다. 이것은 버그를 찾기 어려울 수도 있다.
 
-출처 : Nesoy | [덕 타이핑 이란?](https://ko.wikipedia.org/wiki/%EB%8D%95_%ED%83%80%EC%9D%B4%ED%95%91)    
+출처 : Nesoy [덕 타이핑 이란?](https://ko.wikipedia.org/wiki/%EB%8D%95_%ED%83%80%EC%9D%B4%ED%95%91)    
 
 <br/>  
 
 ## python이 느린 이유에 대한 자료   
 
-[Why python is slow](http://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/)  
+- [Why python is slow](http://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/)  
