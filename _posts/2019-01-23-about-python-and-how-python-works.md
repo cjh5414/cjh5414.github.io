@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Python에 대하여, Python은 어떻게 동작하는가? Python의 장단점.
+title:  Python에 대하여, Python은 어떻게 동작하는가? Python의 장단점
 tags:   ['Python']
 ---
 
