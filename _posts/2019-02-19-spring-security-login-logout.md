@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spring Security 로그인 및 로그아웃 기능 사용하기. 로그아웃 후 로그인 두번 되는 문제.
+title: Spring Security 로그인 및 로그아웃 기능 사용하기 & 로그아웃 후 로그인 두번 되는 문
 tags:   ['Spring', 'Spring Security']
 ---
 
